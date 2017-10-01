@@ -6,8 +6,7 @@ public class camera : MonoBehaviour {
 
 	private const float ANGLE_MIN_Y = 0.0f;
 	private const float ANGLE_MAX_Y = 50.0f;
-
-	private Camera cam;
+    
 	public GameObject cible;
 	public float vitesse_rotation = 5;
 	public float horizontal;
@@ -17,7 +16,6 @@ public class camera : MonoBehaviour {
 
 	void Start() {
 		camera_transform = transform;
-		cam = Camera.main;
 	}
 
 	void Update(){
