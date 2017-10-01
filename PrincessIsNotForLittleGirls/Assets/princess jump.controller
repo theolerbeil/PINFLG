@@ -5,17 +5,13 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: princess_annim1
+  m_Name: princess jump
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
-<<<<<<< HEAD
-    m_StateMachine: {fileID: 1107532075410586040}
-=======
-    m_StateMachine: {fileID: 1107252811288916850}
->>>>>>> e41046454c8909df0beba42703957bce459cbc0e
+    m_StateMachine: {fileID: 1107911386667595680}
     m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
@@ -25,21 +21,13 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
-<<<<<<< HEAD
---- !u!1102 &1102065456383508638
-=======
---- !u!1102 &1102806779758111738
->>>>>>> e41046454c8909df0beba42703957bce459cbc0e
+--- !u!1102 &1102727825327049410
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-<<<<<<< HEAD
-  m_Name: attack1
-=======
-  m_Name: jump
->>>>>>> e41046454c8909df0beba42703957bce459cbc0e
+  m_Name: Armature|ArmatureAction
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -51,20 +39,12 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-<<<<<<< HEAD
-  m_Motion: {fileID: 7400000, guid: 5f374ae2a2cab0e47a84f1be82331205, type: 2}
-=======
-  m_Motion: {fileID: 7400000, guid: dee99398b62b5604aba06b10ff7ae8bc, type: 3}
->>>>>>> e41046454c8909df0beba42703957bce459cbc0e
+  m_Motion: {fileID: 7400000, guid: 3cd69a01d57761144ace91ab213c26a9, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
-<<<<<<< HEAD
---- !u!1107 &1107532075410586040
-=======
---- !u!1107 &1107252811288916850
->>>>>>> e41046454c8909df0beba42703957bce459cbc0e
+--- !u!1107 &1107911386667595680
 AnimatorStateMachine:
   serializedVersion: 5
   m_ObjectHideFlags: 1
@@ -73,28 +53,15 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-<<<<<<< HEAD
-    m_State: {fileID: 1102065456383508638}
-    m_Position: {x: 368, y: 254, z: 0}
-=======
-    m_State: {fileID: 1102806779758111738}
-    m_Position: {x: 337, y: 180, z: 0}
->>>>>>> e41046454c8909df0beba42703957bce459cbc0e
+    m_State: {fileID: 1102727825327049410}
+    m_Position: {x: 200, y: 0, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-<<<<<<< HEAD
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 1102065456383508638}
-=======
-  m_AnyStatePosition: {x: 48, y: 36, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
-  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 1102806779758111738}
->>>>>>> e41046454c8909df0beba42703957bce459cbc0e
+  m_DefaultState: {fileID: 1102727825327049410}
