@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class camera : MonoBehaviour {
 
-	private const float ANGLE_MIN_Y = 0.0f;
-	private const float ANGLE_MAX_Y = 50.0f;
+	private const float ANGLE_MIN_Y = 40f;
+	private const float ANGLE_MAX_Y = 40f;
     
 	public GameObject cible;
 	public float vitesse_rotation = 5;
@@ -27,12 +27,12 @@ public class camera : MonoBehaviour {
 
 
 	void LateUpdate() { 
-
+		Cursor.visible = false;
 		Vector3 dir = new Vector3 (0, 0,-distance);
 		Quaternion rotation = Quaternion.Euler(vertical, horizontal, 0);
 		camera_transform.position = cible.transform.position + rotation * dir;
 		camera_transform.LookAt (cible.transform.position);
 
-
+		camera_transform.transform.Rotate(new Vector3(-20, 0, 0));
 	}
 }
