@@ -8,9 +8,9 @@ public class groundtest : MonoBehaviour {
 	void Start () {
 		
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		gameObject.transform.Translate (Vector3.back * 0.1f);
+		gameObject.transform.Translate (Vector3.forward * 0.1f);
 	}
 }
