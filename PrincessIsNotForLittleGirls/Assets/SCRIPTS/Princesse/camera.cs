@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class camera : MonoBehaviour {
 
-	private const float ANGLE_MIN_Y = 40f;
-	private const float ANGLE_MAX_Y = 40f;
+	private const float ANGLE_MIN_Y = 30f;
+	private const float ANGLE_MAX_Y = 50f;
     
 	public GameObject cible;
 	public float vitesse_rotation = 5;
