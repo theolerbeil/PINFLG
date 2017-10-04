@@ -5,6 +5,7 @@ using UnityEngine;
 public class objet_interaction : MonoBehaviour {
 
 	public GameObject princesse;
+    public Objet objet;
 	public float distance_activation;
     public float demiAngleActivationFrontal;
 
@@ -28,6 +29,7 @@ public class objet_interaction : MonoBehaviour {
             if(angle <= demiAngleActivationFrontal)
             {
                 Debug.Log(this.ToString() + " is triggered !");
+                objet.Activation();
             }
 		}
 	}
