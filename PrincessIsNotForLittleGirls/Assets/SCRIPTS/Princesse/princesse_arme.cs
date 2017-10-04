@@ -6,6 +6,9 @@ public class princesse_arme : MonoBehaviour {
 
     public EnumArmes armeActive;
 
+    private GameObject actualHandArme;
+    private GameObject actualWorldArme;
+
     public GameObject handPoele;
     public GameObject worldPoele;
 
@@ -23,42 +26,44 @@ public class princesse_arme : MonoBehaviour {
     {
         poserArme();
         armeActive = arme;
+        defineActualsArmes();
         activerArme();
     }
 
-    private void poserArme()
+    private void defineActualsArmes()
     {
         switch (armeActive)
         {
             case EnumArmes.vide:
 
-
+                actualHandArme = null;
+                actualWorldArme = null;
                 break;
 
             case EnumArmes.poele:
 
-                handPoele.SetActive(false);
-                worldPoele.transform.SetPositionAndRotation(this.transform.position + this.transform.forward * 0.5f, new Quaternion());
-                worldPoele.SetActive(true);
+                actualHandArme = handPoele;
+                actualWorldArme = worldPoele;
                 break;
+        }
+    }
+
+    private void poserArme()
+    {
+        if(armeActive != EnumArmes.vide)
+        {
+            actualHandArme.SetActive(false);
+            actualWorldArme.transform.SetPositionAndRotation(this.transform.position + this.transform.forward * 0.5f, new Quaternion());
+            actualWorldArme.SetActive(true);
         }
     }
 
     private void activerArme()
     {
-        switch (armeActive)
+        if(armeActive != EnumArmes.vide)
         {
-            case EnumArmes.vide:
-
-
-                break;
-
-            case EnumArmes.poele:
-
-                worldPoele.SetActive(false);
-                handPoele.SetActive(true);
-                
-                break;
+            actualWorldArme.SetActive(false);
+            actualHandArme.SetActive(true);
         }
     }
 }
