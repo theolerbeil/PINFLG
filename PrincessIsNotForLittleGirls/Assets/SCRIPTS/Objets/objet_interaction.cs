@@ -8,10 +8,11 @@ public class objet_interaction : MonoBehaviour {
     public Objet objet;
 	public float distance_activation;
     public float demiAngleActivationFrontal;
+	public UnityEngine.UI.Image image_detection;
 
 	// Use this for initialization
 	void Start () {
-		
+		image_detection.enabled = false;	
 	}
 	
 	// Update is called once per frame
@@ -21,16 +22,25 @@ public class objet_interaction : MonoBehaviour {
 
 		bool action = Input.GetKeyDown (KeyCode.E);
 
-		if (distance_princesse.magnitude < distance_activation && action) {
-            // dans la distance d'activation de l'objet
 
-            float angle = Vector3.Angle(princesse.transform.forward, distance_princesse.normalized);
-            
-            if(angle <= demiAngleActivationFrontal)
-            {
-                Debug.Log(this.ToString() + " is triggered !");
-                objet.Activation();
-            }
+
+		if (distance_princesse.magnitude < distance_activation) {
+			// dans la distance d'activation de l'objet
+
+			float angle = Vector3.Angle (princesse.transform.forward, distance_princesse.normalized);
+
+			if (angle <= demiAngleActivationFrontal) {
+				image_detection.enabled = true;
+				if (action) {
+					objet.Activation ();
+					image_detection.enabled = false;
+				}
+                
+			} else {
+				image_detection.enabled = false;
+			}
+		} else {
+			image_detection.enabled = false;
 		}
 	}
 }
