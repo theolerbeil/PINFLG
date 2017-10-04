@@ -9,11 +9,13 @@ public class objet_interaction : MonoBehaviour {
     public Objet objet;
 	public float distance_activation;
     public float demiAngleActivationFrontal;
-	public UnityEngine.UI.Image image_detection;
+	private UnityEngine.UI.Image image_detection;
 
 	// Use this for initialization
 	void Start () {
-		image_detection.enabled = false;
+        image_detection = GameObject.FindGameObjectWithTag("Image_Action").GetComponent< UnityEngine.UI.Image>();
+
+        image_detection.enabled = false;
         princesse = GameObject.FindGameObjectWithTag("Player");
 
     }

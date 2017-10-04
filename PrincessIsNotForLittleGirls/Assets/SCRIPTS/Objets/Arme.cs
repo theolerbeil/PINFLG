@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Arme : Objet {
 
-    public princesse_arme princesse;
+    private princesse_arme princesse;
     public EnumArmes arme;
 
     // Use this for initialization
     void Start () {
-		
-	}
+        princesse = GameObject.FindGameObjectWithTag("Player").GetComponent<princesse_arme>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
