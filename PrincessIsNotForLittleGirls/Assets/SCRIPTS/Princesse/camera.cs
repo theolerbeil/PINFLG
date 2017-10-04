@@ -11,7 +11,7 @@ public class camera : MonoBehaviour {
 	public float vitesse_rotation = 5;
 	public float horizontal;
 	public float vertical;
-	public float distance = 10.0f;
+    public float distanceMax;
 	public Transform camera_transform;
 
 	void Start() {
@@ -28,7 +28,15 @@ public class camera : MonoBehaviour {
 
 	void LateUpdate() { 
 		Cursor.visible = false;
-		Vector3 dir = new Vector3 (0, 0,-distance);
+
+        Vector3 direction = this.transform.position - cible.transform.position;
+        RaycastHit hitInfo;
+
+        Physics.Raycast(cible.transform.position, direction, out hitInfo);
+
+        float distance = hitInfo.distance == 0.0f ? distanceMax : Mathf.Min(hitInfo.distance, distanceMax);
+        
+        Vector3 dir = new Vector3 (0, 0,-distance);
 		Quaternion rotation = Quaternion.Euler(vertical, horizontal, 0);
 		camera_transform.position = cible.transform.position + rotation * dir;
 		camera_transform.LookAt (cible.transform.position);
