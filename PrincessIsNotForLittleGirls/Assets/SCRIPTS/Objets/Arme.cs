@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Poele : Objet {
+public class Arme : Objet {
 
     public princesse_arme princesse;
+    public EnumArmes arme;
 
     // Use this for initialization
     void Start () {
@@ -19,6 +20,6 @@ public class Poele : Objet {
     override
     public void Activation()
     {
-        princesse.SetArmeActive(EnumArmes.poele);
+        princesse.SetArmeActive(arme);
     }
 }
