@@ -12,6 +12,7 @@ public class camera : MonoBehaviour {
 	public float horizontal;
 	public float vertical;
     public float distanceMax;
+    public float hauteurFocus;
 	public Transform camera_transform;
 
 	void Start() {
@@ -39,7 +40,7 @@ public class camera : MonoBehaviour {
         Vector3 dir = new Vector3 (0, 0,-distance);
 		Quaternion rotation = Quaternion.Euler(vertical, horizontal, 0);
 		camera_transform.position = cible.transform.position + rotation * dir;
-		camera_transform.LookAt (cible.transform.position);
+		camera_transform.LookAt (cible.transform.position + new Vector3(0.0f, hauteurFocus, 0.0f));
 
 		camera_transform.transform.Rotate(new Vector3(-20, 0, 0));
 	}
