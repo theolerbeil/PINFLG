@@ -24327,6 +24327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   princesse: {fileID: 2111981680}
   distance_activation: 1.5
+  demiAngleActivationFrontal: 45
 --- !u!1001 &1864135430
 Prefab:
   m_ObjectHideFlags: 0
@@ -26340,7 +26341,7 @@ MonoBehaviour:
   horizontal: 0
   vertical: 50
   distanceMax: 4
-  hauteurFocus: 0.5
+  hauteurFocus: 0.6
   camera_transform: {fileID: 2021728523}
 --- !u!81 &2021728519
 AudioListener:

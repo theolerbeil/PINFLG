@@ -6,8 +6,7 @@ public class objet_interaction : MonoBehaviour {
 
 	public GameObject princesse;
 	public float distance_activation;
-
-	private Vector3 distance_princesse;
+    public float demiAngleActivationFrontal;
 
 	// Use this for initialization
 	void Start () {
@@ -17,12 +16,19 @@ public class objet_interaction : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		distance_princesse = princesse.transform.position - transform.position;
+        Vector3 distance_princesse = this.transform.position - princesse.transform.position;
 
 		bool action = Input.GetKeyDown (KeyCode.E);
 
 		if (distance_princesse.magnitude < distance_activation && action) {
-			Debug.Log ("mdctyv");
+            // dans la distance d'activation de l'objet
+
+            float angle = Vector3.Angle(princesse.transform.forward, distance_princesse.normalized);
+            
+            if(angle <= demiAngleActivationFrontal)
+            {
+                Debug.Log(this.ToString() + " is triggered !");
+            }
 		}
 	}
 }
