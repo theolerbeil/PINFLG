@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23579216456415930}
   - component: {fileID: 65813770965817326}
   - component: {fileID: 54815172836366120}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: caisse2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,6 +73,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33649439891656850
 MeshFilter:
