@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class objet_interaction : MonoBehaviour {
 
-	public GameObject princesse;
+	private GameObject princesse;
+
     public Objet objet;
 	public float distance_activation;
     public float demiAngleActivationFrontal;
@@ -12,8 +13,10 @@ public class objet_interaction : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		image_detection.enabled = false;	
-	}
+		image_detection.enabled = false;
+        princesse = GameObject.FindGameObjectWithTag("Player");
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
