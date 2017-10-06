@@ -7,44 +7,46 @@ public class princesse_vie : MonoBehaviour {
 	public int vie_max;
 	private int vie_courante;
 
+    private bool gameover;
+
 	// Use this for initialization
 	void Start () {
 		vie_courante = vie_max;
-	}
+        gameover = false;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (vie_courante == 0) {
+		if (!enVie() && !gameover) {
 			Debug.Log ("GAME OVER");
+            gameover = true;
+		}
+        
+		if (Input.GetKeyDown (KeyCode.X)) {
+            soigner(10);
+
+		} else if (Input.GetKeyDown (KeyCode.W)) {
+            blesser(10);
 		}
 
-		/*
-		bool soin = Input.GetKeyDown (KeyCode.X);
-		bool degat = Input.GetKeyDown (KeyCode.W);
+    }
 
-		if (soin) {
-			vie_courante += 10;
-			vie_courante = (vie_courante > vie_max) ? vie_max : vie_courante;
-			Debug.Log ("vie courante : " + vie_courante);
-		}
+    public void soigner(int valeurSoin)
+    {
+        vie_courante = Mathf.Min(vie_courante + valeurSoin, vie_max);
+        Debug.Log("vie courante : " + vie_courante);
+    }
 
-		if (degat) {
-			vie_courante -= 10;
-			vie_courante = (vie_courante < 0) ? 0 : vie_courante;
-			Debug.Log ("vie courante : " + vie_courante);
-		}*/
+    public void blesser(int valeurDegats)
+    {
+        vie_courante = Mathf.Max(vie_courante - valeurDegats, 0);
+        Debug.Log("vie courante : " + vie_courante);
+    }
 
-
-		/* déslolé mais ce code est tellement plus opti :D */
-		if (Input.GetKeyDown (KeyCode.X) && vie_courante < vie_max) {
-			vie_courante += 10;
-			Debug.Log ("vie courante : " + vie_courante);
-
-		} else if (Input.GetKeyDown (KeyCode.W) && vie_courante > 0) {
-			vie_courante -= 10;
-			Debug.Log ("vie courante : " + vie_courante);
-		}
-
-	}
+    public bool enVie()
+    {
+        return vie_courante > 0;
+    }
 }
