@@ -1,32 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class gobelin_ia : MonoBehaviour {
+public class gobelin_ia : ia_agent {
 
     public float porteeAttaqueSimple;
     public int degatsAttaqueSimple;
 
-    
-    public float delaiAttaqueSimple; // en seconde
-
-    private NavMeshAgent nav;
-    private GameObject princesse;
-    private princesse_vie princesseVie;
+    [Tooltip("Délai en secondes entre deux attaques simples.")]
+    public float delaiAttaqueSimple;
 
     private float delaiActuelAttaqueSimple;
 
     // Use this for initialization
     void Start () {
 
-        nav = this.GetComponent<NavMeshAgent>();
-        princesse = GameObject.FindGameObjectWithTag("Player");
-        princesseVie = princesse.GetComponent<princesse_vie>();
+        base.init();
+        pointsInteret = GameObject.FindObjectsOfType<ia_PI_gobelin>();
 
         delaiActuelAttaqueSimple = 0.0f;
 
-        definirDestination(princesse.transform.position);
+        definirDestination("test");
+       // definirDestination(princesse.transform.position);
     }
 	
 	// Update is called once per frame
@@ -36,7 +31,7 @@ public class gobelin_ia : MonoBehaviour {
         {
             nav.isStopped = true;
 
-            if (princesseAttaquable())
+            if (princesseAttaquableSimplement())
             {
                 Debug.Log("Attaque simple");
                 attaquerSimplementPrincesse();
@@ -47,19 +42,12 @@ public class gobelin_ia : MonoBehaviour {
                 nav.isStopped = false;
             }
         }
-	}
-
-    private void definirDestination(Vector3 positionDestination)
-    {
-        nav.SetDestination(positionDestination);
     }
 
-    private bool destinationCouranteAtteinte()
-    {
-        return (nav.pathEndPosition - this.transform.position).magnitude <= nav.stoppingDistance;
-    }
-
-    private bool princesseAttaquable()
+    /// <summary>
+    /// Permet de savoir si l'agent peut effectuer une attaque simple contre la princesse.
+    /// </summary>
+    private bool princesseAttaquableSimplement()
     {
         return princesseVie.enVie() && princesseAPorteeAttaqueSimple() && attaqueSimplePrete();
     }
