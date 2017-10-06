@@ -24,8 +24,15 @@ public class gob_E_patrouille : ia_etat {
     {
         if (agent.destinationCouranteAtteinte())
         {
-            indiceCheminActuel = (indiceCheminActuel + 1) % chemin.Length;
-            suivreChemin();
+            if (indiceCheminActuel == 2)
+            {
+                changerEtat(this.GetComponent<gob_E_combat>());
+            }
+            else
+            {
+                indiceCheminActuel = (indiceCheminActuel + 1) % chemin.Length;
+                suivreChemin();
+            }
         }
     }
 
