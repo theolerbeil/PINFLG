@@ -21,8 +21,10 @@ GameObject:
   - component: {fileID: 4442861547216250}
   - component: {fileID: 33049252586190834}
   - component: {fileID: 23053347572888330}
-  - component: {fileID: 54912711707029880}
   - component: {fileID: 65639372427221284}
+  - component: {fileID: 114300607186316716}
+  - component: {fileID: 114178260984131014}
+  - component: {fileID: 54912711707029880}
   m_Layer: 2
   m_Name: bread
   m_TagString: Untagged
@@ -109,3 +111,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0035892464, y: 0.004386094, z: 0.01864625}
   m_Center: {x: 0.00074130594, y: 0.00000001761865, z: 0.0037541538}
+--- !u!114 &114178260984131014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1684576953106768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c7109e91c9b064499f84d5a0998c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arme: 2
+--- !u!114 &114300607186316716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1684576953106768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9235aa119ac50f94e9729049f4f64ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objet: {fileID: 114178260984131014}
+  distance_activation: 1.5
+  demiAngleActivationFrontal: 45

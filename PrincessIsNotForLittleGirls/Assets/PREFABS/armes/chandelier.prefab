@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33045904500479454}
   - component: {fileID: 23986719770288718}
   - component: {fileID: 64053395047839142}
+  - component: {fileID: 114008485571711352}
+  - component: {fileID: 114309357773166720}
   - component: {fileID: 54884474973321318}
   m_Layer: 2
   m_Name: chandelier
@@ -362,6 +364,20 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300006, guid: 29ab004aaba84b84aa8f3572216d8f66, type: 3}
+--- !u!114 &114008485571711352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1159153376731854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9235aa119ac50f94e9729049f4f64ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objet: {fileID: 114309357773166720}
+  distance_activation: 1.5
+  demiAngleActivationFrontal: 45
 --- !u!114 &114204101886461168
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -375,6 +391,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minDuration: 15
   maxDuration: 20
+--- !u!114 &114309357773166720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1159153376731854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c7109e91c9b064499f84d5a0998c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arme: 4
 --- !u!114 &114341338937238686
 MonoBehaviour:
   m_ObjectHideFlags: 1

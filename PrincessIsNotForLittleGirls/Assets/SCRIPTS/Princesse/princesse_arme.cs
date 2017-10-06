@@ -12,6 +12,18 @@ public class princesse_arme : MonoBehaviour {
     public GameObject handPoele;
     public GameObject worldPoele;
 
+    public GameObject handBread;
+    public GameObject worldBread;
+
+    public GameObject handBedfoot;
+    public GameObject worldBedfoot;
+
+    public GameObject handChandelier;
+    public GameObject worldChandelier;
+
+    public GameObject handShowel;
+    public GameObject worldShowel;
+
     // Use this for initialization
     void Start () {
 		
@@ -45,6 +57,30 @@ public class princesse_arme : MonoBehaviour {
                 actualHandArme = handPoele;
                 actualWorldArme = worldPoele;
                 break;
+
+            case EnumArmes.bread:
+
+                actualHandArme = handBread;
+                actualWorldArme = worldBread;
+                break;
+
+            case EnumArmes.bedfoot:
+
+                actualHandArme = handBedfoot;
+                actualWorldArme = worldBedfoot;
+                break;
+
+            case EnumArmes.chandelier:
+
+                actualHandArme = handChandelier;
+                actualWorldArme = worldChandelier;
+                break;
+
+            case EnumArmes.showel:
+
+                actualHandArme = handShowel;
+                actualWorldArme = worldShowel;
+                break;
         }
     }
 
@@ -53,7 +89,7 @@ public class princesse_arme : MonoBehaviour {
         if(armeActive != EnumArmes.vide)
         {
             actualHandArme.SetActive(false);
-            actualWorldArme.transform.SetPositionAndRotation(this.transform.position + this.transform.forward * 0.5f, new Quaternion());
+            actualWorldArme.transform.SetPositionAndRotation(this.transform.position + this.transform.forward + this.transform.up, new Quaternion());
             actualWorldArme.SetActive(true);
         }
     }
@@ -71,5 +107,9 @@ public class princesse_arme : MonoBehaviour {
 public enum EnumArmes
 {
     vide,
-    poele
+    poele,
+    bread,
+    bedfoot,
+    chandelier,
+    showel
 }

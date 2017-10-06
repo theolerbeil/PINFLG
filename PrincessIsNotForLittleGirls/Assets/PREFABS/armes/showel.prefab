@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33510657407396880}
   - component: {fileID: 23047779650017338}
   - component: {fileID: 64871396142180190}
+  - component: {fileID: 114152710879287466}
+  - component: {fileID: 114741673513039238}
   - component: {fileID: 54888989907788496}
   m_Layer: 2
   m_Name: showel
@@ -112,3 +114,29 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300004, guid: 29ab004aaba84b84aa8f3572216d8f66, type: 3}
+--- !u!114 &114152710879287466
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1576406784650638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9235aa119ac50f94e9729049f4f64ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objet: {fileID: 114741673513039238}
+  distance_activation: 1.5
+  demiAngleActivationFrontal: 45
+--- !u!114 &114741673513039238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1576406784650638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c7109e91c9b064499f84d5a0998c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arme: 5

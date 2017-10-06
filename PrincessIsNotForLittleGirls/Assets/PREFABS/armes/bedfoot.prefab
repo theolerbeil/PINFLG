@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33106798044331366}
   - component: {fileID: 23565979663797044}
   - component: {fileID: 65203554865248298}
+  - component: {fileID: 114326940643757206}
+  - component: {fileID: 114907848406693678}
   - component: {fileID: 54316988085793892}
   m_Layer: 2
   m_Name: bedfoot
@@ -110,3 +112,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0040000016, y: 0.004000003, z: 0.03025012}
   m_Center: {x: 3.4924733e-10, y: -1.4058804e-10, z: 0.008125062}
+--- !u!114 &114326940643757206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1203672002515400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9235aa119ac50f94e9729049f4f64ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objet: {fileID: 114907848406693678}
+  distance_activation: 1.5
+  demiAngleActivationFrontal: 45
+--- !u!114 &114907848406693678
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1203672002515400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c7109e91c9b064499f84d5a0998c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arme: 3
