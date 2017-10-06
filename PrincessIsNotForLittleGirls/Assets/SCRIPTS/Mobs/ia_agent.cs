@@ -5,33 +5,58 @@ using UnityEngine.AI;
 
 public class ia_agent : MonoBehaviour {
 
-    protected NavMeshAgent nav;
-    protected GameObject princesse;
-    protected princesse_vie princesseVie;
-    protected ia_pointInteret[] pointsInteret;
-    public List<string> chemins;
+    private NavMeshAgent nav;
+    private GameObject princesse;
+    private princesse_vie princesseVie;
+    private ia_pointInteret[] pointsInteret;
+    
+    public ia_etat etatCourant;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    protected void init()
+    void Awake()
     {
         nav = this.GetComponent<NavMeshAgent>();
         princesse = GameObject.FindGameObjectWithTag("Player");
         princesseVie = princesse.GetComponent<princesse_vie>();
+        pointsInteret = GameObject.FindObjectsOfType<ia_pointInteret>();
+    }
+
+    // Use this for initialization
+    void Start () {
+        
+        etatCourant.entrerEtat();
+    }
+	
+	// Update is called once per frame
+	void Update () {
+
+        etatCourant.faireEtat();
+
+    }
+
+    public NavMeshAgent getNav()
+    {
+        return nav;
+    }
+
+    public GameObject getPrincesse()
+    {
+        return princesse;
+    }
+
+    public princesse_vie getPrincesse_Vie()
+    {
+        return princesseVie;
+    }
+
+    public ia_pointInteret[] getPointsInteret()
+    {
+        return pointsInteret;
     }
 
     /// <summary>
     /// Définit la position de la destination actuel de l'agent.
     /// </summary>
-    protected void definirDestination(Vector3 positionDestination)
+    public void definirDestination(Vector3 positionDestination)
     {
         nav.SetDestination(positionDestination);
     }
@@ -39,7 +64,7 @@ public class ia_agent : MonoBehaviour {
     /// <summary>
     /// Définit le nom du point d'interet de destination actuel de l'agent.
     /// </summary>
-    protected void definirDestination(string nomDestination)
+    public void definirDestination(string nomDestination)
     {
         foreach (ia_pointInteret pi in pointsInteret)
         {
@@ -54,13 +79,18 @@ public class ia_agent : MonoBehaviour {
     /// <summary>
     /// Permet de savoir si l'agent a atteint sa destination.
     /// </summary>
-    protected bool destinationCouranteAtteinte()
+    public bool destinationCouranteAtteinte()
     {
         return (nav.pathEndPosition - this.transform.position).magnitude <= nav.stoppingDistance;
     }
 
-    protected void patrouiller()
+    /// <summary>
+    /// Permet de sortir de l'état courant puis d'entrer dans le nouvel état.
+    /// </summary>
+    public void changerEtat(ia_etat nouvelEtat)
     {
-
+        etatCourant.sortirEtat();
+        etatCourant = nouvelEtat;
+        etatCourant.entrerEtat();
     }
 }

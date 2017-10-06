@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ia_pointInteret : MonoBehaviour {
+public class ia_pointInteret : MonoBehaviour {
 
     public string nom;
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gobelin_ia : ia_agent {
+public class gob_E_combat : ia_etat {
 
     public float porteeAttaqueSimple;
     public int degatsAttaqueSimple;
@@ -14,20 +14,19 @@ public class gobelin_ia : ia_agent {
 
     // Use this for initialization
     void Start () {
-
-        base.init();
-        pointsInteret = GameObject.FindObjectsOfType<ia_PI_gobelin>();
-
-        delaiActuelAttaqueSimple = 0.0f;
-
-        definirDestination("test");
-       // definirDestination(princesse.transform.position);
+        base.init(); // permet d'initialiser l'état, ne pas l'oublier !
     }
-	
-	// Update is called once per frame
-	void Update () {
 
-        if (destinationCouranteAtteinte())
+    public override void entrerEtat()
+    {
+        delaiActuelAttaqueSimple = 0.0f;
+        agent.definirDestination(princesse.transform.position);
+        nav.isStopped = false;
+    }
+
+    public override void faireEtat()
+    {
+        if (agent.destinationCouranteAtteinte())
         {
             nav.isStopped = true;
 
@@ -38,15 +37,17 @@ public class gobelin_ia : ia_agent {
             }
             else
             {
-                definirDestination(princesse.transform.position);
+                agent.definirDestination(princesse.transform.position);
                 nav.isStopped = false;
             }
         }
     }
 
-    /// <summary>
-    /// Permet de savoir si l'agent peut effectuer une attaque simple contre la princesse.
-    /// </summary>
+    public override void sortirEtat()
+    {
+
+    }
+
     private bool princesseAttaquableSimplement()
     {
         return princesseVie.enVie() && princesseAPorteeAttaqueSimple() && attaqueSimplePrete();

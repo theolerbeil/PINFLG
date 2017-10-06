@@ -3987,7 +3987,7 @@ GameObject:
   - component: {fileID: 287064271}
   - component: {fileID: 287064272}
   m_Layer: 0
-  m_Name: PI_test
+  m_Name: PI_patrouille_1
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4000,7 +4000,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 287064270}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.8485584, y: 0, z: -16.97}
+  m_LocalPosition: {x: 3.36, y: 0, z: -13.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590817362}
@@ -4014,10 +4014,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 287064270}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab97b9782c35bf408a9eca8d2619205, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e156f4616f5a7f439234371260dbffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nom: test
+  nom: patrouille_1
 --- !u!4 &296241371 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4310414316340388, guid: b04e184621462ab4f9fb09af14bd73c0,
@@ -7968,7 +7968,9 @@ GameObject:
   - component: {fileID: 535649649}
   - component: {fileID: 535649650}
   - component: {fileID: 535649648}
+  - component: {fileID: 535649652}
   - component: {fileID: 535649651}
+  - component: {fileID: 535649653}
   m_Layer: 0
   m_Name: goblin1
   m_TagString: Untagged
@@ -8066,14 +8068,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 535649645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dd6b612837861f46832ea8e2755760a, type: 3}
+  m_Script: {fileID: 11500000, guid: e1adcf2a5f9cdac4cbfa86a3c21f8db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chemins:
-  - test bis
   porteeAttaqueSimple: 3
   degatsAttaqueSimple: 10
   delaiAttaqueSimple: 2
+--- !u!114 &535649652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 535649645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67d4a77407f26674f97e3f01fd946f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  etatCourant: {fileID: 535649653}
+--- !u!114 &535649653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 535649645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88407da4b50c51f448bb5622bf755fef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chemin:
+  - {fileID: 287064272}
+  - {fileID: 743526683}
+  - {fileID: 1777001696}
 --- !u!1001 &540392900
 Prefab:
   m_ObjectHideFlags: 0
@@ -10860,7 +10887,7 @@ GameObject:
   - component: {fileID: 743526682}
   - component: {fileID: 743526683}
   m_Layer: 0
-  m_Name: PI_bis
+  m_Name: PI_patrouille_2
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -10873,7 +10900,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 743526681}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.23, y: 0, z: 5.56}
+  m_LocalPosition: {x: 7.27, y: 0, z: 2.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590817362}
@@ -10887,10 +10914,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 743526681}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab97b9782c35bf408a9eca8d2619205, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e156f4616f5a7f439234371260dbffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nom: bis
+  nom: patrouille_2
 --- !u!1001 &745676975
 Prefab:
   m_ObjectHideFlags: 0
@@ -24193,6 +24220,7 @@ Transform:
   m_Children:
   - {fileID: 287064271}
   - {fileID: 743526682}
+  - {fileID: 1777001695}
   m_Father: {fileID: 0}
   m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26824,6 +26852,47 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b04e184621462ab4f9fb09af14bd73c0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1777001694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1777001695}
+  - component: {fileID: 1777001696}
+  m_Layer: 0
+  m_Name: PI_patrouille_3
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1777001695
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1777001694}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.12, y: 0, z: -9.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1590817362}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1777001696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1777001694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e156f4616f5a7f439234371260dbffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nom: patrouille_3
 --- !u!1001 &1778031435
 Prefab:
   m_ObjectHideFlags: 0
