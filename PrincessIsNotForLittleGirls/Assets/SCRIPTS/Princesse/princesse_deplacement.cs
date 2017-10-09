@@ -5,7 +5,7 @@ using UnityEngine;
 public class princesse_deplacement : MonoBehaviour {
 
     public GameObject cam;
-	static Animator annim;
+	static Animator anim;
 	public float vitesse;
 	public float forceSaut;
     public float vitesseAngulaire;
@@ -15,7 +15,7 @@ public class princesse_deplacement : MonoBehaviour {
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody>();
-		annim = GetComponent<Animator> ();
+		anim = GetComponent<Animator> ();
 	}
 
 	void Update ()
@@ -33,37 +33,37 @@ public class princesse_deplacement : MonoBehaviour {
         
 		if (moveHorizontal != 0.0f || moveVertical != 0.0f) {
 			GererDeplacement (moveHorizontal, moveVertical);
-			if (annim.GetBool ("IsJumping") == false) {
+			if (anim.GetBool ("IsJumping") == false) {
 				if (moveHorizontal < 0.0f && moveVertical == 0.0f || moveHorizontal > 0.0f && moveVertical == 0.0f) {
-					annim.SetBool ("IsSidewalk", true);
-					annim.SetBool ("IsBackwalk", false);
-					annim.SetBool ("IsRunning", false);
-					annim.SetBool ("IsIdle", false);
+					anim.SetBool ("IsSidewalk", true);
+					anim.SetBool ("IsBackwalk", false);
+					anim.SetBool ("IsRunning", false);
+					anim.SetBool ("IsIdle", false);
 				} else if (moveVertical < 0.0f && moveHorizontal == 0.0f) {
-					annim.SetBool ("IsBackwalk", true);
-					annim.SetBool ("IsSidewalk", false);
-					annim.SetBool ("IsRunning", false);
-					annim.SetBool ("IsIdle", false);
+					anim.SetBool ("IsBackwalk", true);
+					anim.SetBool ("IsSidewalk", false);
+					anim.SetBool ("IsRunning", false);
+					anim.SetBool ("IsIdle", false);
 				} else if (moveVertical > 0.0f) {
-					annim.SetBool ("IsBackwalk", false);
-					annim.SetBool ("IsSidewalk", false);
-					annim.SetBool ("IsRunning", true);
-					annim.SetBool ("IsIdle", false);
+					anim.SetBool ("IsBackwalk", false);
+					anim.SetBool ("IsSidewalk", false);
+					anim.SetBool ("IsRunning", true);
+					anim.SetBool ("IsIdle", false);
 				}
 			} else {
-				annim.SetBool ("IsRunning", false);
-				annim.SetBool ("IsBackwalk", false);
-				annim.SetBool ("IsSidewalk", false);
-				annim.SetBool ("IsIdle", false);
+				anim.SetBool ("IsRunning", false);
+				anim.SetBool ("IsBackwalk", false);
+				anim.SetBool ("IsSidewalk", false);
+				anim.SetBool ("IsIdle", false);
 			}
 		} else {
-			annim.SetBool ("IsRunning", false);
-			annim.SetBool ("IsBackwalk", false);
-			annim.SetBool ("IsSidewalk", false);
+			anim.SetBool ("IsRunning", false);
+			anim.SetBool ("IsBackwalk", false);
+			anim.SetBool ("IsSidewalk", false);
 			if (isGrounded == false) {
-				annim.SetBool ("IsIdle", false);
+				anim.SetBool ("IsIdle", false);
 			} else {
-				annim.SetBool ("IsIdle", true);
+				anim.SetBool ("IsIdle", true);
 			}
 		}
         
@@ -119,10 +119,10 @@ public class princesse_deplacement : MonoBehaviour {
 		Vector3 fwd = transform.TransformDirection (Vector3.down);
 		if(Physics.Raycast (transform.position, fwd, feetDist)){
 			isGrounded = true;
-			annim.SetBool ("IsJumping", false);
+			anim.SetBool ("IsJumping", false);
 		}else{
 			isGrounded = false;
-			annim.SetBool ("IsJumping", true);
+			anim.SetBool ("IsJumping", true);
 		}
 	}
     

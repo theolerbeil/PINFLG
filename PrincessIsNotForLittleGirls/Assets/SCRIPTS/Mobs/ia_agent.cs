@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class ia_agent : MonoBehaviour {
 
     private NavMeshAgent nav;
+    private Animator anim;
     private GameObject princesse;
     private princesse_vie princesseVie;
     private ia_pointInteret[] pointsInteret;
@@ -15,6 +16,7 @@ public class ia_agent : MonoBehaviour {
     void Awake()
     {
         nav = this.GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
         princesse = GameObject.FindGameObjectWithTag("Player");
         princesseVie = princesse.GetComponent<princesse_vie>();
         pointsInteret = GameObject.FindObjectsOfType<ia_pointInteret>();
@@ -36,6 +38,11 @@ public class ia_agent : MonoBehaviour {
     public NavMeshAgent getNav()
     {
         return nav;
+    }
+
+    public Animator getAnimator()
+    {
+        return anim;
     }
 
     public GameObject getPrincesse()

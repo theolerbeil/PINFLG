@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4511717, g: 0.50093174, b: 0.57380015, a: 1}
+  m_IndirectSpecularColor: {r: 0.45117223, g: 0.5009328, b: 0.5738009, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -8023,7 +8023,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 200
   m_StoppingDistance: 2.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -8071,6 +8071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1adcf2a5f9cdac4cbfa86a3c21f8db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vitesse: 3.5
   porteeAttaqueSimple: 3
   degatsAttaqueSimple: 10
   delaiAttaqueSimple: 2
@@ -8097,6 +8098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88407da4b50c51f448bb5622bf755fef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vitesse: 0.1
   chemin:
   - {fileID: 287064272}
   - {fileID: 743526683}
