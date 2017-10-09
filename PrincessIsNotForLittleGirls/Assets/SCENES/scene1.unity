@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45117223, g: 0.5009328, b: 0.5738009, a: 1}
+  m_IndirectSpecularColor: {r: 0.4511717, g: 0.50093174, b: 0.57380015, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1278,7 +1278,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 97148343}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bras IK.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1597,7 +1597,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 131251559}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: jambe2.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3477,7 +3477,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 257307357}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bras2.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5234,7 +5234,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 368403089}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ventre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7251,7 +7251,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 473357762}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bras IK.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7971,7 +7971,7 @@ GameObject:
   - component: {fileID: 535649652}
   - component: {fileID: 535649651}
   - component: {fileID: 535649653}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: goblin1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7988,7 +7988,7 @@ Animator:
   m_GameObject: {fileID: 535649645}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 33eb89e501c1d02428bf313ebca6b78c, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ea669dd1eccc575478f38c5db80cc510, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8828,7 +8828,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 581639970}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: jambe2.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9670,7 +9670,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 661065499}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: main.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10408,7 +10408,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 708152316}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bras1.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10541,7 +10541,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 727858286}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: jambe IK.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13374,7 +13374,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 921068851}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: main.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14382,7 +14382,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 989062836}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: jambe2.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14643,7 +14643,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4465023658823104, guid: 501c6b24e71c68541a0019898ad40d14, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 15.72101
+      value: 16.47
       objectReference: {fileID: 0}
     - target: {fileID: 4465023658823104, guid: 501c6b24e71c68541a0019898ad40d14, type: 2}
       propertyPath: m_LocalPosition.y
@@ -14704,6 +14704,11 @@ Prefab:
     - target: {fileID: 1872437504251278, guid: 501c6b24e71c68541a0019898ad40d14, type: 2}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 23193803524744368, guid: 501c6b24e71c68541a0019898ad40d14,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 501c6b24e71c68541a0019898ad40d14, type: 2}
@@ -14973,7 +14978,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1015043367}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: queue3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15542,7 +15547,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1048805770}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: jambe IK.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15575,7 +15580,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1054451697}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: jambe1.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16441,7 +16446,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1106378672}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: genou.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16469,7 +16474,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1109200124}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: genou.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17194,7 +17199,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1153158656}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: coude.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17545,7 +17550,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1182391660}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: coude.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17939,7 +17944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1217082009}
   - component: {fileID: 1217082010}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18673,7 +18678,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1243648799}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: jambe IK.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18918,7 +18923,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1262261875}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: control
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19668,7 +19673,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1286587468}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: jambe IK.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19896,7 +19901,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1294281786}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20114,7 +20119,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1308363505}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: jambe2.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20264,7 +20269,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1319715062}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bras2.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22251,6 +22256,21 @@ Prefab:
       propertyPath: randomSeed
       value: 1294253554
       objectReference: {fileID: 0}
+    - target: {fileID: 114436681502611272, guid: 58f33d8fdf6fa1a458749a7995ecd0f5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114400959598207030, guid: 58f33d8fdf6fa1a458749a7995ecd0f5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114988922557944734, guid: 58f33d8fdf6fa1a458749a7995ecd0f5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114341338937238686, guid: 58f33d8fdf6fa1a458749a7995ecd0f5, type: 2}
     - {fileID: 114204101886461168, guid: 58f33d8fdf6fa1a458749a7995ecd0f5, type: 2}
@@ -22909,7 +22929,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1503682411}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: head_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23583,7 +23603,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1543695820}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bras1.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24307,7 +24327,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1595027915}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24482,7 +24502,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1610300561}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: main.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24887,7 +24907,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1634482215}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: buste
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25436,7 +25456,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1664056811}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bras2.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25980,7 +26000,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1728056740}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: queue3_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27084,7 +27104,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1787820067}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: queue IK_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27243,7 +27263,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1803807366}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: genou.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28429,7 +28449,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1889670512}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: genou.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28458,7 +28478,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1891697850}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: queue IK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28676,7 +28696,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1914801861}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: jambe1.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28768,7 +28788,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1918025502}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: queue2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29044,7 +29064,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1929315450}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: queue1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29677,7 +29697,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1979607382}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bras2.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30429,7 +30449,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2024199895}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: coude.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30458,7 +30478,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2025327766}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: main.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31336,7 +31356,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2086648390}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: coude.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
