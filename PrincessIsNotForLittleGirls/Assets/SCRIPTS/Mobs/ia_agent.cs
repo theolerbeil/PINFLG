@@ -40,11 +40,6 @@ public class ia_agent : MonoBehaviour {
         return nav;
     }
 
-    public Animator getAnimator()
-    {
-        return anim;
-    }
-
     public GameObject getPrincesse()
     {
         return princesse;
@@ -89,6 +84,16 @@ public class ia_agent : MonoBehaviour {
     public bool destinationCouranteAtteinte()
     {
         return (nav.pathEndPosition - this.transform.position).magnitude <= nav.stoppingDistance;
+    }
+
+    public void setAnimation(string nomAnimation)
+    {
+        foreach (AnimatorControllerParameter parameter in anim.parameters)
+        {
+            anim.SetBool(parameter.name, false);
+        }
+
+        anim.SetBool(nomAnimation, true);
     }
 
     /// <summary>

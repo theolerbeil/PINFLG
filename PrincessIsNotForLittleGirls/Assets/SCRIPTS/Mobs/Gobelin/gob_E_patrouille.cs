@@ -16,7 +16,7 @@ public class gob_E_patrouille : ia_etat {
 
     public override void entrerEtat()
     {
-        anim.SetBool("IsWalking", true);
+        setAnimation("IsWalking");
         indiceCheminActuel = 0;
         suivreChemin();
         nav.isStopped = false;
@@ -27,7 +27,8 @@ public class gob_E_patrouille : ia_etat {
         
         if (agent.destinationCouranteAtteinte())
         {
-            if (indiceCheminActuel == 2)
+            // pour faire un test, quand on a fini le chemin on passe au combat...
+            if (indiceCheminActuel == chemin.Length - 1)
             {
                 changerEtat(this.GetComponent<gob_E_combat>());
             }
@@ -41,7 +42,7 @@ public class gob_E_patrouille : ia_etat {
 
     public override void sortirEtat()
     {
-        anim.SetBool("IsWalking", false);
+        
     }
 
     private void suivreChemin()

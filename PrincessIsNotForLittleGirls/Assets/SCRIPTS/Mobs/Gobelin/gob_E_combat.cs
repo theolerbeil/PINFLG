@@ -21,7 +21,7 @@ public class gob_E_combat : ia_etat {
 
     public override void entrerEtat()
     {
-        anim.SetBool("IsRunning", true);
+        setAnimation("IsRunning");
         nav.speed = vitesse;
         agent.definirDestination(princesse.transform.position);
         nav.isStopped = false;
@@ -35,11 +35,17 @@ public class gob_E_combat : ia_etat {
 
             if (princesseAttaquableSimplement())
             {
-                Debug.Log("Attaque simple");
+                
                 attaquerSimplementPrincesse();
             }
+         /*   else if (princesseAPorteeAttaqueSimple())
+            {
+
+                setAnimation("IsIdle");
+            }*/
             else
             {
+                setAnimation("IsRunning");
                 agent.definirDestination(princesse.transform.position);
                 nav.isStopped = false;
             }
@@ -48,7 +54,7 @@ public class gob_E_combat : ia_etat {
 
     public override void sortirEtat()
     {
-        anim.SetBool("IsRunning", false);
+        
     }
 
     private bool princesseAttaquableSimplement()
@@ -68,6 +74,8 @@ public class gob_E_combat : ia_etat {
 
     private void attaquerSimplementPrincesse()
     {
+        setAnimation("IsAttack1");
+        Debug.Log("Attaque simple");
         princesseVie.blesser(degatsAttaqueSimple);
         delaiActuelAttaqueSimple = Time.time + delaiAttaqueSimple;
     }
