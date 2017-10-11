@@ -5,22 +5,29 @@ using UnityEngine;
 public class princesse_deplacement : MonoBehaviour {
 
     public GameObject cam;
-	static Animator annim;
 	public float vitesse;
 	public float forceSaut;
     public float vitesseAngulaire;
 	public bool isGrounded;
-	private Rigidbody rb;
 	public float feetDist = 0.1f;
+
+	static Animator annim;
+
+	private Rigidbody rb;
+	private bool DoubleClickZ;
+
+
+
 	void Start ()
 	{
+		DoubleClickZ = false;
 		rb = GetComponent<Rigidbody>();
 		annim = GetComponent<Animator> ();
 	}
 
 	void Update ()
 	{
-
+		
         bool toucheDebug = Input.GetKeyDown(KeyCode.K);
 
         if (toucheDebug)
@@ -81,6 +88,24 @@ public class princesse_deplacement : MonoBehaviour {
 		}else{
 			isGrounded = false;
 		}
+
+
+		bool toucheAttack1 = Input.GetButtonDown("Fire1");
+		if (toucheAttack1) {
+			if (annim.GetBool ("IsIdle") == true) {
+				annim.Play ("attack1");
+			}
+			if(annim.GetBool ("IsJumping") == true){
+				annim.Play ("attack_jump");
+				rb.AddForce (transform.forward * 500f);
+				rb.AddForce (new Vector3 (0.0f, -1000f, 0.0f));
+			}
+			if(annim.GetBool ("IsRunning") == true){
+				annim.Play ("attack_run");
+
+			}
+		}
+
     }
     
     private void GererDeplacement(float moveHorizontal, float moveVertical)
