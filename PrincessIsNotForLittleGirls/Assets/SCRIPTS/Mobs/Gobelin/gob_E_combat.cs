@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class gob_E_combat : ia_etat {
 
+    public float vitesse;
     public float porteeAttaqueSimple;
     public int degatsAttaqueSimple;
 
@@ -15,11 +16,13 @@ public class gob_E_combat : ia_etat {
     // Use this for initialization
     void Start () {
         base.init(); // permet d'initialiser l'état, ne pas l'oublier !
+        delaiActuelAttaqueSimple = 0.0f;
     }
 
     public override void entrerEtat()
     {
-        delaiActuelAttaqueSimple = 0.0f;
+        setAnimation("IsRunning");
+        nav.speed = vitesse;
         agent.definirDestination(princesse.transform.position);
         nav.isStopped = false;
     }
@@ -32,11 +35,17 @@ public class gob_E_combat : ia_etat {
 
             if (princesseAttaquableSimplement())
             {
-                Debug.Log("Attaque simple");
+                
                 attaquerSimplementPrincesse();
             }
+         /*   else if (princesseAPorteeAttaqueSimple())
+            {
+
+                setAnimation("IsIdle");
+            }*/
             else
             {
+                setAnimation("IsRunning");
                 agent.definirDestination(princesse.transform.position);
                 nav.isStopped = false;
             }
@@ -45,7 +54,7 @@ public class gob_E_combat : ia_etat {
 
     public override void sortirEtat()
     {
-
+        
     }
 
     private bool princesseAttaquableSimplement()
@@ -65,6 +74,8 @@ public class gob_E_combat : ia_etat {
 
     private void attaquerSimplementPrincesse()
     {
+        setAnimation("IsAttack1");
+        Debug.Log("Attaque simple");
         princesseVie.blesser(degatsAttaqueSimple);
         delaiActuelAttaqueSimple = Time.time + delaiAttaqueSimple;
     }

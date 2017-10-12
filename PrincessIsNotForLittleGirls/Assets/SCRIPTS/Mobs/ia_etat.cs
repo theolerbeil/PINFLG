@@ -13,6 +13,12 @@ public abstract class ia_etat : MonoBehaviour
     protected princesse_vie princesseVie;
     protected ia_pointInteret[] pointsInteret;
 
+    // Use this for initialization
+    void Awake()
+    {
+        init();
+    }
+
     protected void init()
     {
         agent = this.GetComponent<ia_agent>();
@@ -29,5 +35,10 @@ public abstract class ia_etat : MonoBehaviour
     protected void changerEtat(ia_etat nouvelEtat)
     {
         agent.changerEtat(nouvelEtat);
+    }
+
+    protected void setAnimation(string nomAnimation)
+    {
+        agent.setAnimation(nomAnimation);
     }
 }

@@ -5,13 +5,12 @@ using UnityEngine;
 public class princesse_deplacement : MonoBehaviour {
 
     public GameObject cam;
+	static Animator anim;
 	public float vitesse;
 	public float forceSaut;
     public float vitesseAngulaire;
 	public bool isGrounded;
 	public float feetDist = 0.1f;
-
-	static Animator annim;
 
 	private bool CanDash;
 	private Rigidbody rb;
@@ -27,7 +26,7 @@ public class princesse_deplacement : MonoBehaviour {
 		CanDash = true;
 		DoubleClickZ = false;
 		rb = GetComponent<Rigidbody>();
-		annim = GetComponent<Animator> ();
+		anim = GetComponent<Animator> ();
 	}
 
 	void Update ()
@@ -45,37 +44,37 @@ public class princesse_deplacement : MonoBehaviour {
         
 		if (moveHorizontal != 0.0f || moveVertical != 0.0f) {
 			GererDeplacement (moveHorizontal, moveVertical);
-			if (annim.GetBool ("IsJumping") == false) {
+			if (anim.GetBool ("IsJumping") == false) {
 				if (moveHorizontal < 0.0f && moveVertical == 0.0f || moveHorizontal > 0.0f && moveVertical == 0.0f) {
-					annim.SetBool ("IsSidewalk", true);
-					annim.SetBool ("IsBackwalk", false);
-					annim.SetBool ("IsRunning", false);
-					annim.SetBool ("IsIdle", false);
+					anim.SetBool ("IsSidewalk", true);
+					anim.SetBool ("IsBackwalk", false);
+					anim.SetBool ("IsRunning", false);
+					anim.SetBool ("IsIdle", false);
 				} else if (moveVertical < 0.0f && moveHorizontal == 0.0f) {
-					annim.SetBool ("IsBackwalk", true);
-					annim.SetBool ("IsSidewalk", false);
-					annim.SetBool ("IsRunning", false);
-					annim.SetBool ("IsIdle", false);
+					anim.SetBool ("IsBackwalk", true);
+					anim.SetBool ("IsSidewalk", false);
+					anim.SetBool ("IsRunning", false);
+					anim.SetBool ("IsIdle", false);
 				} else if (moveVertical > 0.0f) {
-					annim.SetBool ("IsBackwalk", false);
-					annim.SetBool ("IsSidewalk", false);
-					annim.SetBool ("IsRunning", true);
-					annim.SetBool ("IsIdle", false);
+					anim.SetBool ("IsBackwalk", false);
+					anim.SetBool ("IsSidewalk", false);
+					anim.SetBool ("IsRunning", true);
+					anim.SetBool ("IsIdle", false);
 				}
 			} else {
-				annim.SetBool ("IsRunning", false);
-				annim.SetBool ("IsBackwalk", false);
-				annim.SetBool ("IsSidewalk", false);
-				annim.SetBool ("IsIdle", false);
+				anim.SetBool ("IsRunning", false);
+				anim.SetBool ("IsBackwalk", false);
+				anim.SetBool ("IsSidewalk", false);
+				anim.SetBool ("IsIdle", false);
 			}
 		} else {
-			annim.SetBool ("IsRunning", false);
-			annim.SetBool ("IsBackwalk", false);
-			annim.SetBool ("IsSidewalk", false);
+			anim.SetBool ("IsRunning", false);
+			anim.SetBool ("IsBackwalk", false);
+			anim.SetBool ("IsSidewalk", false);
 			if (isGrounded == false) {
-				annim.SetBool ("IsIdle", false);
+				anim.SetBool ("IsIdle", false);
 			} else {
-				annim.SetBool ("IsIdle", true);
+				anim.SetBool ("IsIdle", true);
 			}
 		}
         
@@ -97,23 +96,23 @@ public class princesse_deplacement : MonoBehaviour {
 
 		bool toucheAttack1 = Input.GetButtonDown("Fire1");
 		if (toucheAttack1) {
-			if (annim.GetBool ("IsIdle") == true) {
-				annim.Play ("attack1");
+			if (anim.GetBool ("IsIdle") == true) {
+				anim.Play ("attack1");
 			}
-			if(annim.GetBool ("IsJumping") == true){
-				annim.Play ("attack_jump");
+			if(anim.GetBool ("IsJumping") == true){
+				anim.Play ("attack_jump");
 				rb.AddForce (transform.forward * 500f);
 				rb.AddForce (new Vector3 (0.0f, -1000f, 0.0f));
 			}
-			if(annim.GetBool ("IsRunning") == true){
-				annim.Play ("attack_run");
+			if(anim.GetBool ("IsRunning") == true){
+				anim.Play ("attack_run");
 
 			}
 		}
 
 		if(Input.GetKeyDown(KeyCode.Z)){
 			if (DoubleClickZ == true && CanDash == true && isGrounded == true) {
-				annim.Play ("fwdash");
+				anim.Play ("fwdash");
 				rb.AddForce (transform.forward * 2000f);
 				CanDash = false;
 
@@ -126,7 +125,7 @@ public class princesse_deplacement : MonoBehaviour {
 		}
 		if(Input.GetKeyDown(KeyCode.S)){
 			if (DoubleClickS == true && CanDash == true && isGrounded == true) {
-				annim.Play ("backdash");
+				anim.Play ("backdash");
 				rb.AddForce (transform.forward * -1750f);
 				CanDash = false;
 
@@ -139,7 +138,7 @@ public class princesse_deplacement : MonoBehaviour {
 		}
 		if(Input.GetKeyDown(KeyCode.D)){
 			if (DoubleClickD == true && CanDash == true && isGrounded == true) {
-				annim.Play ("rightdash");
+				anim.Play ("rightdash");
 				rb.AddForce (transform.right * 2000f);
 				CanDash = false;
 
@@ -152,7 +151,7 @@ public class princesse_deplacement : MonoBehaviour {
 		}
 		if(Input.GetKeyDown(KeyCode.Q)){
 			if (DoubleClickQ == true && CanDash == true && isGrounded == true) {
-				annim.Play ("leftdash");
+				anim.Play ("leftdash");
 				rb.AddForce (transform.right * -2000f);
 				CanDash = false;
 
@@ -202,10 +201,10 @@ public class princesse_deplacement : MonoBehaviour {
 		Vector3 fwd = transform.TransformDirection (Vector3.down);
 		if(Physics.Raycast (transform.position, fwd, feetDist)){
 			isGrounded = true;
-			annim.SetBool ("IsJumping", false);
+			anim.SetBool ("IsJumping", false);
 		}else{
 			isGrounded = false;
-			annim.SetBool ("IsJumping", true);
+			anim.SetBool ("IsJumping", true);
 		}
 	}
 	IEnumerator WaitForDashZ(){

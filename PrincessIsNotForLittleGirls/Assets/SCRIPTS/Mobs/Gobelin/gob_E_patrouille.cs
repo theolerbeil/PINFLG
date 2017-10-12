@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class gob_E_patrouille : ia_etat {
 
+    public float vitesse;
     public ia_pointInteret[] chemin;
 
     private int indiceCheminActuel;
@@ -15,6 +16,7 @@ public class gob_E_patrouille : ia_etat {
 
     public override void entrerEtat()
     {
+        setAnimation("IsWalking");
         indiceCheminActuel = 0;
         suivreChemin();
         nav.isStopped = false;
@@ -22,9 +24,11 @@ public class gob_E_patrouille : ia_etat {
 
     public override void faireEtat()
     {
+        
         if (agent.destinationCouranteAtteinte())
         {
-            if (indiceCheminActuel == 2)
+            // pour faire un test, quand on a fini le chemin on passe au combat...
+            if (indiceCheminActuel == chemin.Length - 1)
             {
                 changerEtat(this.GetComponent<gob_E_combat>());
             }
@@ -44,5 +48,6 @@ public class gob_E_patrouille : ia_etat {
     private void suivreChemin()
     {
         agent.definirDestination(chemin[indiceCheminActuel].transform.position);
+        nav.speed = vitesse;
     }
 }
