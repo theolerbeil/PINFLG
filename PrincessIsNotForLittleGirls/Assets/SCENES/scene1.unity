@@ -7705,7 +7705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1adcf2a5f9cdac4cbfa86a3c21f8db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitesse: 3.5
+  vitesse: 3
   porteeAttaqueSimple: 3
   degatsAttaqueSimple: 10
   delaiAttaqueSimple: 2
@@ -7732,7 +7732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88407da4b50c51f448bb5622bf755fef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitesse: 1.2
+  vitesse: 1
   chemin:
   - {fileID: 287064272}
   - {fileID: 743526683}
