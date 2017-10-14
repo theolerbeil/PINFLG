@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33061212321194916}
   - component: {fileID: 23066346308823298}
   - component: {fileID: 65745971529143758}
+  - component: {fileID: 65399506894427556}
   m_Layer: 0
   m_Name: wall10
   m_TagString: Untagged
@@ -72,6 +73,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33061212321194916
 MeshFilter:
@@ -80,6 +82,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1887363154836992}
   m_Mesh: {fileID: 4300024, guid: 80c00abba9663cb49b621bc427ad3640, type: 3}
+--- !u!65 &65399506894427556
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887363154836992}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000007, y: 0.020000005, z: 0.019999996}
+  m_Center: {x: -4.656613e-10, y: -9.313224e-10, z: 0}
 --- !u!65 &65745971529143758
 BoxCollider:
   m_ObjectHideFlags: 1
