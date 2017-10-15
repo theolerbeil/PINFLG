@@ -1,0 +1,211 @@
+fileFormatVersion: 2
+guid: bc47c58bef8cf424eb0da18caf6a3c5c
+timeCreated: 1508037725
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Armature
+    100002: bras IK.L
+    100004: bras IK.R
+    100006: bras1.L
+    100008: bras1.R
+    100010: bras2.L
+    100012: bras2.L_end
+    100014: bras2.R
+    100016: bras2.R_end
+    100018: buste
+    100020: Camera
+    100022: Camera.001
+    100024: Circle
+    100026: control
+    100028: coude.L
+    100030: coude.L_end
+    100032: coude.R
+    100034: coude.R_end
+    100036: Cube
+    100038: Cube.001
+    100040: Cylinder
+    100042: Cylinder.001
+    100044: //RootNode
+    100046: genou.L
+    100048: genou.L_end
+    100050: genou.R
+    100052: genou.R_end
+    100054: head
+    100056: head_end
+    100058: jambe IK.L
+    100060: jambe IK.L_end
+    100062: jambe IK.R
+    100064: jambe IK.R_end
+    100066: jambe1.L
+    100068: jambe1.R
+    100070: jambe2.L
+    100072: jambe2.L_end
+    100074: jambe2.R
+    100076: jambe2.R_end
+    100078: Lamp
+    100080: Lamp.001
+    100082: main.L
+    100084: main.L_end
+    100086: main.R
+    100088: main.R_end
+    100090: queue IK
+    100092: queue IK_end
+    100094: queue1
+    100096: queue2
+    100098: queue3
+    100100: queue3_end
+    100102: Sphere
+    100104: ventre
+    400000: Armature
+    400002: bras IK.L
+    400004: bras IK.R
+    400006: bras1.L
+    400008: bras1.R
+    400010: bras2.L
+    400012: bras2.L_end
+    400014: bras2.R
+    400016: bras2.R_end
+    400018: buste
+    400020: Camera
+    400022: Camera.001
+    400024: Circle
+    400026: control
+    400028: coude.L
+    400030: coude.L_end
+    400032: coude.R
+    400034: coude.R_end
+    400036: Cube
+    400038: Cube.001
+    400040: Cylinder
+    400042: Cylinder.001
+    400044: //RootNode
+    400046: genou.L
+    400048: genou.L_end
+    400050: genou.R
+    400052: genou.R_end
+    400054: head
+    400056: head_end
+    400058: jambe IK.L
+    400060: jambe IK.L_end
+    400062: jambe IK.R
+    400064: jambe IK.R_end
+    400066: jambe1.L
+    400068: jambe1.R
+    400070: jambe2.L
+    400072: jambe2.L_end
+    400074: jambe2.R
+    400076: jambe2.R_end
+    400078: Lamp
+    400080: Lamp.001
+    400082: main.L
+    400084: main.L_end
+    400086: main.R
+    400088: main.R_end
+    400090: queue IK
+    400092: queue IK_end
+    400094: queue1
+    400096: queue2
+    400098: queue3
+    400100: queue3_end
+    400102: Sphere
+    400104: ventre
+    2000000: Camera
+    2000002: Camera.001
+    2300000: Circle
+    2300002: Cube
+    2300004: Cylinder
+    2300006: Cylinder.001
+    2300008: Sphere
+    3300000: Circle
+    3300002: Cube
+    3300004: Cylinder
+    3300006: Cylinder.001
+    3300008: Sphere
+    4300000: Cube
+    4300002: Cylinder.001
+    4300004: Cylinder
+    4300006: Cube.001
+    4300008: Circle
+    4300010: Sphere
+    7400000: Armature|ArmatureAction
+    9500000: //RootNode
+    10800000: Lamp
+    10800002: Lamp.001
+    13700000: Cube.001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

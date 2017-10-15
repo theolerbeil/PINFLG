@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fire
   - Image_Action
+  - wall
   layers:
   - Default
   - TransparentFX
