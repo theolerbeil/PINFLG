@@ -5534,7 +5534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &355958699
 Transform:
   m_ObjectHideFlags: 0
@@ -6503,6 +6503,11 @@ Prefab:
     - target: {fileID: 1699896983032384, guid: 9c2df3bc84c716b42a92f01f86652f11, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114789323116748324, guid: 9c2df3bc84c716b42a92f01f86652f11,
+        type: 2}
+      propertyPath: vitesse
+      value: 5.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9c2df3bc84c716b42a92f01f86652f11, type: 2}
@@ -34069,11 +34074,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d70e9a11c3115be468a8715eba28883b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxReduction: 0.2
-  MaxIncrease: 0.2
-  RateDamping: 0.1
-  Strength: 300
-  StopFlickering: 0
 --- !u!1001 &2118847672
 Prefab:
   m_ObjectHideFlags: 0
