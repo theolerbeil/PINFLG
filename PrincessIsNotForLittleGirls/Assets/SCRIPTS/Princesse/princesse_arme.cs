@@ -10,19 +10,11 @@ public class princesse_arme : MonoBehaviour {
     private GameObject actualWorldArme;
 
     public GameObject handPoele;
-    public GameObject worldPoele;
-
     public GameObject handBread;
-    public GameObject worldBread;
-
     public GameObject handBedfoot;
-    public GameObject worldBedfoot;
-
     public GameObject handChandelier;
-    public GameObject worldChandelier;
-
-    public GameObject handShowel;
-    public GameObject worldShowel;
+	public GameObject handShowel;
+	public GameObject handMagicStaff;
 
     // Use this for initialization
     void Start () {
@@ -34,16 +26,17 @@ public class princesse_arme : MonoBehaviour {
 		
 	}
 
-    public void SetArmeActive(EnumArmes arme)
+	public void SetArmeActive(EnumArmes typeArme, GameObject armeRamasse)
     {
         poserArme();
-        armeActive = arme;
-        defineActualsArmes();
+        armeActive = typeArme;
+		defineActualsArmes(armeRamasse);
         activerArme();
     }
 
-    private void defineActualsArmes()
+	private void defineActualsArmes(GameObject armeRamasse)
     {
+		actualWorldArme = armeRamasse;
         switch (armeActive)
         {
             case EnumArmes.vide:
@@ -55,32 +48,32 @@ public class princesse_arme : MonoBehaviour {
             case EnumArmes.poele:
 
                 actualHandArme = handPoele;
-                actualWorldArme = worldPoele;
                 break;
 
             case EnumArmes.bread:
 
                 actualHandArme = handBread;
-                actualWorldArme = worldBread;
                 break;
 
             case EnumArmes.bedfoot:
 
                 actualHandArme = handBedfoot;
-                actualWorldArme = worldBedfoot;
                 break;
 
             case EnumArmes.chandelier:
 
                 actualHandArme = handChandelier;
-                actualWorldArme = worldChandelier;
                 break;
 
             case EnumArmes.showel:
 
                 actualHandArme = handShowel;
-                actualWorldArme = worldShowel;
                 break;
+
+			case EnumArmes.magic_staff:
+
+				actualHandArme = handMagicStaff;
+				break;
         }
     }
 
@@ -111,5 +104,6 @@ public enum EnumArmes
     bread,
     bedfoot,
     chandelier,
-    showel
+    showel,
+	magic_staff
 }

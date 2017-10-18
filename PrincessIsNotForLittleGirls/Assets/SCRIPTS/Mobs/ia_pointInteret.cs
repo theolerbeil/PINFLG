@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ia_pointInteret : MonoBehaviour {
 
-    public string nom;
-
     // Use this for initialization
     void Start () {
 		

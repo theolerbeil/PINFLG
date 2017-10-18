@@ -27,16 +27,16 @@ public class gob_E_patrouille : ia_etat {
         
         if (agent.destinationCouranteAtteinte())
         {
-            // pour faire un test, quand on a fini le chemin on passe au combat...
+    /*        // pour faire un test, quand on a fini le chemin on passe au combat...
             if (indiceCheminActuel == chemin.Length - 1)
             {
                 changerEtat(this.GetComponent<gob_E_combat>());
             }
             else
-            {
+            {*/
                 indiceCheminActuel = (indiceCheminActuel + 1) % chemin.Length;
                 suivreChemin();
-            }
+       //     }
         }
     }
 

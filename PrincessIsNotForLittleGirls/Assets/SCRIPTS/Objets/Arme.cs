@@ -20,6 +20,6 @@ public class Arme : Objet {
     override
     public void Activation()
     {
-        princesse.SetArmeActive(arme);
+		princesse.SetArmeActive(arme, this.gameObject);
     }
 }

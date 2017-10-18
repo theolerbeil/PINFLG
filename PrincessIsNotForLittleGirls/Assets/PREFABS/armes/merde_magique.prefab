@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33694337064545204}
   - component: {fileID: 23093358610382836}
   - component: {fileID: 54865130530061536}
+  - component: {fileID: 114173218139847390}
+  - component: {fileID: 114808953300819152}
   - component: {fileID: 64619387501733648}
   m_Layer: 2
   m_Name: merde_magique
@@ -112,3 +114,29 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 29ab004aaba84b84aa8f3572216d8f66, type: 3}
+--- !u!114 &114173218139847390
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1836365409999234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9235aa119ac50f94e9729049f4f64ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objet: {fileID: 114808953300819152}
+  distance_activation: 1.5
+  demiAngleActivationFrontal: 45
+--- !u!114 &114808953300819152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1836365409999234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c7109e91c9b064499f84d5a0998c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arme: 6

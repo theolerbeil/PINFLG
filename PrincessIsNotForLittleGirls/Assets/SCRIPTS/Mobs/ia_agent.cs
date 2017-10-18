@@ -70,7 +70,7 @@ public class ia_agent : MonoBehaviour {
     {
         foreach (ia_pointInteret pi in pointsInteret)
         {
-            if (pi.nom.Equals(nomDestination))
+			if (pi.name.Equals(nomDestination))
             {
                 nav.SetDestination(pi.transform.position);
                 return;

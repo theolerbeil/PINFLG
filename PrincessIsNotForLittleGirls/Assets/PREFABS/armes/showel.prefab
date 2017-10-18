@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objet: {fileID: 114741673513039238}
-  distance_activation: 1.5
+  distance_activation: 2.5
   demiAngleActivationFrontal: 45
 --- !u!114 &114741673513039238
 MonoBehaviour:
