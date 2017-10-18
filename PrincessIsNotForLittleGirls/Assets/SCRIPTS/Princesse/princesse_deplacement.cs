@@ -194,7 +194,7 @@ public class princesse_deplacement : MonoBehaviour {
 
         mouvement = (mouvement / mouvement.magnitude) * norme;
 
-        this.transform.position += mouvement * vitesse;
+		this.transform.position += mouvement * vitesse * Time.deltaTime;
     }
 
 	void FixedUpdate(){
