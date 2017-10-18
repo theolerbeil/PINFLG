@@ -14,17 +14,12 @@ public class princesse_deplacement : MonoBehaviour {
 
 	private bool CanDash;
 	private Rigidbody rb;
-	private bool DoubleClickZ;
-	private bool DoubleClickS;
-	private bool DoubleClickQ;
-	private bool DoubleClickD;
 
 
 
 	void Start ()
 	{
 		CanDash = true;
-		DoubleClickZ = false;
 		rb = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator> ();
 	}
@@ -110,56 +105,21 @@ public class princesse_deplacement : MonoBehaviour {
 			}
 		}
 
-		if(Input.GetKeyDown(KeyCode.Z)){
-			if (DoubleClickZ == true && CanDash == true && isGrounded == true) {
+		if(Input.GetKeyDown(KeyCode.LeftShift)){
+			if (CanDash == true && isGrounded == true) {
 				anim.Play ("fwdash");
-				rb.AddForce (transform.forward * 2000f);
+                if (moveVertical > 0.0f)
+                {
+                    rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 2000f);
+                } else
+                {
+                    rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 1500f);
+                }
+               
 				CanDash = false;
 
 				StartCoroutine (WaitBeforDash ());
 
-			} else {
-				DoubleClickZ = true;
-				StartCoroutine (WaitForDashZ ());
-			}
-		}
-		if(Input.GetKeyDown(KeyCode.S)){
-			if (DoubleClickS == true && CanDash == true && isGrounded == true) {
-				anim.Play ("backdash");
-				rb.AddForce (transform.forward * -1750f);
-				CanDash = false;
-
-				StartCoroutine (WaitBeforDash ());
-
-			} else {
-				DoubleClickS = true;
-				StartCoroutine (WaitForDashS ());
-			}
-		}
-		if(Input.GetKeyDown(KeyCode.D)){
-			if (DoubleClickD == true && CanDash == true && isGrounded == true) {
-				anim.Play ("rightdash");
-				rb.AddForce (transform.right * 2000f);
-				CanDash = false;
-
-				StartCoroutine (WaitBeforDash ());
-
-			} else {
-				DoubleClickD = true;
-				StartCoroutine (WaitForDashD ());
-			}
-		}
-		if(Input.GetKeyDown(KeyCode.Q)){
-			if (DoubleClickQ == true && CanDash == true && isGrounded == true) {
-				anim.Play ("leftdash");
-				rb.AddForce (transform.right * -2000f);
-				CanDash = false;
-
-				StartCoroutine (WaitBeforDash ());
-
-			} else {
-				DoubleClickQ = true;
-				StartCoroutine (WaitForDashQ ());
 			}
 		}
 
@@ -207,43 +167,10 @@ public class princesse_deplacement : MonoBehaviour {
 			anim.SetBool ("IsJumping", true);
 		}
 	}
-	IEnumerator WaitForDashZ(){
-		
-		yield return new WaitForSeconds (0.2f);
-		DoubleClickZ = false;
 
-
-	}
-	IEnumerator WaitForDashS(){
-
-		yield return new WaitForSeconds (0.2f);
-		DoubleClickS = false;
-
-
-	}
-	IEnumerator WaitForDashD(){
-
-		yield return new WaitForSeconds (0.2f);
-		DoubleClickD = false;
-
-
-	}
-	IEnumerator WaitForDashQ(){
-
-		yield return new WaitForSeconds (0.2f);
-		DoubleClickQ = false;
-
-
-	}
 	IEnumerator WaitBeforDash(){
-
-		DoubleClickZ = false;
-		DoubleClickD = false;
-		DoubleClickQ = false;
-		DoubleClickS = false;
 		yield return new WaitForSeconds (1f);
 		CanDash = true;
-
 	}
     
 }
