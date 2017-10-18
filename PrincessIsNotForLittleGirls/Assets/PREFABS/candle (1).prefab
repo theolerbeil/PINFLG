@@ -229,7 +229,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -266,6 +266,9 @@ MonoBehaviour:
   RateDamping: 0.1
   Strength: 300
   StopFlickering: 0
+  _lightSource: {fileID: 0}
+  _baseIntensity: 0
+  _flickering: 0
 --- !u!114 &114343155934803618
 MonoBehaviour:
   m_ObjectHideFlags: 1
