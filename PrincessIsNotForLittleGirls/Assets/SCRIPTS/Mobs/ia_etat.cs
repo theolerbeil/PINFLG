@@ -8,7 +8,9 @@ public abstract class ia_etat : MonoBehaviour
 
     protected ia_agent agent;
 
-    protected NavMeshAgent nav;
+	protected NavMeshAgent nav;
+	protected Animator anim;
+	protected Rigidbody rb;
     protected GameObject princesse;
     protected princesse_vie princesseVie;
     protected ia_pointInteret[] pointsInteret;
@@ -23,6 +25,8 @@ public abstract class ia_etat : MonoBehaviour
     {
         agent = this.GetComponent<ia_agent>();
         nav = agent.getNav();
+		anim = agent.getAnimator ();
+		rb = agent.getRigidbody ();
         princesse = agent.getPrincesse();
         princesseVie = agent.getPrincesse_Vie();
         pointsInteret = agent.getPointsInteret();

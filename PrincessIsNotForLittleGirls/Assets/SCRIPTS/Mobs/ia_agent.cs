@@ -7,16 +7,22 @@ public class ia_agent : MonoBehaviour {
 
     private NavMeshAgent nav;
     private Animator anim;
+	private Rigidbody rb;
     private GameObject princesse;
     private princesse_vie princesseVie;
     private ia_pointInteret[] pointsInteret;
     
     public ia_etat etatCourant;
 
+	public float demiAngleVision;
+	public float distanceVision;
+	public float rayonAudition;
+
     void Awake()
     {
         nav = this.GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+		rb = GetComponent<Rigidbody> ();
         princesse = GameObject.FindGameObjectWithTag("Player");
         princesseVie = princesse.GetComponent<princesse_vie>();
         pointsInteret = GameObject.FindObjectsOfType<ia_pointInteret>();
@@ -33,12 +39,21 @@ public class ia_agent : MonoBehaviour {
 
         etatCourant.faireEtat();
 
-    }
+	}
 
-    public NavMeshAgent getNav()
-    {
-        return nav;
-    }
+	public NavMeshAgent getNav()
+	{
+		return nav;
+	}
+
+	public Animator getAnimator(){
+		return anim;
+	}
+
+	public Rigidbody getRigidbody()
+	{
+		return rb;
+	}
 
     public GameObject getPrincesse()
     {
@@ -104,5 +119,47 @@ public class ia_agent : MonoBehaviour {
         etatCourant.sortirEtat();
         etatCourant = nouvelEtat;
         etatCourant.entrerEtat();
-    }
+	}
+
+	/// <summary>
+	/// Permet de savoir si l'agent a repéré la princesse en fonction de son audition et de sa vision
+	/// </summary>
+	public bool princesseReperee(){
+
+		return chercherPrincesse (1.0f);
+	}
+
+	/// <summary>
+	/// Permet de savoir si l'agent a repéré la princesse en fonction de son audition et de sa vision en faissant vraiment attention
+	/// </summary>
+	public bool princesseRepereeAvecAttention(){
+
+		return chercherPrincesse (2.0f);
+	}
+
+	private bool chercherPrincesse(float niveauAttention){
+
+		Vector3 vecDistancePrincesse = princesse.transform.position - this.transform.position;
+
+		float distancePrincesse = vecDistancePrincesse.magnitude;
+
+		if (distancePrincesse <= this.rayonAudition * niveauAttention) {
+			return true;
+		}
+
+		float angle = Vector3.Angle (this.transform.forward, vecDistancePrincesse.normalized);
+
+		if(angle <= this.demiAngleVision * niveauAttention) {
+
+			RaycastHit hitInfo;
+
+			Physics.Raycast(this.transform.position, vecDistancePrincesse.normalized, out hitInfo);
+
+			if (hitInfo.distance <= this.distanceVision && hitInfo.collider.gameObject.Equals(princesse)) {
+				return true;
+			}
+		}
+
+		return false;
+	}
 }
