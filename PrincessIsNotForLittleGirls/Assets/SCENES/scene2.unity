@@ -11355,7 +11355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13ebaeebc13aa244b74848055910c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pourcentageUtilisationAttaquePuissante: 100
+  pourcentageUtilisationAttaquePuissante: 40
   degatsAttaquePuissante: 20
   forceDeSautAttaquePuissante: 1400
   forceAvancementAttaquePuissante: 700
