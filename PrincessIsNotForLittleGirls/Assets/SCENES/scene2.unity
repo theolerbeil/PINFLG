@@ -24851,6 +24851,11 @@ Prefab:
       propertyPath: chemin.Array.data[3]
       value: 
       objectReference: {fileID: 999386286}
+    - target: {fileID: 114406686919795056, guid: 53a770449bc895240b07b768b30e3e97,
+        type: 2}
+      propertyPath: rayonAudition
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
   m_IsPrefabParent: 0

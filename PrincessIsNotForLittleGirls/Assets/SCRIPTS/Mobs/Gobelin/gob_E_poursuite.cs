@@ -67,6 +67,7 @@ public class gob_E_poursuite : ia_etat {
 					Debug.Log ("princesse retrouvée");
 					setAnimation("running");
 					princessePerdue = false;
+					delaiActuelRecherche = 0.0f;
 					dernierePositionPrincesseConnue = princesse.transform.position;
 					agent.definirDestination (dernierePositionPrincesseConnue);
 

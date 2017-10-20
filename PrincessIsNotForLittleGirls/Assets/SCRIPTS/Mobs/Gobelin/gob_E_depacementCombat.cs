@@ -23,8 +23,6 @@ public class gob_E_depacementCombat : ia_etat {
 		setAnimation("running");
 		nav.speed = vitesse;
 		nav.enabled = true;
-		dernierePositionPrincesseConnue = princesse.transform.position;
-		agent.definirDestination(dernierePositionPrincesseConnue);
 	}
 
 	public override void faireEtat()
