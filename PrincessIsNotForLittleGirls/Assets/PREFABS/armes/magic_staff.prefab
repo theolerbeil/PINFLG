@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114808953300819152}
   - component: {fileID: 64619387501733648}
   m_Layer: 2
-  m_Name: merde_magique
+  m_Name: magic_staff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
