@@ -15,13 +15,14 @@ public class princesse_deplacement : MonoBehaviour {
 	private bool CanDash;
 	private Rigidbody rb;
 
-
+	private princesse_arme princesseArme;
 
 	void Start ()
 	{
 		CanDash = true;
 		rb = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator> ();
+		princesseArme = GetComponent<princesse_arme> ();
 	}
 
 	void Update ()
@@ -93,15 +94,17 @@ public class princesse_deplacement : MonoBehaviour {
 		if (toucheAttack1) {
 			if (anim.GetBool ("IsIdle") == true) {
 				anim.Play ("attack1");
+				princesseArme.lancerAttaque ();
 			}
 			if(anim.GetBool ("IsJumping") == true){
 				anim.Play ("attack_jump");
 				rb.AddForce (transform.forward * 500f);
 				rb.AddForce (new Vector3 (0.0f, -1000f, 0.0f));
+				princesseArme.lancerAttaque ();
 			}
 			if(anim.GetBool ("IsRunning") == true){
 				anim.Play ("attack_run");
-
+				princesseArme.lancerAttaque ();
 			}
 		}
 

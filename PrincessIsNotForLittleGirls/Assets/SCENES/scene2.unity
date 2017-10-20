@@ -24817,19 +24817,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.70710677
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.70710665
+      value: -0.7071067
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.00026975636
+      value: 0.0002697564
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.0002696229
+      value: -0.00026962292
       objectReference: {fileID: 0}
     - target: {fileID: 114380259584643674, guid: 53a770449bc895240b07b768b30e3e97,
         type: 2}
@@ -24855,6 +24855,10 @@ Prefab:
         type: 2}
       propertyPath: rayonAudition
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613168974629440, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
+      propertyPath: m_TagString
+      value: mob
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53a770449bc895240b07b768b30e3e97, type: 2}

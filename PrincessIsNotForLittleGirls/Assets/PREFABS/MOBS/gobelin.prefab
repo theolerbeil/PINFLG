@@ -465,11 +465,12 @@ GameObject:
   - component: {fileID: 114495343298560022}
   - component: {fileID: 114959185836115210}
   - component: {fileID: 114303874674154140}
+  - component: {fileID: 114851886317558394}
   - component: {fileID: 114640148858761534}
   - component: {fileID: 82590305404001812}
   m_Layer: 2
   m_Name: gobelin
-  m_TagString: Untagged
+  m_TagString: mob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1556,6 +1557,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ed512e6795468f4a933a2bebb2d666b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114851886317558394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1613168974629440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d262acc6205784fb927fe553a00b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114959185836115210

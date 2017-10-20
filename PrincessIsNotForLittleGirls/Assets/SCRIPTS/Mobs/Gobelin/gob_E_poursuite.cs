@@ -55,7 +55,6 @@ public class gob_E_poursuite : ia_etat {
 		} else if (agent.destinationCouranteAtteinte ()) {
 
 			if (delaiActuelRecherche == 0.0f) {
-				Debug.Log ("princesse perdue");
 				princessePerdue = true;
 				delaiActuelRecherche = Time.time + dureeRecherchePrincesse;
 				setAnimation ("searching");
@@ -64,7 +63,6 @@ public class gob_E_poursuite : ia_etat {
 			if(Time.time <= delaiActuelRecherche) {
 
 				if (agent.princesseRepereeAvecAttention ()) {
-					Debug.Log ("princesse retrouvée");
 					setAnimation("running");
 					princessePerdue = false;
 					delaiActuelRecherche = 0.0f;
@@ -73,7 +71,6 @@ public class gob_E_poursuite : ia_etat {
 
 				}
 			} else {
-				Debug.Log ("abandon retour patrouille");
 				changerEtat (GetComponent<gob_E_patrouille> ());
 			}
 		}

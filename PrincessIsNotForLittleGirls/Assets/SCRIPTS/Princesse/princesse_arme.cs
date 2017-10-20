@@ -16,14 +16,47 @@ public class princesse_arme : MonoBehaviour {
 	public GameObject handShowel;
 	public GameObject handMagicStaff;
 
+//	public Collider colliderArmeActuelle;
+
+	private bool attaqueEnCours;
+	private Animator anim;
+	private List<ia_agent> listeMobsTouches;
+
     // Use this for initialization
     void Start () {
-		
+		attaqueEnCours = false;
+		anim = GetComponent<Animator> ();
+		listeMobsTouches = new List<ia_agent> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	void OnTriggerEnter(Collider other){
+
+		if (attaqueEnCours) {
+
+			if (anim.GetCurrentAnimatorStateInfo (0).IsName (anim.GetLayerName (0) + ".idle1")) {
+
+				attaqueEnCours = false;
+				listeMobsTouches.Clear ();
+
+			} else {
+
+				if (other.tag.Equals ("mob")) {
+					
+					ia_agent mobTouche = other.gameObject.GetComponent<ia_agent> ();
+
+					if (!listeMobsTouches.Contains (mobTouche)) {
+						
+						listeMobsTouches.Add (mobTouche);
+						mobTouche.recevoirDegat (0);
+					}
+				}
+			}
+		}
 	}
 
 	public void SetArmeActive(EnumArmes typeArme, GameObject armeRamasse)
@@ -33,6 +66,10 @@ public class princesse_arme : MonoBehaviour {
 		defineActualsArmes(armeRamasse);
         activerArme();
     }
+
+	public void lancerAttaque() {
+		attaqueEnCours = true;
+	}
 
 	private void defineActualsArmes(GameObject armeRamasse)
     {
@@ -93,6 +130,7 @@ public class princesse_arme : MonoBehaviour {
         {
             actualWorldArme.SetActive(false);
             actualHandArme.SetActive(true);
+//			colliderArmeActuelle = actualHandArme.GetComponent<Collider>();
         }
     }
 }

@@ -172,4 +172,8 @@ public class ia_agent : MonoBehaviour {
 	public float distanceToPrincesse() {
 		return (princesse.transform.position - this.transform.position).magnitude;
 	}
+
+	public void recevoirDegat(int valeurDegats) {
+		changerEtat (GetComponent<gob_E_degatsRecu> ());
+	}
 }
