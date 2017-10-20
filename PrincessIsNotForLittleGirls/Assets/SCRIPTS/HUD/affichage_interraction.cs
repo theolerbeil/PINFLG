@@ -16,7 +16,6 @@ public class affichage_interraction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log("change le message");
 		if (list_objet.Count > 0) {
 			image_detection.enabled = true;
 		} else {

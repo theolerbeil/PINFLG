@@ -11,7 +11,6 @@ public class gob_E_combat : ia_etat {
 	public float delaiAttaqueSimple;
 
 	private float delaiActuelAttaqueSimple;
-	private bool attaqueSimpleEnCours;
 	private Vector3 dernierePositionPrincesseConnue;
 	private bool degatsAttaqueEffectues;
 	private triggerArme colliderArme;
@@ -27,7 +26,6 @@ public class gob_E_combat : ia_etat {
     public override void entrerEtat()
     {
 		setAnimation("idleCombat");
-		attaqueSimpleEnCours = false;
 		degatsAttaqueEffectues = false;
     }
 
@@ -43,7 +41,6 @@ public class gob_E_combat : ia_etat {
 			
 			if (attaqueSimplePrete ()) {
 				setAnimation ("attackSimple");
-				attaqueSimpleEnCours = true;
 				delaiActuelAttaqueSimple = Time.time + delaiAttaqueSimple;
 
 			} else {
@@ -57,8 +54,6 @@ public class gob_E_combat : ia_etat {
 						degatsAttaqueEffectues = true;
 					}
 				} else {
-
-					attaqueSimpleEnCours = false;
 					degatsAttaqueEffectues = false;
 				}
 			}

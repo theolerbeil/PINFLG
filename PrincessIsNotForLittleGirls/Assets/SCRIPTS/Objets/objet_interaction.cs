@@ -25,7 +25,7 @@ public class objet_interaction : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Vector3 distance_princesse = this.transform.position - princesse.transform.position;
-		Debug.Log("eee");
+
 		bool action = Input.GetKeyDown (KeyCode.E);
 
 
