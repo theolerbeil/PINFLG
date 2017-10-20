@@ -10,23 +10,23 @@ public class objet_interaction : MonoBehaviour {
 	public float distance_activation;
     public float demiAngleActivationFrontal;
 	private UnityEngine.UI.Image image_detection;
+	private affichage_interraction hud_refractor;
+
 
 	// Use this for initialization
 	void Start () {
         image_detection = GameObject.FindGameObjectWithTag("Image_Action").GetComponent< UnityEngine.UI.Image>();
-
-        image_detection.enabled = false;
+        //image_detection.enabled = false;
         princesse = GameObject.FindGameObjectWithTag("Player");
 
+		hud_refractor = GameObject.FindGameObjectWithTag ("Image_Action").GetComponent<affichage_interraction>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-
         Vector3 distance_princesse = this.transform.position - princesse.transform.position;
-
+		Debug.Log("eee");
 		bool action = Input.GetKeyDown (KeyCode.E);
-
 
 
 		if (distance_princesse.magnitude < distance_activation) {
@@ -35,17 +35,22 @@ public class objet_interaction : MonoBehaviour {
 			float angle = Vector3.Angle (princesse.transform.forward, distance_princesse.normalized);
 
 			if (angle <= demiAngleActivationFrontal) {
-				image_detection.enabled = true;
+
+				hud_refractor.activeObjet (objet);
+				
+				//image_detection.enabled = true;
 				if (action) {
 					objet.Activation ();
-					image_detection.enabled = false;
+					hud_refractor.desactiveObjet (objet);
 				}
                 
 			} else {
-				image_detection.enabled = false;
+				hud_refractor.desactiveObjet (objet);
+				//image_detection.enabled = false;
 			}
 		} else {
-			image_detection.enabled = false;
+			hud_refractor.desactiveObjet (objet);
+			//image_detection.enabled = false;
 		}
 	}
 }
