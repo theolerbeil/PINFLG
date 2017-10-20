@@ -21,30 +21,30 @@ public class gob_E_patrouille : ia_etat {
 
     public override void entrerEtat()
 	{
-		nav.stoppingDistance = 0.0f;
-        setAnimation("IsWalking");
-        indiceCheminActuel = 0;
-        suivreChemin();
+        setAnimation("walking");
+		indiceCheminActuel = 0;
 		nav.enabled = true;
+        suivreChemin();
 		this.enChemin = true;
     }
 
     public override void faireEtat()
     {
 		if(agent.princesseReperee()) {
-			changerEtat(this.GetComponent<gob_E_combat>());
+			changerEtat(this.GetComponent<gob_E_poursuite>());
 		}
 
 		if (enChemin) {
 
 			if (agent.destinationCouranteAtteinte ()) {
 
+				setAnimation("searching");
 				enChemin = false;
-
 				this.delaisActuel = Time.time + this.delaisAChaqueArret;
 			}
 		} else if (Time.time > this.delaisActuel) {
 
+			setAnimation("walking");
 			indiceCheminActuel = (indiceCheminActuel + 1) % chemin.Length;
 			suivreChemin ();
 			enChemin = true;
@@ -52,7 +52,7 @@ public class gob_E_patrouille : ia_etat {
 		} else {
 
 			if(agent.princesseRepereeAvecAttention()) {
-				changerEtat(this.GetComponent<gob_E_combat>());
+				changerEtat(this.GetComponent<gob_E_poursuite>());
 			}
 		}
     }

@@ -17,6 +17,7 @@ public class ia_agent : MonoBehaviour {
 	public float demiAngleVision;
 	public float distanceVision;
 	public float rayonAudition;
+	public float distanceCombatOptimale;
 
     void Awake()
     {
@@ -108,8 +109,12 @@ public class ia_agent : MonoBehaviour {
             anim.SetBool(parameter.name, false);
         }
 
-        anim.SetBool(nomAnimation, true);
+		anim.SetBool(nomAnimation, true);
     }
+
+	public bool isActualAnimation(string nomAnimation){
+		return anim.GetCurrentAnimatorStateInfo (0).IsName (anim.GetLayerName(0) + "." + nomAnimation);
+	}
 
     /// <summary>
     /// Permet de sortir de l'état courant puis d'entrer dans le nouvel état.
@@ -118,6 +123,7 @@ public class ia_agent : MonoBehaviour {
     {
         etatCourant.sortirEtat();
         etatCourant = nouvelEtat;
+		Debug.Log ("Entree état " + etatCourant.ToString());
         etatCourant.entrerEtat();
 	}
 
@@ -161,5 +167,9 @@ public class ia_agent : MonoBehaviour {
 		}
 
 		return false;
+	}
+
+	public float distanceToPrincesse() {
+		return (princesse.transform.position - this.transform.position).magnitude;
 	}
 }
