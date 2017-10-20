@@ -16,8 +16,6 @@ public class princesse_arme : MonoBehaviour {
 	public GameObject handShowel;
 	public GameObject handMagicStaff;
 
-//	public Collider colliderArmeActuelle;
-
 	private bool attaqueEnCours;
 	private Animator anim;
 	private List<ia_agent> listeMobsTouches;
@@ -130,7 +128,6 @@ public class princesse_arme : MonoBehaviour {
         {
             actualWorldArme.SetActive(false);
             actualHandArme.SetActive(true);
-//			colliderArmeActuelle = actualHandArme.GetComponent<Collider>();
         }
     }
 }
