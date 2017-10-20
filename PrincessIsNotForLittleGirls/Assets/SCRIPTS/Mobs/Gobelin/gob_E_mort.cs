@@ -14,7 +14,9 @@ public class gob_E_mort : ia_etat {
 
 	public override void entrerEtat()
 	{
-		anim.StopPlayback ();
+		setAnimation("mort");
+		anim.enabled = false;
+		rb.constraints = new RigidbodyConstraints ();
 	}
 
 	public override void faireEtat()
