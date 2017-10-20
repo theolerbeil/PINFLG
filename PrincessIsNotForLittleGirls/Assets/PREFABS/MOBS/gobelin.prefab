@@ -459,6 +459,7 @@ GameObject:
   - component: {fileID: 54393237237696536}
   - component: {fileID: 136874068501000326}
   - component: {fileID: 195983392004149306}
+  - component: {fileID: 114257562304705656}
   - component: {fileID: 114406686919795056}
   - component: {fileID: 114380259584643674}
   - component: {fileID: 114495390672951426}
@@ -466,6 +467,7 @@ GameObject:
   - component: {fileID: 114959185836115210}
   - component: {fileID: 114303874674154140}
   - component: {fileID: 114851886317558394}
+  - component: {fileID: 114025833143946730}
   - component: {fileID: 114640148858761534}
   - component: {fileID: 82590305404001812}
   m_Layer: 2
@@ -1472,6 +1474,29 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114025833143946730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1613168974629440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ae5f4fe4da9254a8afe942a47a869a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114257562304705656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1613168974629440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a5bbea1c0e62e4cb3997d595bd75ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vieMax: 100
 --- !u!114 &114303874674154140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1521,6 +1546,8 @@ MonoBehaviour:
   distanceVision: 18
   rayonAudition: 5
   distanceCombatOptimale: 1.5
+  etatDegatsRecu: {fileID: 114851886317558394}
+  etatMort: {fileID: 114025833143946730}
 --- !u!114 &114495343298560022
 MonoBehaviour:
   m_ObjectHideFlags: 1

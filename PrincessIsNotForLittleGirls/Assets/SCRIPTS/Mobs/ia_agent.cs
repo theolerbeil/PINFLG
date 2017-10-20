@@ -11,6 +11,7 @@ public class ia_agent : MonoBehaviour {
     private GameObject princesse;
     private princesse_vie princesseVie;
     private ia_pointInteret[] pointsInteret;
+	private mob_vie mobVie;
     
     public ia_etat etatCourant;
 
@@ -18,6 +19,8 @@ public class ia_agent : MonoBehaviour {
 	public float distanceVision;
 	public float rayonAudition;
 	public float distanceCombatOptimale;
+	public ia_etat etatDegatsRecu;
+	public ia_etat etatMort;
 
     void Awake()
     {
@@ -27,6 +30,7 @@ public class ia_agent : MonoBehaviour {
         princesse = GameObject.FindGameObjectWithTag("Player");
         princesseVie = princesse.GetComponent<princesse_vie>();
         pointsInteret = GameObject.FindObjectsOfType<ia_pointInteret>();
+		mobVie = GetComponent<mob_vie> ();
     }
 
     // Use this for initialization
@@ -64,12 +68,17 @@ public class ia_agent : MonoBehaviour {
     public princesse_vie getPrincesse_Vie()
     {
         return princesseVie;
-    }
+	}
 
-    public ia_pointInteret[] getPointsInteret()
-    {
-        return pointsInteret;
-    }
+	public ia_pointInteret[] getPointsInteret()
+	{
+		return pointsInteret;
+	}
+
+	public mob_vie getMobVie()
+	{
+		return mobVie;
+	}
 
     /// <summary>
     /// Définit la position de la destination actuel de l'agent.
@@ -174,6 +183,15 @@ public class ia_agent : MonoBehaviour {
 	}
 
 	public void recevoirDegat(int valeurDegats) {
-		changerEtat (GetComponent<gob_E_degatsRecu> ());
+		changerEtat (etatDegatsRecu);
+		mobVie.blesser (valeurDegats);
+	}
+
+	public bool estEnVie() {
+		return mobVie.estEnVie ();
+	}
+
+	public void mourir() {
+		changerEtat (etatMort);
 	}
 }

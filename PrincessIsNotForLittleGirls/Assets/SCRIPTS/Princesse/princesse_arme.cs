@@ -49,10 +49,10 @@ public class princesse_arme : MonoBehaviour {
 					
 					ia_agent mobTouche = other.gameObject.GetComponent<ia_agent> ();
 
-					if (!listeMobsTouches.Contains (mobTouche)) {
+					if (!listeMobsTouches.Contains (mobTouche) && mobTouche.estEnVie()) {
 						
 						listeMobsTouches.Add (mobTouche);
-						mobTouche.recevoirDegat (0);
+						mobTouche.recevoirDegat (100);
 					}
 				}
 			}
