@@ -132,7 +132,7 @@ public class ia_agent : MonoBehaviour {
     {
         etatCourant.sortirEtat();
         etatCourant = nouvelEtat;
-		Debug.Log ("Entree état " + etatCourant.ToString());
+//		Debug.Log ("Entree état " + etatCourant.ToString());
         etatCourant.entrerEtat();
 	}
 

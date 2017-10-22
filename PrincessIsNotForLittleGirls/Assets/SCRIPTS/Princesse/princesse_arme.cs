@@ -9,6 +9,13 @@ public class princesse_arme : MonoBehaviour {
     private GameObject actualHandArme;
     private GameObject actualWorldArme;
 
+	public int degatsPoele;
+	public int degatsBread;
+	public int degatsBedfoot;
+	public int degatsChandelier;
+	public int degatsShowel;
+	public int degatsMagicStaff;
+
     public GameObject handPoele;
     public GameObject handBread;
     public GameObject handBedfoot;
@@ -30,7 +37,7 @@ public class princesse_arme : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (attaqueEnCours && anim.GetCurrentAnimatorStateInfo (0).IsName (anim.GetLayerName (0) + ".idle1")) {
-			Debug.Log ("fin attaque");
+			
 			attaqueEnCours = false;
 			listeMobsTouches.Clear ();
 
@@ -48,7 +55,7 @@ public class princesse_arme : MonoBehaviour {
 				if (!listeMobsTouches.Contains (mobTouche) && mobTouche.estEnVie()) {
 					
 					listeMobsTouches.Add (mobTouche);
-					mobTouche.recevoirDegat (50);
+					mobTouche.recevoirDegat (getDegatsArmeActuel());
 				}
 			}
 		}
@@ -127,6 +134,42 @@ public class princesse_arme : MonoBehaviour {
             actualHandArme.SetActive(true);
         }
     }
+
+	private int getDegatsArmeActuel(){
+
+		switch (armeActive)
+		{
+		case EnumArmes.vide:
+
+			return 0;
+
+		case EnumArmes.poele:
+
+			return degatsPoele;
+
+		case EnumArmes.bread:
+
+			return degatsBread;
+
+		case EnumArmes.bedfoot:
+
+			return degatsBedfoot;
+
+		case EnumArmes.chandelier:
+
+			return degatsChandelier;
+
+		case EnumArmes.showel:
+
+			return degatsShowel;
+
+		case EnumArmes.magic_staff:
+
+			return degatsMagicStaff;
+		}
+
+		return 0;
+	}
 }
 
 public enum EnumArmes
