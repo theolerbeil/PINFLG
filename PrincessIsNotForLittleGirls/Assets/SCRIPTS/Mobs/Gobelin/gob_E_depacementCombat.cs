@@ -23,6 +23,7 @@ public class gob_E_depacementCombat : ia_etat {
 		setAnimation("running");
 		nav.speed = vitesse;
 		nav.enabled = true;
+		dernierePositionPrincesseConnue = new Vector3 ();
 	}
 
 	public override void faireEtat()

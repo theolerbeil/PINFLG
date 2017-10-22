@@ -29,29 +29,26 @@ public class princesse_arme : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (attaqueEnCours && anim.GetCurrentAnimatorStateInfo (0).IsName (anim.GetLayerName (0) + ".idle1")) {
+			Debug.Log ("fin attaque");
+			attaqueEnCours = false;
+			listeMobsTouches.Clear ();
+
+		}
 	}
 
 	void OnTriggerEnter(Collider other){
 
 		if (attaqueEnCours) {
 
-			if (anim.GetCurrentAnimatorStateInfo (0).IsName (anim.GetLayerName (0) + ".idle1")) {
+			if (other.tag.Equals ("mob")) {
+				
+				ia_agent mobTouche = other.gameObject.GetComponent<ia_agent> ();
 
-				attaqueEnCours = false;
-				listeMobsTouches.Clear ();
-
-			} else {
-
-				if (other.tag.Equals ("mob")) {
+				if (!listeMobsTouches.Contains (mobTouche) && mobTouche.estEnVie()) {
 					
-					ia_agent mobTouche = other.gameObject.GetComponent<ia_agent> ();
-
-					if (!listeMobsTouches.Contains (mobTouche) && mobTouche.estEnVie()) {
-						
-						listeMobsTouches.Add (mobTouche);
-						mobTouche.recevoirDegat (100);
-					}
+					listeMobsTouches.Add (mobTouche);
+					mobTouche.recevoirDegat (50);
 				}
 			}
 		}

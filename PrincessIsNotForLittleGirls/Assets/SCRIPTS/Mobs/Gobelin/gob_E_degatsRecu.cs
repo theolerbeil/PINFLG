@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class gob_E_degatsRecu : ia_etat {
 
+	public float forceReculeVertical;
+	public float forceReculeHorizontal;
+
 	// Use this for initialization
 	void Start()
 	{
@@ -15,6 +18,7 @@ public class gob_E_degatsRecu : ia_etat {
 	public override void entrerEtat()
 	{
 		anim.Play("degatsRecu");
+		rb.AddForce ((this.transform.forward * -forceReculeHorizontal) + (this.transform.up * forceReculeVertical));
 	}
 
 	public override void faireEtat()
