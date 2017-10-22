@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class princesse_vie : MonoBehaviour {
+	static Animator anim;
 
 	public int vie_max;
 	private int vie_courante;
@@ -13,7 +14,7 @@ public class princesse_vie : MonoBehaviour {
 	void Start () {
 		vie_courante = vie_max;
         gameover = false;
-
+		anim = GetComponent<Animator> ();
     }
 	
 	// Update is called once per frame
@@ -41,6 +42,7 @@ public class princesse_vie : MonoBehaviour {
 
     public void blesser(int valeurDegats)
     {
+		anim.Play ("hurt");
         vie_courante = Mathf.Max(vie_courante - valeurDegats, 0);
         Debug.Log("vie courante : " + vie_courante);
     }
