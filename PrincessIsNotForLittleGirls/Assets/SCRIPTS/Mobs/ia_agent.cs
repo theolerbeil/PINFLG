@@ -9,7 +9,8 @@ public class ia_agent : MonoBehaviour {
     private Animator anim;
 	private Rigidbody rb;
     private GameObject princesse;
-    private princesse_vie princesseVie;
+	private princesse_vie princesseVie;
+	private princesse_arme princesseArme;
     private ia_pointInteret[] pointsInteret;
 	private mob_vie mobVie;
     
@@ -29,6 +30,7 @@ public class ia_agent : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
         princesse = GameObject.FindGameObjectWithTag("Player");
         princesseVie = princesse.GetComponent<princesse_vie>();
+		princesseArme = princesse.GetComponent<princesse_arme>();
         pointsInteret = GameObject.FindObjectsOfType<ia_pointInteret>();
 		mobVie = GetComponent<mob_vie> ();
     }
@@ -63,11 +65,16 @@ public class ia_agent : MonoBehaviour {
     public GameObject getPrincesse()
     {
         return princesse;
-    }
+	}
 
-    public princesse_vie getPrincesse_Vie()
-    {
-        return princesseVie;
+	public princesse_vie getPrincesse_Vie()
+	{
+		return princesseVie;
+	}
+
+	public princesse_arme getPrincesse_Arme()
+	{
+		return princesseArme;
 	}
 
 	public ia_pointInteret[] getPointsInteret()
@@ -193,5 +200,14 @@ public class ia_agent : MonoBehaviour {
 
 	public void mourir() {
 		changerEtat (etatMort);
+	}
+
+	public bool estAuSol(){
+
+		RaycastHit hitInfo;
+
+		Physics.Raycast (this.transform.position, -this.transform.up, out hitInfo);
+
+		return hitInfo.distance <= 0.05f;
 	}
 }
