@@ -7,7 +7,7 @@ public class princesse_arme : MonoBehaviour {
     public EnumArmes armeActive;
 
     private GameObject actualHandArme;
-    private GameObject actualWorldArme;
+	private GameObject actualWorldArme;
 
 	public int degatsPoele;
 	public int degatsBread;
@@ -15,6 +15,13 @@ public class princesse_arme : MonoBehaviour {
 	public int degatsChandelier;
 	public int degatsShowel;
 	public int degatsMagicStaff;
+
+	public float facteurReculePoele;
+	public float facteurReculeBread;
+	public float facteurReculeBedfoot;
+	public float facteurReculeChandelier;
+	public float facteurReculeShowel;
+	public float facteurReculeMagicStaff;
 
     public GameObject handPoele;
     public GameObject handBread;
@@ -26,6 +33,9 @@ public class princesse_arme : MonoBehaviour {
 	private bool attaqueEnCours;
 	private Animator anim;
 	private List<ia_agent> listeMobsTouches;
+
+	private int degatsArmeActuelle;
+	private float facteurReculeArmeActuelle;
 
     // Use this for initialization
     void Start () {
@@ -55,7 +65,7 @@ public class princesse_arme : MonoBehaviour {
 				if (!listeMobsTouches.Contains (mobTouche) && mobTouche.estEnVie()) {
 					
 					listeMobsTouches.Add (mobTouche);
-					mobTouche.recevoirDegat (getDegatsArmeActuel());
+					mobTouche.recevoirDegat (degatsArmeActuelle);
 				}
 			}
 		}
@@ -76,44 +86,58 @@ public class princesse_arme : MonoBehaviour {
 	private void defineActualsArmes(GameObject armeRamasse)
     {
 		actualWorldArme = armeRamasse;
-        switch (armeActive)
-        {
-            case EnumArmes.vide:
+		switch (armeActive)
+		{
+		case EnumArmes.vide:
 
-                actualHandArme = null;
-                actualWorldArme = null;
-                break;
+			actualHandArme = null;
+			actualWorldArme = null;
+			degatsArmeActuelle = 0;
+			facteurReculeArmeActuelle = 0.0f;
+			break;
 
-            case EnumArmes.poele:
+		case EnumArmes.poele:
 
-                actualHandArme = handPoele;
-                break;
+			actualHandArme = handPoele;
+			degatsArmeActuelle = degatsPoele;
+			facteurReculeArmeActuelle = facteurReculePoele;
+			break;
 
-            case EnumArmes.bread:
+		case EnumArmes.bread:
 
-                actualHandArme = handBread;
-                break;
+			actualHandArme = handBread;
+			degatsArmeActuelle = degatsBread;
+			facteurReculeArmeActuelle = facteurReculeBread;
+			break;
 
-            case EnumArmes.bedfoot:
+		case EnumArmes.bedfoot:
 
-                actualHandArme = handBedfoot;
-                break;
+			actualHandArme = handBedfoot;
+			degatsArmeActuelle = degatsBedfoot;
+			facteurReculeArmeActuelle = facteurReculeBedfoot;
+			break;
 
-            case EnumArmes.chandelier:
+		case EnumArmes.chandelier:
 
-                actualHandArme = handChandelier;
-                break;
+			actualHandArme = handChandelier;
+			degatsArmeActuelle = degatsChandelier;
+			facteurReculeArmeActuelle = facteurReculeChandelier;
+			break;
 
-            case EnumArmes.showel:
+		case EnumArmes.showel:
 
-                actualHandArme = handShowel;
-                break;
+			actualHandArme = handShowel;
+			degatsArmeActuelle = degatsShowel;
+			facteurReculeArmeActuelle = facteurReculeShowel;
+			break;
 
-			case EnumArmes.magic_staff:
+		case EnumArmes.magic_staff:
 
-				actualHandArme = handMagicStaff;
-				break;
-        }
+			actualHandArme = handMagicStaff;
+			degatsArmeActuelle = degatsMagicStaff;
+			facteurReculeArmeActuelle = facteurReculeMagicStaff;
+			break;
+		}
     }
 
     private void poserArme()
@@ -135,40 +159,8 @@ public class princesse_arme : MonoBehaviour {
         }
     }
 
-	private int getDegatsArmeActuel(){
-
-		switch (armeActive)
-		{
-		case EnumArmes.vide:
-
-			return 0;
-
-		case EnumArmes.poele:
-
-			return degatsPoele;
-
-		case EnumArmes.bread:
-
-			return degatsBread;
-
-		case EnumArmes.bedfoot:
-
-			return degatsBedfoot;
-
-		case EnumArmes.chandelier:
-
-			return degatsChandelier;
-
-		case EnumArmes.showel:
-
-			return degatsShowel;
-
-		case EnumArmes.magic_staff:
-
-			return degatsMagicStaff;
-		}
-
-		return 0;
+	public float getFacteurReculeArmeActuelle(){
+		return facteurReculeArmeActuelle;
 	}
 }
 

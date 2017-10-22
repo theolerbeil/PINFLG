@@ -16,7 +16,7 @@ public class gob_E_mort : ia_etat {
 	{
 		setAnimation("mort");
 		anim.enabled = false;
-		rb.constraints = new RigidbodyConstraints ();
+		rb.constraints = RigidbodyConstraints.None;
 	}
 
 	public override void faireEtat()

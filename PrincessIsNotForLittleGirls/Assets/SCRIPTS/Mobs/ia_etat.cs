@@ -12,7 +12,8 @@ public abstract class ia_etat : MonoBehaviour
 	protected Animator anim;
 	protected Rigidbody rb;
     protected GameObject princesse;
-    protected princesse_vie princesseVie;
+	protected princesse_vie princesseVie;
+	protected princesse_arme princesseArme;
     protected ia_pointInteret[] pointsInteret;
 
     // Use this for initialization
@@ -29,6 +30,7 @@ public abstract class ia_etat : MonoBehaviour
 		rb = agent.getRigidbody ();
         princesse = agent.getPrincesse();
         princesseVie = agent.getPrincesse_Vie();
+		princesseArme = agent.getPrincesse_Arme ();
         pointsInteret = agent.getPointsInteret();
     }
 
