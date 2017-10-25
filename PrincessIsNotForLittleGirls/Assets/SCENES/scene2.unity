@@ -24885,6 +24885,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114380259584643674, guid: 53a770449bc895240b07b768b30e3e97,
+        type: 2}
+      propertyPath: chemin.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4409541074894840, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalPosition.x
       value: -15.3
@@ -24953,14 +24958,14 @@ Prefab:
       propertyPath: chemin.Array.data[3]
       value: 
       objectReference: {fileID: 999386286}
-    - target: {fileID: 114406686919795056, guid: 53a770449bc895240b07b768b30e3e97,
-        type: 2}
-      propertyPath: rayonAudition
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1613168974629440, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_TagString
       value: mob
+      objectReference: {fileID: 0}
+    - target: {fileID: 114959185836115210, guid: 53a770449bc895240b07b768b30e3e97,
+        type: 2}
+      propertyPath: pourcentageEsquive
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53a770449bc895240b07b768b30e3e97, type: 2}

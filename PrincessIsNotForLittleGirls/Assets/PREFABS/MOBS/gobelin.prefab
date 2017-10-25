@@ -1539,11 +1539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 1
   delaisAChaqueArret: 2
-  chemin:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  chemin: []
 --- !u!114 &114406686919795056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1558,7 +1554,7 @@ MonoBehaviour:
   etatCourant: {fileID: 114380259584643674}
   demiAngleVision: 60
   distanceVision: 18
-  rayonAudition: 5
+  rayonAudition: 2
   distanceCombatOptimale: 1.5
   etatDegatsRecu: {fileID: 114851886317558394}
   etatMort: {fileID: 114025833143946730}
@@ -1627,8 +1623,8 @@ MonoBehaviour:
   porteeAttaqueSimple: 1.8
   degatsAttaqueSimple: 10
   delaiAttaqueSimple: 5
-  delaiEntreDeuxEsquives: 8
-  pourcentageEsquive: 0.5
+  delaiEntreDeuxEsquives: 3
+  pourcentageEsquive: 0.6
 --- !u!136 &136874068501000326
 CapsuleCollider:
   m_ObjectHideFlags: 1
