@@ -27,7 +27,7 @@ public class gob_E_attackPuissante : ia_etat {
 		float rand = Random.value;
 
 		if (rand <= pourcentageUtilisationAttaquePuissante) {
-
+			this.transform.forward = (princesse.transform.position - this.transform.position).normalized;
 			degatsAttaqueEffectues = false;
 			rb.AddForce (this.transform.up * forceDeSautAttaquePuissante + this.transform.forward * forceAvancementAttaquePuissante);
 			setAnimation ("attackPuissante");
