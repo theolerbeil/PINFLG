@@ -83,6 +83,10 @@ public class princesse_arme : MonoBehaviour {
 		attaqueEnCours = true;
 	}
 
+	public bool isAttaqueEnCours() {
+		return attaqueEnCours;
+	}
+
 	private void defineActualsArmes(GameObject armeRamasse)
     {
 		actualWorldArme = armeRamasse;
