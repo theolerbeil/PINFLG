@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gob_E_degatsRecu : ia_etat {
+public class gob_E_esquive : ia_etat {
 
 	public float forceReculeVertical;
 	public float forceReculeHorizontal;
-
-	private float facteurRecule;
 
 	private float timer;
 
@@ -15,18 +13,14 @@ public class gob_E_degatsRecu : ia_etat {
 	void Start()
 	{
 		base.init(); // permet d'initialiser l'état, ne pas l'oublier !
-		
+
 		// ne pas initialiser vos autres variables ici, utiliser plutôt la méthode entrerEtat()
 	}
 
 	public override void entrerEtat()
 	{
-		facteurRecule = princesseArme.getFacteurReculeArmeActuelle();
 		anim.Play("degatsRecu");
-
-		Vector3 directionRecule = this.transform.position - princesse.transform.position;
-
-		rb.AddForce ((directionRecule * (forceReculeHorizontal * facteurRecule)) + (this.transform.up * (forceReculeVertical * facteurRecule)));
+		rb.AddForce ((this.transform.forward * -forceReculeHorizontal) + (this.transform.up * forceReculeVertical));
 		timer = Time.time + 0.1f;
 	}
 
@@ -40,9 +34,5 @@ public class gob_E_degatsRecu : ia_etat {
 	public override void sortirEtat()
 	{
 
-	}
-
-	public void setFacteurRecule(float facteurRecule){
-		this.facteurRecule = facteurRecule;
 	}
 }
