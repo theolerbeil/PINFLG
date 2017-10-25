@@ -10,7 +10,11 @@ public class gob_E_combat : ia_etat {
 	[Tooltip("Délai en secondes entre deux attaques simples.")]
 	public float delaiAttaqueSimple;
 
+	public float delaiEntreDeuxEsquives;
+	public float pourcentageEsquive;
+
 	private float delaiActuelAttaqueSimple;
+	private float delaiActuelEntreDeuxEsquives;
 	private Vector3 dernierePositionPrincesseConnue;
 	private bool degatsAttaqueEffectues;
 	private triggerArme colliderArme;
@@ -20,6 +24,7 @@ public class gob_E_combat : ia_etat {
     void Start () {
 		base.init (); // permet d'initialiser l'état, ne pas l'oublier !
 		delaiActuelAttaqueSimple = 0.0f;
+		delaiActuelAttaqueSimple = 0.0f;
 		colliderArme = GetComponent<triggerArme> ();
 	}
 
@@ -27,6 +32,7 @@ public class gob_E_combat : ia_etat {
     {
 		setAnimation("idleCombat");
 		degatsAttaqueEffectues = false;
+		delaiActuelAttaqueSimple = Time.time + delaiAttaqueSimple * Random.value;
     }
 
     public override void faireEtat()
@@ -36,6 +42,17 @@ public class gob_E_combat : ia_etat {
 		if (agent.distanceToPrincesse () > porteeAttaqueSimple) {
 			
 			changerEtat (GetComponent<gob_E_depacementCombat> ());
+
+		} else if (esquivePrete() && princesseArme.isAttaqueEnCours() && Vector3.Angle(-princesse.transform.forward, this.transform.forward) <= 20.0f) {
+
+			delaiActuelEntreDeuxEsquives = Time.time + delaiEntreDeuxEsquives;
+
+			float rand = Random.value;
+
+			if (rand <= pourcentageEsquive) {
+
+				changerEtat (GetComponent<gob_E_esquive> ());
+			}
 
 		} else {
 			
@@ -63,6 +80,10 @@ public class gob_E_combat : ia_etat {
     public override void sortirEtat()
     {
         
+	}
+
+	private bool esquivePrete() {
+		return Time.time >= delaiActuelEntreDeuxEsquives;
 	}
 
     private bool princesseAttaquableSimplement()

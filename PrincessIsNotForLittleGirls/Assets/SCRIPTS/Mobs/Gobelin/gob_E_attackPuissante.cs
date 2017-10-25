@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class gob_E_attackPuissante : ia_etat {
 
-	public int pourcentageUtilisationAttaquePuissante;
+	public float pourcentageUtilisationAttaquePuissante;
 	public int degatsAttaquePuissante;
 	public float forceDeSautAttaquePuissante;
 	public float forceAvancementAttaquePuissante;
@@ -23,7 +23,7 @@ public class gob_E_attackPuissante : ia_etat {
 
 	public override void entrerEtat()
 	{
-		int rand = Random.Range (1, 100);
+		float rand = Random.value;
 
 		if (rand <= pourcentageUtilisationAttaquePuissante) {
 
