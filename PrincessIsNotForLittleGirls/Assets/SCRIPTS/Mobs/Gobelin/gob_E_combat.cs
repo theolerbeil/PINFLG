@@ -43,7 +43,7 @@ public class gob_E_combat : ia_etat {
 			
 			changerEtat (GetComponent<gob_E_depacementCombat> ());
 
-		} else if (esquivePrete() && princesseArme.isAttaqueEnCours() && Vector3.Angle(-princesse.transform.forward, this.transform.forward) <= 20.0f) {
+		} else if (!agent.isActualAnimation ("attackSimple") && esquivePrete() && princesseArme.isAttaqueEnCours() && Vector3.Angle(-princesse.transform.forward, this.transform.forward) <= 20.0f) {
 
 			delaiActuelEntreDeuxEsquives = Time.time + delaiEntreDeuxEsquives;
 

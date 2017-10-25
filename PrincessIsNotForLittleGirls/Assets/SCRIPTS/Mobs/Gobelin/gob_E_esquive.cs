@@ -19,7 +19,7 @@ public class gob_E_esquive : ia_etat {
 
 	public override void entrerEtat()
 	{
-		anim.Play("degatsRecu");
+		anim.Play("esquive");
 		rb.AddForce ((this.transform.forward * -forceReculeHorizontal) + (this.transform.up * forceReculeVertical));
 		timer = Time.time + 0.1f;
 	}
