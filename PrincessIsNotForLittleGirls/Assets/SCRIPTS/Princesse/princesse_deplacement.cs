@@ -128,12 +128,15 @@ public class princesse_deplacement : MonoBehaviour {
 
     }
     
-    private void GererDeplacement(float moveHorizontal, float moveVertical)
-    {
+    private void GererDeplacement(float moveHorizontal, float moveVertical) {
+
+		if (anim.GetCurrentAnimatorStateInfo (0).IsName (anim.GetLayerName (0) + ".hurt")) {
+			
+			return;
+		}
+
         float difRotation = cam.transform.rotation.eulerAngles.y - this.transform.rotation.eulerAngles.y;
-
-
-
+		
         float rotation;
 
         if (difRotation > 180.0f)

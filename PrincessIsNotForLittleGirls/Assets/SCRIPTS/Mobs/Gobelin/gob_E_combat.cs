@@ -9,6 +9,7 @@ public class gob_E_combat : ia_etat {
 
 	[Tooltip("Délai en secondes entre deux attaques simples.")]
 	public float delaiAttaqueSimple;
+	public float forceReculeAttaqueSimple;
 
 	public float delaiEntreDeuxEsquives;
 	public float pourcentageEsquive;
@@ -67,7 +68,7 @@ public class gob_E_combat : ia_etat {
 
 					if (!degatsAttaqueEffectues && colliderArme.IsPrincesseTouchee ()) {
 
-						princesseVie.blesser (degatsAttaqueSimple);
+						princesseVie.blesser (degatsAttaqueSimple, this.gameObject, forceReculeAttaqueSimple);
 						degatsAttaqueEffectues = true;
 					}
 				} else {

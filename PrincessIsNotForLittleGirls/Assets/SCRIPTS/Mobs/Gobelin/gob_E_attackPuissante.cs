@@ -8,6 +8,7 @@ public class gob_E_attackPuissante : ia_etat {
 	public int degatsAttaquePuissante;
 	public float forceDeSautAttaquePuissante;
 	public float forceAvancementAttaquePuissante;
+	public float forceReculeAttaquePuissante;
 
 	private bool degatsAttaqueEffectues;
 	private triggerArme colliderArme;
@@ -43,7 +44,7 @@ public class gob_E_attackPuissante : ia_etat {
 			
 			if (!degatsAttaqueEffectues && colliderArme.IsPrincesseTouchee ()) {
 
-				princesseVie.blesser (degatsAttaquePuissante);
+				princesseVie.blesser (degatsAttaquePuissante, this.gameObject, forceReculeAttaquePuissante);
 				degatsAttaqueEffectues = true;
 			}
 

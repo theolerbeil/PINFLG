@@ -6,8 +6,11 @@ public class princesse_vie : MonoBehaviour {
 	static Animator anim;
 
 	public int vie_max;
-	private int vie_courante;
+	public float reculeVertical;
+	public float reculeHorizontal;
 
+	private int vie_courante;
+	private Rigidbody rb;
     private bool gameover;
 
 	// Use this for initialization
@@ -15,6 +18,7 @@ public class princesse_vie : MonoBehaviour {
 		vie_courante = vie_max;
         gameover = false;
 		anim = GetComponent<Animator> ();
+		rb = GetComponent<Rigidbody>();
     }
 	
 	// Update is called once per frame
@@ -29,7 +33,7 @@ public class princesse_vie : MonoBehaviour {
             soigner(10);
 
 		} else if (Input.GetKeyDown (KeyCode.W)) {
-            blesser(10);
+			blesser(10, this.gameObject, 0.0f);
 		}
 
     }
@@ -40,9 +44,14 @@ public class princesse_vie : MonoBehaviour {
         Debug.Log("vie courante : " + vie_courante);
     }
 
-    public void blesser(int valeurDegats)
+	public void blesser(int valeurDegats, GameObject sourceDegats, float facteurRecule)
     {
 		anim.Play ("hurt");
+
+		Vector3 directionRecule = this.transform.position - sourceDegats.transform.position;
+
+		rb.AddForce ((directionRecule * (reculeHorizontal * facteurRecule)) + (this.transform.up * (reculeVertical * facteurRecule)));
+
         vie_courante = Mathf.Max(vie_courante - valeurDegats, 0);
         Debug.Log("vie courante : " + vie_courante);
     }

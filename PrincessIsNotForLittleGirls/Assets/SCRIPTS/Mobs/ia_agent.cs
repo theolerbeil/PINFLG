@@ -138,7 +138,7 @@ public class ia_agent : MonoBehaviour {
     {
         etatCourant.sortirEtat();
         etatCourant = nouvelEtat;
-		Debug.Log ("Entree état " + etatCourant.ToString());
+//		Debug.Log ("Entree état " + etatCourant.ToString());
         etatCourant.entrerEtat();
 	}
 
@@ -206,7 +206,6 @@ public class ia_agent : MonoBehaviour {
 		RaycastHit hitInfo;
 
 		Physics.Raycast (this.transform.position, -this.transform.up, out hitInfo);
-		Debug.Log (hitInfo.distance);
 
 		return hitInfo.distance <= 0.065f;
 	}
