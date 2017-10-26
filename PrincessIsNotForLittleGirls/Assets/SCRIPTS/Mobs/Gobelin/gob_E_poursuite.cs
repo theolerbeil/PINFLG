@@ -8,6 +8,8 @@ public class gob_E_poursuite : ia_etat {
 	public float dureeRecherchePrincesse;
 	public float distanceEntreeCombat;
 
+	public ia_etat etatSiPrincessePerdue;
+
 	private Vector3 dernierePositionPrincesseConnue;
 	private bool princessePerdue;
 	private float delaiActuelRecherche;
@@ -71,7 +73,7 @@ public class gob_E_poursuite : ia_etat {
 
 				}
 			} else {
-				changerEtat (GetComponent<gob_E_patrouille> ());
+				changerEtat (etatSiPrincessePerdue);
 			}
 		}
 	}

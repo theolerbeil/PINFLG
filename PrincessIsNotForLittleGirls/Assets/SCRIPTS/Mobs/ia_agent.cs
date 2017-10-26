@@ -86,13 +86,21 @@ public class ia_agent : MonoBehaviour {
 		return mobVie;
 	}
 
-    /// <summary>
-    /// Définit la position de la destination actuel de l'agent.
-    /// </summary>
-    public void definirDestination(Vector3 positionDestination)
-    {
-        nav.SetDestination(positionDestination);
-    }
+	/// <summary>
+	/// Définit la position de la destination actuel de l'agent.
+	/// </summary>
+	public void definirDestination(Vector3 positionDestination)
+	{
+		nav.SetDestination(positionDestination);
+	}
+
+	/// <summary>
+	/// Définit le point d'interet de destination actuel de l'agent.
+	/// </summary>
+	public void definirDestination(ia_pointInteret pi)
+	{
+		nav.SetDestination(pi.transform.position);
+	}
 
     /// <summary>
     /// Définit le nom du point d'interet de destination actuel de l'agent.
