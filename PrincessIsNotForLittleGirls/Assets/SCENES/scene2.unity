@@ -29146,8 +29146,6 @@ GameObject:
   - component: {fileID: 1045900197}
   - component: {fileID: 1045900196}
   - component: {fileID: 1045900195}
-  - component: {fileID: 1045900194}
-  - component: {fileID: 1045900193}
   - component: {fileID: 1045900192}
   - component: {fileID: 1045900191}
   - component: {fileID: 1045900185}
@@ -29306,35 +29304,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceReculeVertical: 100
   forceReculeHorizontal: 300
---- !u!114 &1045900193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1045900182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc2814b3f6d8db84d827758d10fd9d7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forceReculeVertical: 0
-  forceReculeHorizontal: 0
---- !u!114 &1045900194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1045900182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04b3273a55bbf6644beebba7063e75fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pourcentageUtilisationAttaquePuissante: 0
-  degatsAttaquePuissante: 0
-  forceDeSautAttaquePuissante: 0
-  forceAvancementAttaquePuissante: 0
-  forceReculeAttaquePuissante: 0
 --- !u!114 &1045900195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29350,8 +29319,6 @@ MonoBehaviour:
   degatsAttaqueSimple: 40
   delaiAttaqueSimple: 6
   forceReculeAttaqueSimple: 2
-  delaiEntreDeuxEsquives: 0
-  pourcentageEsquive: 0
 --- !u!114 &1045900196
 MonoBehaviour:
   m_ObjectHideFlags: 0

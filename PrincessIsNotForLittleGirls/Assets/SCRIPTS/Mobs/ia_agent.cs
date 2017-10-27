@@ -145,12 +145,6 @@ public class ia_agent : MonoBehaviour {
 	/// Retourne false si la rotation est finie.
 	/// </summary>
 	public bool seTournerEnDirectionDe(Vector3 forward) {
-		/*
-		GameObject obj = new GameObject ();
-
-		obj.transform.forward = forward;
-
-		return seTournerDansOrientationDe (obj);*/
 
 		Quaternion q = new Quaternion ();
 		q.SetLookRotation (forward);

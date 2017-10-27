@@ -52,17 +52,12 @@ public class tro_E_poursuite : ia_etat {
 
 			enRotation = agent.seTournerVersPosition (dernierePositionPrincesseConnue);
 		}
-
-//		if (agent.distanceToPrincesse() <= agent.distanceCombatOptimale) {
+		
 		if (agent.distanceToPrincesse() <= distanceEntreeCombat) {
 
 			changerEtat (this.GetComponent<tro_E_combat> ());
-
-	/*	} else if (agent.distanceToPrincesse() <= distanceEntreeCombat && Vector3.Angle(this.transform.forward, princesse.transform.position - this.transform.position) <= 10.0f) {
-
-			changerEtat(this.GetComponent<tro_E_attackPuissante>());
-
-	*/	} else if (agent.destinationCouranteAtteinte ()) {
+		
+		} else if (agent.destinationCouranteAtteinte ()) {
 
 			if (delaiActuelRecherche == 0.0f) {
 				princessePerdue = true;
