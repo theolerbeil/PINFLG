@@ -36,7 +36,7 @@ public class gob_E_patrouille : ia_etat {
 			changerEtat(this.GetComponent<gob_E_poursuite>());
 		}
 
-		if (enChemin) {
+		else if (enChemin) {
 
 			if (agent.destinationCouranteAtteinte ()) {
 

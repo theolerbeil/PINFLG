@@ -15010,19 +15010,19 @@ Prefab:
       objectReference: {fileID: 1134805953}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.7071067
+      value: -0.70710665
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.0002697564
+      value: 0.00026975636
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.00026962292
+      value: -0.0002696229
       objectReference: {fileID: 0}
     - target: {fileID: 82590305404001812, guid: 53a770449bc895240b07b768b30e3e97,
         type: 2}
@@ -29143,6 +29143,7 @@ GameObject:
   - component: {fileID: 1045900186}
   - component: {fileID: 1045900199}
   - component: {fileID: 1045900198}
+  - component: {fileID: 1045900193}
   - component: {fileID: 1045900197}
   - component: {fileID: 1045900196}
   - component: {fileID: 1045900195}
@@ -29214,7 +29215,7 @@ MonoBehaviour:
   etatCourant: {fileID: 1045900198}
   demiAngleVision: 60
   distanceVision: 12
-  rayonAudition: 2
+  rayonAudition: 5
   distanceCombatOptimale: 1.5
   vitesseAngulaire: 4
   etatDegatsRecu: {fileID: 1045900192}
@@ -29304,6 +29305,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceReculeVertical: 100
   forceReculeHorizontal: 300
+--- !u!114 &1045900193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1045900182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a4173e0ff3b70549adc7765e0e9deba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dureeReposMax: 45
+  dureeReposMin: 20
+  pourcentageAuditionEnDormant: 0.5
+  etatRetour: {fileID: 1045900198}
 --- !u!114 &1045900195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29360,6 +29376,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emplacementAGarder: {fileID: 835509558}
   vitesse: 1.2
+  delaiMinEntreRepos: 15
+  delaiMaxEntreRepos: 30
 --- !u!114 &1045900199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29373,6 +29391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 0.8
   delaisAChaqueArret: 3.5
+  chanceDeDormir: 0.8
   chemin: []
 --- !u!1001 &1048528139
 Prefab:
@@ -40521,19 +40540,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.70710677
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.70710665
+      value: -0.7071067
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.00026975636
+      value: 0.0002697564
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.0002696229
+      value: -0.00026962292
       objectReference: {fileID: 0}
     - target: {fileID: 114380259584643674, guid: 53a770449bc895240b07b768b30e3e97,
         type: 2}

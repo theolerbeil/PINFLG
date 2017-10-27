@@ -205,7 +205,7 @@ public class ia_agent : MonoBehaviour {
     {
         etatCourant.sortirEtat();
         etatCourant = nouvelEtat;
-//		Debug.Log ("Entree état " + etatCourant.ToString());
+		Debug.Log (this.gameObject.name + " entre dans l'état " + etatCourant.ToString());
         etatCourant.entrerEtat();
 	}
 
@@ -229,6 +229,14 @@ public class ia_agent : MonoBehaviour {
 
 		Vector3 vecDistancePrincesse = princesse.transform.position - this.transform.position;
 
+		RaycastHit hitInfo;
+
+		Physics.Raycast(this.transform.position, vecDistancePrincesse.normalized, out hitInfo);
+
+		if ( ! hitInfo.collider.gameObject.Equals(princesse)) {
+			return false;
+		}
+
 		float distancePrincesse = vecDistancePrincesse.magnitude;
 
 		if (distancePrincesse <= this.rayonAudition * niveauAttention) {
@@ -239,11 +247,7 @@ public class ia_agent : MonoBehaviour {
 
 		if(angle <= this.demiAngleVision * niveauAttention) {
 
-			RaycastHit hitInfo;
-
-			Physics.Raycast(this.transform.position, vecDistancePrincesse.normalized, out hitInfo);
-
-			if (hitInfo.distance <= this.distanceVision && hitInfo.collider.gameObject.Equals(princesse)) {
+			if (hitInfo.distance <= this.distanceVision) {
 				return true;
 			}
 		}

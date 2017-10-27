@@ -6,6 +6,7 @@ public class tro_E_patrouille : ia_etat {
 
     public float vitesse;
 	public float delaisAChaqueArret;
+	public float chanceDeDormir;
 
     public ia_pointInteret[] chemin;
 
@@ -36,14 +37,22 @@ public class tro_E_patrouille : ia_etat {
 			changerEtat(this.GetComponent<tro_E_poursuite>());
 		}
 
-		if (enChemin) {
+		else if (enChemin) {
 
 			if (agent.destinationCouranteAtteinte ()) {
-				
+
 				indiceDernierPointRejoint = indiceCheminActuel;
-				setAnimation("searching");
 				enChemin = false;
-				this.delaisActuel = Time.time + this.delaisAChaqueArret;
+
+				if (Random.value <= chanceDeDormir) {
+
+					changerEtat (GetComponent<tro_E_repos> ());
+
+				} else {
+					
+					setAnimation ("searching");
+					this.delaisActuel = Time.time + this.delaisAChaqueArret;
+				}
 			}
 		} else if (Time.time > this.delaisActuel) {
 
@@ -60,8 +69,8 @@ public class tro_E_patrouille : ia_etat {
     }
 
     public override void sortirEtat()
-    {
-        
+	{
+		nav.enabled = false;
     }
 
     private void suivreChemin()

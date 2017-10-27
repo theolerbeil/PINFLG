@@ -1569,7 +1569,7 @@ MonoBehaviour:
   etatCourant: {fileID: 114380259584643674}
   demiAngleVision: 60
   distanceVision: 18
-  rayonAudition: 2
+  rayonAudition: 7
   distanceCombatOptimale: 1.5
   vitesseAngulaire: 8
   etatDegatsRecu: {fileID: 114851886317558394}
