@@ -12,7 +12,6 @@ public class tro_E_combat : ia_etat {
 	public float forceReculeAttaqueSimple;
 
 	private float delaiActuelAttaqueSimple;
-	private float delaiActuelEntreDeuxEsquives;
 	private Vector3 dernierePositionPrincesseConnue;
 	private bool degatsAttaqueEffectues;
 	private triggerArme colliderArme;
@@ -21,7 +20,6 @@ public class tro_E_combat : ia_etat {
     // Use this for initialization
     void Start () {
 		base.init (); // permet d'initialiser l'état, ne pas l'oublier !
-		delaiActuelAttaqueSimple = 0.0f;
 		delaiActuelAttaqueSimple = 0.0f;
 		colliderArme = GetComponent<triggerArme> ();
 	}
@@ -70,10 +68,6 @@ public class tro_E_combat : ia_etat {
     public override void sortirEtat()
     {
         
-	}
-
-	private bool esquivePrete() {
-		return Time.time >= delaiActuelEntreDeuxEsquives;
 	}
 
     private bool princesseAttaquableSimplement()

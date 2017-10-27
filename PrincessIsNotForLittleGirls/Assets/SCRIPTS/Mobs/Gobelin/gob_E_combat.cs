@@ -24,7 +24,7 @@ public class gob_E_combat : ia_etat {
     void Start () {
 		base.init (); // permet d'initialiser l'état, ne pas l'oublier !
 		delaiActuelAttaqueSimple = 0.0f;
-		delaiActuelAttaqueSimple = 0.0f;
+		delaiActuelEntreDeuxEsquives = 0.0f;
 		colliderArme = GetComponent<triggerArme> ();
 	}
 
