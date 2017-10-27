@@ -8,6 +8,7 @@ public class gob_E_garder : ia_etat {
 	public float vitesse;
 
 	private bool enDeplacement;
+	private bool enRotation;
 
 	// Use this for initialization
 	void Start()
@@ -24,6 +25,7 @@ public class gob_E_garder : ia_etat {
 		nav.enabled = true;
 		agent.definirDestination(emplacementAGarder);
 		enDeplacement = true;
+		enRotation = false;
 	}
 
 	public override void faireEtat()
@@ -31,12 +33,15 @@ public class gob_E_garder : ia_etat {
 		if (agent.princesseRepereeAvecAttention ()) {
 			changerEtat (this.GetComponent<gob_E_poursuite> ());
 		} else if (enDeplacement) {
-			if (agent.destinationCouranteAtteinte()) {
+			if (agent.destinationCouranteAtteinte ()) {
 				nav.enabled = false;
 				enDeplacement = false;
-				setAnimation("garder");
-				this.transform.forward = emplacementAGarder.transform.forward;
+				setAnimation ("garder");
+				enRotation = true;
 			}
+		} else if (enRotation) {
+
+			enRotation = agent.seTournerDansOrientationDe (emplacementAGarder.gameObject);
 		}
 	}
 

@@ -12752,7 +12752,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1613168974629440, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_Name
-      value: gobelin_2
+      value: gobelin_garde
       objectReference: {fileID: 0}
     - target: {fileID: 114406686919795056, guid: 53a770449bc895240b07b768b30e3e97,
         type: 2}
@@ -12771,19 +12771,19 @@ Prefab:
       objectReference: {fileID: 1134805953}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.70710677
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.70710665
+      value: -0.7071067
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.00026975636
+      value: 0.0002697564
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.0002696229
+      value: -0.00026962292
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
@@ -39480,19 +39480,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.70710677
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.70710665
+      value: -0.7071067
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.00026975636
+      value: 0.0002697564
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.0002696229
+      value: -0.00026962292
       objectReference: {fileID: 0}
     - target: {fileID: 114380259584643674, guid: 53a770449bc895240b07b768b30e3e97,
         type: 2}
@@ -39523,6 +39523,10 @@ Prefab:
       propertyPath: emplacementAGarder
       value: 
       objectReference: {fileID: 106593451}
+    - target: {fileID: 1613168974629440, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
+      propertyPath: m_Name
+      value: gobelin_patrouilleur
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
   m_IsPrefabParent: 0

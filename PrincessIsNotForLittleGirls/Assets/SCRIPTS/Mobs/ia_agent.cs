@@ -20,6 +20,7 @@ public class ia_agent : MonoBehaviour {
 	public float distanceVision;
 	public float rayonAudition;
 	public float distanceCombatOptimale;
+	public float vitesseAngulaire;
 	public ia_etat etatDegatsRecu;
 	public ia_etat etatMort;
 
@@ -123,7 +124,58 @@ public class ia_agent : MonoBehaviour {
     public bool destinationCouranteAtteinte()
     {
         return (nav.pathEndPosition - this.transform.position).magnitude <= nav.stoppingDistance;
-    }
+	}
+
+	/// <summary>
+	/// Tourne l'agent vers la position en fonction de sa vitesse angulaire maximale.
+	/// Retourne true si la rotation est finie.
+	/// </summary>
+	public bool seTournerVersPosition(Vector3 positionCible) {
+
+		Vector3 v = positionCible - this.transform.position;
+
+		return seTournerEnDirectionDe (v);
+	}
+
+	/// <summary>
+	/// Tourne l'agent vers la direction en fonction de sa vitesse angulaire maximale.
+	/// Retourne true si la rotation est finie.
+	/// </summary>
+	public bool seTournerEnDirectionDe(Vector3 forward) {
+
+		GameObject obj = new GameObject ();
+
+		obj.transform.forward = forward;
+
+		return seTournerDansOrientationDe (obj);
+	}
+
+	/// <summary>
+	/// Tourne l'agent vers l'orientation en fonction de sa vitesse angulaire maximale.
+	/// Retourne true si la rotation est finie.
+	/// </summary>
+	public bool seTournerDansOrientationDe(GameObject obj) {
+
+		float difRotation = obj.transform.rotation.eulerAngles.y - this.transform.rotation.eulerAngles.y;
+
+		float rotation;
+
+		if (difRotation > 180.0f)
+		{
+			difRotation -= 360.0f;
+		}
+
+		if (difRotation < -180.0f)
+		{
+			difRotation += 360.0f;
+		}
+
+		rotation = Mathf.Clamp(difRotation, -vitesseAngulaire, vitesseAngulaire);
+
+		this.transform.Rotate(0.0f, rotation, 0.0f);
+
+		return Mathf.Abs(rotation) <= vitesseAngulaire ;
+	}
 
     public void setAnimation(string nomAnimation)
     {
