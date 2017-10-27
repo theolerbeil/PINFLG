@@ -24,8 +24,9 @@ public class gob_E_degatsRecu : ia_etat {
 		facteurRecule = princesseArme.getFacteurReculeArmeActuelle();
 		anim.Play("degatsRecu");
 
-		Vector3 directionRecule = this.transform.position - princesse.transform.position;
+		Vector3 directionRecule = (this.transform.position - princesse.transform.position).normalized;
 
+		rb.velocity = Vector3.zero;
 		rb.AddForce ((directionRecule * (forceReculeHorizontal * facteurRecule)) + (this.transform.up * (forceReculeVertical * facteurRecule)));
 		timer = Time.time + 0.1f;
 	}

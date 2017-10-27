@@ -29061,7 +29061,7 @@ GameObject:
   - component: {fileID: 1045900185}
   m_Layer: 0
   m_Name: troll
-  m_TagString: Untagged
+  m_TagString: mob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29076,7 +29076,7 @@ Animator:
   m_GameObject: {fileID: 1045900182}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 5ef07ad689fa546499b2f00c0db52c81, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 58f425033a8a56b45a851c4ddccdf495, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -29212,8 +29212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c7b3ab1f24db541974dd57fd9f2e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceReculeVertical: 0
-  forceReculeHorizontal: 0
+  forceReculeVertical: 300
+  forceReculeHorizontal: 300
 --- !u!114 &1045900193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29254,10 +29254,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bceb4b94a02e3b9419d94e14e908cea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  porteeAttaqueSimple: 0
-  degatsAttaqueSimple: 0
-  delaiAttaqueSimple: 0
-  forceReculeAttaqueSimple: 0
+  porteeAttaqueSimple: 1.5
+  degatsAttaqueSimple: 40
+  delaiAttaqueSimple: 6
+  forceReculeAttaqueSimple: 2
   delaiEntreDeuxEsquives: 0
   pourcentageEsquive: 0
 --- !u!114 &1045900196
@@ -29271,8 +29271,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a369db0d256c83428f7ed10139796bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitesse: 0.8
-  distanceSortieCombat: 0
+  vitesse: 1
+  distanceSortieCombat: 6
 --- !u!114 &1045900197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29286,7 +29286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 1.2
   dureeRecherchePrincesse: 3
-  distanceEntreeCombat: 0
+  distanceEntreeCombat: 6
   etatSiPrincessePerdue: {fileID: 1045900198}
 --- !u!114 &1045900198
 MonoBehaviour:
@@ -29312,7 +29312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9305785f0ad264cb316e7c4015906a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitesse: 0
+  vitesse: 0.8
   delaisAChaqueArret: 0
   chemin: []
 --- !u!1001 &1048528139
@@ -40462,19 +40462,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.7071067
+      value: -0.70710665
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.0002697564
+      value: 0.00026975636
       objectReference: {fileID: 0}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.00026962292
+      value: -0.0002696229
       objectReference: {fileID: 0}
     - target: {fileID: 114380259584643674, guid: 53a770449bc895240b07b768b30e3e97,
         type: 2}

@@ -33,7 +33,10 @@ public class tro_E_combat : ia_etat {
     {
 		setAnimation("idleCombat");
 		degatsAttaqueEffectues = false;
-		delaiActuelAttaqueSimple = Time.time + delaiAttaqueSimple * Random.value;
+
+		if (attaqueSimplePrete ()) {
+			delaiActuelAttaqueSimple = Time.time + delaiAttaqueSimple * Random.value;
+		}
     }
 
     public override void faireEtat()

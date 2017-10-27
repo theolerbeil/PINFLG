@@ -31,7 +31,7 @@ public class tro_E_garder : ia_etat {
 	public override void faireEtat()
 	{
 		if (agent.princesseRepereeAvecAttention ()) {
-			changerEtat (this.GetComponent<tro_E_poursuite> ());
+//			changerEtat (this.GetComponent<tro_E_poursuite> ());
 		} else if (enDeplacement) {
 			if (agent.destinationCouranteAtteinte ()) {
 				nav.enabled = false;

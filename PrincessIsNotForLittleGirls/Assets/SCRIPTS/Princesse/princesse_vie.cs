@@ -48,8 +48,9 @@ public class princesse_vie : MonoBehaviour {
     {
 		anim.Play ("hurt");
 
-		Vector3 directionRecule = this.transform.position - sourceDegats.transform.position;
+		Vector3 directionRecule = (this.transform.position - sourceDegats.transform.position).normalized;
 
+		rb.velocity = Vector3.zero;
 		rb.AddForce ((directionRecule * (reculeHorizontal * facteurRecule)) + (this.transform.up * (reculeVertical * facteurRecule)));
 
         vie_courante = Mathf.Max(vie_courante - valeurDegats, 0);

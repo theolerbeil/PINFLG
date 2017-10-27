@@ -32,14 +32,17 @@ public class gob_E_combat : ia_etat {
     {
 		setAnimation("idleCombat");
 		degatsAttaqueEffectues = false;
-		delaiActuelAttaqueSimple = Time.time + delaiAttaqueSimple * Random.value;
+
+		if (attaqueSimplePrete ()) {
+			delaiActuelAttaqueSimple = Time.time + delaiAttaqueSimple * Random.value;
+		}
     }
 
     public override void faireEtat()
     {
 		agent.seTournerVersPosition (princesse.transform.position);
 
-		if (agent.distanceToPrincesse () > porteeAttaqueSimple) {
+		if (agent.distanceToPrincesse () > porteeAttaqueSimple && !agent.isActualAnimation ("attackSimple")) {
 			
 			changerEtat (GetComponent<gob_E_depacementCombat> ());
 
