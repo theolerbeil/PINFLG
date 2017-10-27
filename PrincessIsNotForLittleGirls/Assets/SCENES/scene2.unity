@@ -29372,7 +29372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitesse: 0.8
-  delaisAChaqueArret: 0
+  delaisAChaqueArret: 3.5
   chemin: []
 --- !u!1001 &1048528139
 Prefab:

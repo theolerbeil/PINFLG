@@ -12,17 +12,19 @@ public class tro_E_patrouille : ia_etat {
     private int indiceCheminActuel;
 	private float delaisActuel;
 	private bool enChemin;
+	private int indiceDernierPointRejoint;
 
     // Use this for initialization
     void Start () {
         base.init(); // permet d'initialiser l'état, ne pas l'oublier !
 		this.delaisActuel = 0.0f;
+		indiceDernierPointRejoint = -1;
     }
 
     public override void entrerEtat()
 	{
         setAnimation("walking");
-		indiceCheminActuel = 0;
+		indiceCheminActuel = indiceDernierPointRejoint;
 		nav.enabled = true;
         suivreChemin();
 		this.enChemin = true;
@@ -37,7 +39,8 @@ public class tro_E_patrouille : ia_etat {
 		if (enChemin) {
 
 			if (agent.destinationCouranteAtteinte ()) {
-
+				
+				indiceDernierPointRejoint = indiceCheminActuel;
 				setAnimation("searching");
 				enChemin = false;
 				this.delaisActuel = Time.time + this.delaisAChaqueArret;
@@ -45,7 +48,6 @@ public class tro_E_patrouille : ia_etat {
 		} else if (Time.time > this.delaisActuel) {
 
 			setAnimation("walking");
-			indiceCheminActuel = (indiceCheminActuel + 1) % chemin.Length;
 			suivreChemin ();
 			enChemin = true;
 
@@ -64,6 +66,7 @@ public class tro_E_patrouille : ia_etat {
 
     private void suivreChemin()
     {
+		indiceCheminActuel = (indiceCheminActuel + 1) % chemin.Length;
         agent.definirDestination(chemin[indiceCheminActuel].transform.position);
         nav.speed = vitesse;
     }
