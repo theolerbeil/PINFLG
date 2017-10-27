@@ -21,6 +21,7 @@ public class tro_E_degatsRecu : ia_etat {
 
 	public override void entrerEtat()
 	{
+		nav.enabled = false;
 		facteurRecule = princesseArme.getFacteurReculeArmeActuelle();
 		anim.Play("degatsRecu");
 
