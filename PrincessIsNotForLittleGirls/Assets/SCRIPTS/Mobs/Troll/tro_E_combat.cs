@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gob_E_combat : ia_etat {
+public class tro_E_combat : ia_etat {
 	
 	public float porteeAttaqueSimple;
 	public int degatsAttaqueSimple;
@@ -16,6 +16,7 @@ public class gob_E_combat : ia_etat {
 
 	private float delaiActuelAttaqueSimple;
 	private float delaiActuelEntreDeuxEsquives;
+	private Vector3 dernierePositionPrincesseConnue;
 	private bool degatsAttaqueEffectues;
 	private triggerArme colliderArme;
 	private bool princesseEnVue;
@@ -41,7 +42,7 @@ public class gob_E_combat : ia_etat {
 
 		if (agent.distanceToPrincesse () > porteeAttaqueSimple) {
 			
-			changerEtat (GetComponent<gob_E_depacementCombat> ());
+			changerEtat (GetComponent<tro_E_depacementCombat> ());
 
 		} else if (!agent.isActualAnimation ("attackSimple") && esquivePrete() && princesseArme.isAttaqueEnCours() && Vector3.Angle(-princesse.transform.forward, this.transform.forward) <= 20.0f) {
 
@@ -51,7 +52,7 @@ public class gob_E_combat : ia_etat {
 
 			if (rand <= pourcentageEsquive) {
 
-				changerEtat (GetComponent<gob_E_esquive> ());
+				changerEtat (GetComponent<tro_E_esquive> ());
 			}
 
 		} else {

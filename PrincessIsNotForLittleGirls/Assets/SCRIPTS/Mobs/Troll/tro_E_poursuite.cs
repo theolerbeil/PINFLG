@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gob_E_poursuite : ia_etat {
+public class tro_E_poursuite : ia_etat {
 
 	public float vitesse;
 	public float dureeRecherchePrincesse;
@@ -55,11 +55,11 @@ public class gob_E_poursuite : ia_etat {
 
 		if (agent.distanceToPrincesse() <= agent.distanceCombatOptimale) {
 
-			changerEtat (this.GetComponent<gob_E_combat> ());
+			changerEtat (this.GetComponent<tro_E_combat> ());
 
 		} else if (agent.distanceToPrincesse() <= distanceEntreeCombat && Vector3.Angle(this.transform.forward, princesse.transform.position - this.transform.position) <= 10.0f) {
 
-			changerEtat(this.GetComponent<gob_E_attackPuissante>());
+			changerEtat(this.GetComponent<tro_E_attackPuissante>());
 
 		} else if (agent.destinationCouranteAtteinte ()) {
 

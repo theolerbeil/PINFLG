@@ -123,12 +123,15 @@ public class ia_agent : MonoBehaviour {
     /// </summary>
     public bool destinationCouranteAtteinte()
     {
-        return (nav.pathEndPosition - this.transform.position).magnitude <= nav.stoppingDistance;
+		Vector3 v = nav.pathEndPosition - nav.nextPosition;
+		v.y = 0;
+
+        return v.magnitude <= nav.stoppingDistance;
 	}
 
 	/// <summary>
 	/// Tourne l'agent vers la position en fonction de sa vitesse angulaire maximale.
-	/// Retourne true si la rotation est finie.
+	/// Retourne false si la rotation est finie.
 	/// </summary>
 	public bool seTournerVersPosition(Vector3 positionCible) {
 
@@ -139,24 +142,34 @@ public class ia_agent : MonoBehaviour {
 
 	/// <summary>
 	/// Tourne l'agent vers la direction en fonction de sa vitesse angulaire maximale.
-	/// Retourne true si la rotation est finie.
+	/// Retourne false si la rotation est finie.
 	/// </summary>
 	public bool seTournerEnDirectionDe(Vector3 forward) {
-
+		/*
 		GameObject obj = new GameObject ();
 
 		obj.transform.forward = forward;
 
-		return seTournerDansOrientationDe (obj);
+		return seTournerDansOrientationDe (obj);*/
+
+		Quaternion q = new Quaternion ();
+		q.SetLookRotation (forward);
+
+		return seTourner (q);
 	}
 
 	/// <summary>
 	/// Tourne l'agent vers l'orientation en fonction de sa vitesse angulaire maximale.
-	/// Retourne true si la rotation est finie.
+	/// Retourne false si la rotation est finie.
 	/// </summary>
 	public bool seTournerDansOrientationDe(GameObject obj) {
 
-		float difRotation = obj.transform.rotation.eulerAngles.y - this.transform.rotation.eulerAngles.y;
+		return seTourner (obj.transform.rotation);
+	}
+
+	private bool seTourner(Quaternion q) {
+
+		float difRotation = q.eulerAngles.y - this.transform.rotation.eulerAngles.y;
 
 		float rotation;
 
@@ -174,7 +187,7 @@ public class ia_agent : MonoBehaviour {
 
 		this.transform.Rotate(0.0f, rotation, 0.0f);
 
-		return Mathf.Abs(rotation) <= vitesseAngulaire ;
+		return Mathf.Abs(difRotation) > vitesseAngulaire ;
 	}
 
     public void setAnimation(string nomAnimation)
