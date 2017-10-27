@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class princesse_deplacement : MonoBehaviour {
 
-    public GameObject cam;
+	public GameObject cam;
 	static Animator anim;
 	public float vitesse;
 	public float forceSaut;
-    public float vitesseAngulaire;
+	public float vitesseAngulaire;
 	public bool isGrounded;
 	public float feetDist = 0.1f;
 
@@ -27,17 +27,17 @@ public class princesse_deplacement : MonoBehaviour {
 
 	void Update ()
 	{
-		
-        bool toucheDebug = Input.GetKeyDown(KeyCode.K);
 
-        if (toucheDebug)
-        {
-            
-        }
-        
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        
+		bool toucheDebug = Input.GetKeyDown(KeyCode.K);
+
+		if (toucheDebug)
+		{
+
+		}
+
+		float moveHorizontal = Input.GetAxis("Horizontal");
+		float moveVertical = Input.GetAxis("Vertical");
+
 		if (moveHorizontal != 0.0f || moveVertical != 0.0f) {
 			GererDeplacement (moveHorizontal, moveVertical);
 			if (anim.GetBool ("IsJumping") == false) {
@@ -73,22 +73,22 @@ public class princesse_deplacement : MonoBehaviour {
 				anim.SetBool ("IsIdle", true);
 			}
 		}
-        
 
-        bool saut = Input.GetKeyDown(KeyCode.Space);
+
+		bool saut = Input.GetKeyDown(KeyCode.Space);
 
 		if (saut && isGrounded == true) {
 			rb.AddForce (new Vector3 (0.0f, forceSaut, 0.0f));
 			isGrounded = false;
 		}
-
+		/*
 		Vector3 fwd = transform.TransformDirection (Vector3.down);
 		if(Physics.Raycast (transform.position, fwd, feetDist)){
 			isGrounded = true;
 		}else{
 			isGrounded = false;
 		}
-
+*/
 
 		bool toucheAttack1 = Input.GetButtonDown("Fire1");
 		if (toucheAttack1) {
@@ -111,14 +111,14 @@ public class princesse_deplacement : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.LeftShift)){
 			if (CanDash == true && isGrounded == true) {
 				anim.Play ("fwdash");
-                if (moveVertical > 0.0f)
-                {
-                    rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 2000f);
-                } else
-                {
-                    rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 1500f);
-                }
-               
+				if (moveVertical > 0.0f)
+				{
+					rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 2000f);
+				} else
+				{
+					rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 1500f);
+				}
+
 				CanDash = false;
 
 				StartCoroutine (WaitBeforDash ());
@@ -126,50 +126,50 @@ public class princesse_deplacement : MonoBehaviour {
 			}
 		}
 
-    }
-    
-    private void GererDeplacement(float moveHorizontal, float moveVertical) {
+	}
+
+	private void GererDeplacement(float moveHorizontal, float moveVertical) {
 
 		if (anim.GetCurrentAnimatorStateInfo (0).IsName (anim.GetLayerName (0) + ".hurt")) {
-			
+
 			return;
 		}
 
-        float difRotation = cam.transform.rotation.eulerAngles.y - this.transform.rotation.eulerAngles.y;
-		
-        float rotation;
+		float difRotation = cam.transform.rotation.eulerAngles.y - this.transform.rotation.eulerAngles.y;
 
-        if (difRotation > 180.0f)
-        {
-            difRotation -= 360.0f;
-        }
+		float rotation;
 
-        if (difRotation < -180.0f)
-        {
-            difRotation += 360.0f;
-        }
+		if (difRotation > 180.0f)
+		{
+			difRotation -= 360.0f;
+		}
 
-        rotation = Mathf.Clamp(difRotation, -vitesseAngulaire, vitesseAngulaire);
+		if (difRotation < -180.0f)
+		{
+			difRotation += 360.0f;
+		}
 
-        this.transform.Rotate(0.0f, rotation, 0.0f);
+		rotation = Mathf.Clamp(difRotation, -vitesseAngulaire, vitesseAngulaire);
 
-        Vector3 mouvement = this.transform.forward * Mathf.Max(moveVertical, -0.5f);
-        float norme = Mathf.Max(mouvement.magnitude, 0.5f);
+		this.transform.Rotate(0.0f, rotation, 0.0f);
 
-        mouvement += this.transform.right * moveHorizontal * 0.5f;
+		Vector3 mouvement = this.transform.forward * Mathf.Max(moveVertical, -0.5f);
+		float norme = Mathf.Max(mouvement.magnitude, 0.5f);
 
-        mouvement = (mouvement / mouvement.magnitude) * norme;
+		mouvement += this.transform.right * moveHorizontal * 0.5f;
+
+		mouvement = (mouvement / mouvement.magnitude) * norme;
 
 		this.transform.position += mouvement * vitesse * Time.deltaTime;
-    }
+	}
 
 	void FixedUpdate(){
 		Vector3 fwd = transform.TransformDirection (Vector3.down);
 		if(Physics.Raycast (transform.position, fwd, feetDist)){
-			isGrounded = true;
+
 			anim.SetBool ("IsJumping", false);
 		}else{
-			isGrounded = false;
+
 			anim.SetBool ("IsJumping", true);
 		}
 	}
@@ -178,5 +178,11 @@ public class princesse_deplacement : MonoBehaviour {
 		yield return new WaitForSeconds (1f);
 		CanDash = true;
 	}
-    
+
+	void OnTriggerStay(Collider collision){
+		if (collision.tag == "wall") {
+			isGrounded = true;
+		}
+	}
+
 }
