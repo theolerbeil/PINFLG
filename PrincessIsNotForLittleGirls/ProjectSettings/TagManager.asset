@@ -8,6 +8,7 @@ TagManager:
   - Image_Action
   - wall
   - mob
+  - Image_Action_ObjetProgression
   layers:
   - Default
   - TransparentFX
