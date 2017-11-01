@@ -121,7 +121,7 @@ public class princesse_deplacement : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.LeftShift)){
 			if (CanDash == true && isGrounded == true) {
 				anim.Play ("fwdash");
-                rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 45f, ForceMode.Impulse);
+                rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 27.5f, ForceMode.Impulse);
                 StartCoroutine(WaitForVelocityZero());
                 /*
                 if (moveVertical > 0.0f)
