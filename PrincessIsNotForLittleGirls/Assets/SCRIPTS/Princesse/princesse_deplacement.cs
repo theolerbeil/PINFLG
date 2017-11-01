@@ -111,6 +111,11 @@ public class princesse_deplacement : MonoBehaviour {
                 anim.Play("attack_run");
                 princesseArme.lancerAttaque();
             }
+            if (anim.GetBool("IsBackwalk") == true)
+            {
+                anim.Play("attack_run");
+                princesseArme.lancerAttaque();
+            }
         }
 
 		if(Input.GetKeyDown(KeyCode.LeftShift)){
