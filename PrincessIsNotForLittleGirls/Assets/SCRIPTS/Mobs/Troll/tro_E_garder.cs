@@ -13,6 +13,8 @@ public class tro_E_garder : ia_etat {
 	private bool enRotation;
 	private float delaiReposActuel;
 
+	private bool fegeg;
+
 	// Use this for initialization
 	void Start()
 	{
@@ -29,6 +31,7 @@ public class tro_E_garder : ia_etat {
 		setAnimation ("running");
 		enDeplacement = true;
 		enRotation = false;
+		fegeg = false;
 	}
 
 	public override void faireEtat()
@@ -39,13 +42,18 @@ public class tro_E_garder : ia_etat {
 			if (agent.destinationCouranteAtteinte ()) {
 				nav.enabled = false;
 				enDeplacement = false;
-				setAnimation ("garder");
+//				setAnimation ("garder");
 				enRotation = true;
 			}
 		} else if (enRotation) {
 
 			enRotation = agent.seTournerDansOrientationDe (emplacementAGarder.gameObject);
 			delaiReposActuel = Time.time + (Random.value * (delaiMaxEntreRepos - delaiMinEntreRepos)) + delaiMinEntreRepos;
+
+		} else if (!fegeg && !enRotation) {
+			fegeg = true;
+			setAnimation ("garder");
+
 
 		} else if (Time.time >= delaiReposActuel) {
 			changerEtat (GetComponent<tro_E_repos> ());

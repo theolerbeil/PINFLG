@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 5ef07ad689fa546499b2f00c0db52c81
-timeCreated: 1509068766
+guid: 768f2b32ce72ed3469c47b643c3d152b
+timeCreated: 1509559279
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: Armature
-    100002: Bone
-    100004: brad IK.L
-    100006: brad IK.R
-    100008: bras1.L
-    100010: bras1.R
-    100012: bras2.L
-    100014: bras2.L_end
-    100016: bras2.R
-    100018: bras2.R_end
-    100020: Camera
-    100022: Circle
+    100002: Armature.001
+    100004: Bone
+    100006: brad IK.L
+    100008: brad IK.R
+    100010: bras1.L
+    100012: bras1.R
+    100014: bras2.L
+    100016: bras2.L_end
+    100018: bras2.R
+    100020: bras2.R_end
+    100022: Camera
     100024: cou
     100026: coude.L
     100028: coude.L_end
@@ -44,24 +44,23 @@ ModelImporter:
     100072: pied.L_end
     100074: pied.R
     100076: pied.R_end
-    100078: Sphere
-    100080: tete
-    100082: tete_end
-    100084: torse
-    100086: //RootNode
-    100088: ventre
+    100078: tete
+    100080: tete_end
+    100082: torse
+    100084: //RootNode
+    100086: ventre
     400000: Armature
-    400002: Bone
-    400004: brad IK.L
-    400006: brad IK.R
-    400008: bras1.L
-    400010: bras1.R
-    400012: bras2.L
-    400014: bras2.L_end
-    400016: bras2.R
-    400018: bras2.R_end
-    400020: Camera
-    400022: Circle
+    400002: Armature.001
+    400004: Bone
+    400006: brad IK.L
+    400008: brad IK.R
+    400010: bras1.L
+    400012: bras1.R
+    400014: bras2.L
+    400016: bras2.L_end
+    400018: bras2.R
+    400020: bras2.R_end
+    400022: Camera
     400024: cou
     400026: coude.L
     400028: coude.L_end
@@ -89,21 +88,15 @@ ModelImporter:
     400072: pied.L_end
     400074: pied.R
     400076: pied.R_end
-    400078: Sphere
-    400080: tete
-    400082: tete_end
-    400084: torse
-    400086: //RootNode
-    400088: ventre
+    400078: tete
+    400080: tete_end
+    400082: torse
+    400084: //RootNode
+    400086: ventre
     2000000: Camera
-    2300000: Circle
-    2300002: Sphere
-    3300000: Circle
-    3300002: Sphere
-    4300000: Circle
-    4300002: Sphere
-    4300004: Cube
-    7400000: Armature|ArmatureAction
+    4300000: Cube
+    7400000: troll_walk
+    7400002: troll_idle
     9500000: //RootNode
     10800000: Lamp
     13700000: Cube
@@ -130,7 +123,63 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: troll_walk
+      takeName: Armature.001|Armature.001Action
+      firstFrame: 210
+      lastFrame: 250
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: troll_idle
+      takeName: Armature.001|Armature.001Action
+      firstFrame: 0
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
