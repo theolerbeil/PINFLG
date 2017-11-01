@@ -106,21 +106,30 @@ public class princesse_deplacement : MonoBehaviour {
 				anim.Play ("attack_run");
 				princesseArme.lancerAttaque ();
 			}
-		}
+            if (anim.GetBool("IsSidewalk") == true)
+            {
+                anim.Play("attack_run");
+                princesseArme.lancerAttaque();
+            }
+        }
 
 		if(Input.GetKeyDown(KeyCode.LeftShift)){
 			if (CanDash == true && isGrounded == true) {
 				anim.Play ("fwdash");
-				if (moveVertical > 0.0f)
+                rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 45f, ForceMode.Impulse);
+                StartCoroutine(WaitForVelocityZero());
+                /*
+                if (moveVertical > 0.0f)
 				{
-					rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 2000f);
-				} else
+					rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 50f, ForceMode.Impulse);
+                    StartCoroutine(WaitForVelocityZero());
+                } else
 				{
-					rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 1500f);
-				}
-
+					rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 36.6f, ForceMode.Impulse);
+                    StartCoroutine(WaitForVelocityZero());
+                }
+                */
 				CanDash = false;
-
 				StartCoroutine (WaitBeforDash ());
 
 			}
@@ -128,7 +137,14 @@ public class princesse_deplacement : MonoBehaviour {
 
 	}
 
-	private void GererDeplacement(float moveHorizontal, float moveVertical) {
+    IEnumerator WaitForVelocityZero()
+    {
+        yield return new WaitForSeconds(0.3f);
+        rb.velocity = Vector3.zero;
+    }
+
+
+    private void GererDeplacement(float moveHorizontal, float moveVertical) {
 
 		if (anim.GetCurrentAnimatorStateInfo (0).IsName (anim.GetLayerName (0) + ".hurt")) {
 
