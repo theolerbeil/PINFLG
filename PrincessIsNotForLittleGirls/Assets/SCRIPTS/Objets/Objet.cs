@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Objet : MonoBehaviour {
 
+	public string descriptionObjet;
 	// Use this for initialization
 	void Start () {
 		
