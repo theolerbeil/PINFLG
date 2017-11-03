@@ -11,6 +11,7 @@ public class affichage_ObjetRamasser : MonoBehaviour {
 	void Start () {
 		time = true;
 		listImagePaused = gameObject.GetComponentsInChildren<Transform>();
+		desaffiche ();
 
 	}
 
@@ -41,14 +42,14 @@ public class affichage_ObjetRamasser : MonoBehaviour {
 		for (int i = 1; i < listImagePaused.Length; i++) {
 			switch (listImagePaused [i].name) {
 			case "Panel":
-				listImagePaused [i].GetComponent<UnityEngine.UI.Image> ().enabled = true;
+				listImagePaused [i].gameObject.SetActive(true);
 				break;
 			case "Nom":
-				listImagePaused [i].GetComponent<UnityEngine.UI.Text> ().enabled = true;
-				listImagePaused [i].GetComponent<UnityEngine.UI.Text> ().text = objetProgression.name;
+				listImagePaused [i].gameObject.SetActive (true);
+				listImagePaused [i].GetComponent<UnityEngine.UI.Text> ().text = objetProgression.nomObjet;
 				break;
 			case "Description":
-				listImagePaused [i].GetComponent<UnityEngine.UI.Text> ().enabled = true;
+				listImagePaused [i].gameObject.SetActive (true);
 				listImagePaused [i].GetComponent<UnityEngine.UI.Text> ().text = objetProgression.descriptionObjet;
 				break;
 			}
@@ -60,13 +61,13 @@ public class affichage_ObjetRamasser : MonoBehaviour {
 		for (int i = 1; i < listImagePaused.Length; i++) {
 			switch (listImagePaused [i].name) {
 			case "Nom":
-				listImagePaused [i].GetComponent<UnityEngine.UI.Text> ().enabled = false;
+				listImagePaused [i].gameObject.SetActive (false);
 				break;
 			case "Description":
-				listImagePaused [i].GetComponent<UnityEngine.UI.Text> ().enabled = false;
+				listImagePaused [i].gameObject.SetActive (false);
 				break;
 			default : 
-				listImagePaused [i].GetComponent<UnityEngine.UI.Image> ().enabled = false;
+				listImagePaused [i].gameObject.SetActive (false);
 				break;
 			}
 		}

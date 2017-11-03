@@ -48,7 +48,7 @@ public class affichage_interraction : MonoBehaviour {
 		foreach(Transform t in listImageInterraction){
 			if (t.name.Equals(nomImage)) {
 				trouve = true;
-				t.GetComponent<UnityEngine.UI.Image> ().enabled = true;
+				t.gameObject.SetActive (true);
 			}
 		}
 		if (!trouve) {
@@ -58,7 +58,7 @@ public class affichage_interraction : MonoBehaviour {
 
 	private void desafficheObjet(){
 		for(int i=1;i<listImageInterraction.Length;i++){
-			listImageInterraction[i].GetComponent<UnityEngine.UI.Image> ().enabled = false;
+			listImageInterraction [i].gameObject.SetActive (false);
 		}
 	}
 		
