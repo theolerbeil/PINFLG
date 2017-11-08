@@ -9,6 +9,7 @@ public class gob_E_garder : ia_etat {
 
 	private bool enDeplacement;
 	private bool enRotation;
+	private bool enGarde;
 
 	// Use this for initialization
 	void Start()
@@ -26,22 +27,30 @@ public class gob_E_garder : ia_etat {
 		agent.definirDestination(emplacementAGarder);
 		enDeplacement = true;
 		enRotation = false;
+		enGarde = false;
 	}
 
 	public override void faireEtat()
 	{
-		if (agent.princesseRepereeAvecAttention ()) {
+		if (agent.princesseReperee ()) {
 			changerEtat (this.GetComponent<gob_E_poursuite> ());
+
+		} else if (!enDeplacement && agent.princesseRepereeAvecAttention ()) {
+			changerEtat (this.GetComponent<gob_E_poursuite> ());
+
 		} else if (enDeplacement) {
 			if (agent.destinationCouranteAtteinte ()) {
 				nav.enabled = false;
 				enDeplacement = false;
-				setAnimation ("garder");
 				enRotation = true;
 			}
 		} else if (enRotation) {
 
 			enRotation = agent.seTournerDansOrientationDe (emplacementAGarder.gameObject);
+
+		} else if (!enGarde && !enRotation) {
+			enGarde = true;
+			setAnimation ("garder");
 		}
 	}
 
