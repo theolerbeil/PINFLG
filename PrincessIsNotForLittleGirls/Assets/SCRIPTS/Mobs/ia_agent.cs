@@ -126,7 +126,7 @@ public class ia_agent : MonoBehaviour {
 		Vector3 v = nav.pathEndPosition - nav.nextPosition;
 		v.y = 0;
 
-        return v.magnitude <= nav.stoppingDistance;
+        return v.magnitude <= 0.2f;
 	}
 
 	/// <summary>
