@@ -50,14 +50,14 @@ public class tro_E_garder : ia_etat {
 			}
 		} else if (enRotation) {
 
+			setAnimation ("tourner");
 			enRotation = agent.seTournerDansOrientationDe (emplacementAGarder.gameObject);
 
 		} else if (!enGarde && !enRotation) {
 			enGarde = true;
 			delaiReposActuel = Time.time + (Random.value * (delaiMaxEntreRepos - delaiMinEntreRepos)) + delaiMinEntreRepos;
 			setAnimation ("garder");
-
-
+			
 		} else if (Time.time >= delaiReposActuel) {
 			changerEtat (GetComponent<tro_E_repos> ());
 		}
