@@ -14,11 +14,13 @@ public class princesse_deplacement : MonoBehaviour {
 
 	private bool CanDash;
 	private Rigidbody rb;
-
+	private bool isPushing;
 	private princesse_arme princesseArme;
+	private GameObject pushableCube;
 
 	void Start ()
 	{
+		isPushing = false;
 		CanDash = true;
 		rb = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator> ();
@@ -135,6 +137,17 @@ public class princesse_deplacement : MonoBehaviour {
 			}
 		}
 
+		/*------------------ gerer la poussage du cube --------*/
+
+		if (isPushing == true) {
+			anim.SetBool ("isPushing", true);
+
+		} else {
+			anim.SetBool ("isPushing", false);
+
+		}
+
+
 	}
 
     IEnumerator WaitForVelocityZero()
@@ -176,7 +189,12 @@ public class princesse_deplacement : MonoBehaviour {
 
 		mouvement = (mouvement / mouvement.magnitude) * norme;
 
-		this.transform.position += mouvement * vitesse * Time.deltaTime;
+		if (isPushing == false) {
+			this.transform.position += mouvement * vitesse * Time.deltaTime;
+		} else {
+			this.transform.position += mouvement * vitesse/2 * Time.deltaTime;
+			pushableCube.transform.position += mouvement * vitesse/2 * Time.deltaTime;
+		}
 	}
 
 	void FixedUpdate(){
@@ -196,8 +214,18 @@ public class princesse_deplacement : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider collision){
-		if (collision.tag == "wall") {
+		if (collision.tag == "wall" || collision.tag == "cube") {
 			isGrounded = true;
+		}
+		if (collision.tag == "cube") {
+			if (Input.GetButton ("Fire2")) {
+				isPushing = true;
+				pushableCube = collision.gameObject;
+			} else {
+				
+				isPushing = false;
+
+			}
 		}
 	}
 
