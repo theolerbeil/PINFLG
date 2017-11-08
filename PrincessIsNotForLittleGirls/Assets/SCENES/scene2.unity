@@ -628,7 +628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &37836515
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1626,7 +1626,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1698780262395036, guid: 3d85d6bb5d93ab84aa4fd70e89081212, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d85d6bb5d93ab84aa4fd70e89081212, type: 2}
@@ -14328,7 +14328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &641870627
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14506,7 +14506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &648955009
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19960,7 +19960,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1698780262395036, guid: 3d85d6bb5d93ab84aa4fd70e89081212, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d85d6bb5d93ab84aa4fd70e89081212, type: 2}
@@ -21163,7 +21163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1084862191
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21179,8 +21179,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 42.800003, y: 100}
+  m_AnchoredPosition: {x: 11.6, y: 14.4}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1084862192
 MonoBehaviour:
@@ -21201,7 +21201,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: c56352eeec9e90341b41ba81ddc6a107, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 65a822244eaab404e86fe8f3ab769b66, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28712,7 +28712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1138503780
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33834,7 +33834,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1698780262395036, guid: 3d85d6bb5d93ab84aa4fd70e89081212, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d85d6bb5d93ab84aa4fd70e89081212, type: 2}
@@ -35273,7 +35273,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1698780262395036, guid: 3d85d6bb5d93ab84aa4fd70e89081212, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d85d6bb5d93ab84aa4fd70e89081212, type: 2}
@@ -37522,7 +37522,7 @@ Prefab:
     - target: {fileID: 54912711707029880, guid: 896fc20601f536944a7908659d8d3d5b,
         type: 2}
       propertyPath: m_Constraints
-      value: 14
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 896fc20601f536944a7908659d8d3d5b, type: 2}
@@ -47185,7 +47185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2032436892
 RectTransform:
   m_ObjectHideFlags: 0
