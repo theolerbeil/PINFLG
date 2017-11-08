@@ -10,7 +10,7 @@ public class affichage_ObjetRamasser : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		time = true;
-		listImagePaused = gameObject.GetComponentsInChildren<Transform>();
+		listImagePaused = gameObject.GetComponentsInChildren<Transform>(true);
 		desaffiche ();
 
 	}

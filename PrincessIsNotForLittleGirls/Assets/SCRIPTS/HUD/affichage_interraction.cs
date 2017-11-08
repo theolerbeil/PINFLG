@@ -10,7 +10,7 @@ public class affichage_interraction : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//image_detection=GetComponent< UnityEngine.UI.Image>();
-		listImageInterraction = gameObject.GetComponentsInChildren<Transform>();
+		listImageInterraction = gameObject.GetComponentsInChildren<Transform>(true);
 
 
 	//	image_detection.enabled = false;
