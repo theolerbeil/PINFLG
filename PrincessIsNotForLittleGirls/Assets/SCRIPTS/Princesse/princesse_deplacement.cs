@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class princesse_deplacement : MonoBehaviour {
 
-    public GameObject cam;
+	public GameObject cam;
 	static Animator anim;
 	public float vitesse;
 	public float forceSaut;
-    public float vitesseAngulaire;
+	public float vitesseAngulaire;
 	public bool isGrounded;
 	public float feetDist = 0.1f;
 
 	private bool CanDash;
 	private Rigidbody rb;
-
+	private bool isPushing;
 	private princesse_arme princesseArme;
+	private GameObject pushableCube;
 
 	void Start ()
 	{
+		isPushing = false;
 		CanDash = true;
 		rb = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator> ();
@@ -27,17 +29,17 @@ public class princesse_deplacement : MonoBehaviour {
 
 	void Update ()
 	{
-		
-        bool toucheDebug = Input.GetKeyDown(KeyCode.K);
 
-        if (toucheDebug)
-        {
-            
-        }
-        
+		bool toucheDebug = Input.GetKeyDown(KeyCode.K);
+
+		if (toucheDebug)
+		{
+
+		}
+
 		float moveHorizontal = InputManager.GetKeyAxis("Horizontal");
-			float moveVertical = InputManager.GetKeyAxis("Vertical");
-        
+		float moveVertical = InputManager.GetKeyAxis("Vertical");
+
 		if (moveHorizontal != 0.0f || moveVertical != 0.0f) {
 			GererDeplacement (moveHorizontal, moveVertical);
 			if (anim.GetBool ("IsJumping") == false) {
@@ -73,7 +75,7 @@ public class princesse_deplacement : MonoBehaviour {
 				anim.SetBool ("IsIdle", true);
 			}
 		}
-        
+
 
 		bool saut = InputManager.GetKeyDown (KeyCode.Space);
 		//	Input.GetKeyDown(KeyCode.Space);
@@ -82,14 +84,14 @@ public class princesse_deplacement : MonoBehaviour {
 			rb.AddForce (new Vector3 (0.0f, forceSaut, 0.0f));
 			isGrounded = false;
 		}
-
+		/*
 		Vector3 fwd = transform.TransformDirection (Vector3.down);
 		if(Physics.Raycast (transform.position, fwd, feetDist)){
 			isGrounded = true;
 		}else{
 			isGrounded = false;
 		}
-
+*/
 
 		bool toucheAttack1 = InputManager.GetButtonDown("Fire1");
 		if (toucheAttack1) {
@@ -107,67 +109,102 @@ public class princesse_deplacement : MonoBehaviour {
 				anim.Play ("attack_run");
 				princesseArme.lancerAttaque ();
 			}
-		}
+            if (anim.GetBool("IsSidewalk") == true)
+            {
+                anim.Play("attack_run");
+                princesseArme.lancerAttaque();
+            }
+        }
 
 		if(InputManager.GetKeyDown(KeyCode.LeftShift)){
 			if (CanDash == true && isGrounded == true) {
 				anim.Play ("fwdash");
+                rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 45f, ForceMode.Impulse);
+                StartCoroutine(WaitForVelocityZero());
+                /*
                 if (moveVertical > 0.0f)
-                {
-                    rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 2000f);
+				{
+					rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 50f, ForceMode.Impulse);
+                    StartCoroutine(WaitForVelocityZero());
                 } else
-                {
-                    rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 1500f);
+				{
+					rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 36.6f, ForceMode.Impulse);
+                    StartCoroutine(WaitForVelocityZero());
                 }
-               
+                */
 				CanDash = false;
-
 				StartCoroutine (WaitBeforDash ());
 
 			}
 		}
 
-    }
-    
-    private void GererDeplacement(float moveHorizontal, float moveVertical)
+		/*------------------ gerer la poussage du cube --------*/
+
+		if (isPushing == true) {
+			anim.SetBool ("isPushing", true);
+
+		} else {
+			anim.SetBool ("isPushing", false);
+
+		}
+
+
+	}
+
+    IEnumerator WaitForVelocityZero()
     {
-        float difRotation = cam.transform.rotation.eulerAngles.y - this.transform.rotation.eulerAngles.y;
-
-
-
-        float rotation;
-
-        if (difRotation > 180.0f)
-        {
-            difRotation -= 360.0f;
-        }
-
-        if (difRotation < -180.0f)
-        {
-            difRotation += 360.0f;
-        }
-
-        rotation = Mathf.Clamp(difRotation, -vitesseAngulaire, vitesseAngulaire);
-
-        this.transform.Rotate(0.0f, rotation, 0.0f);
-
-        Vector3 mouvement = this.transform.forward * Mathf.Max(moveVertical, -0.5f);
-        float norme = Mathf.Max(mouvement.magnitude, 0.5f);
-
-        mouvement += this.transform.right * moveHorizontal * 0.5f;
-
-        mouvement = (mouvement / mouvement.magnitude) * norme;
-
-		this.transform.position += mouvement * vitesse * Time.deltaTime;
+        yield return new WaitForSeconds(0.3f);
+        rb.velocity = Vector3.zero;
     }
+
+
+    private void GererDeplacement(float moveHorizontal, float moveVertical) {
+
+		if (anim.GetCurrentAnimatorStateInfo (0).IsName (anim.GetLayerName (0) + ".hurt")) {
+
+			return;
+		}
+
+		float difRotation = cam.transform.rotation.eulerAngles.y - this.transform.rotation.eulerAngles.y;
+
+		float rotation;
+
+		if (difRotation > 180.0f)
+		{
+			difRotation -= 360.0f;
+		}
+
+		if (difRotation < -180.0f)
+		{
+			difRotation += 360.0f;
+		}
+
+		rotation = Mathf.Clamp(difRotation, -vitesseAngulaire, vitesseAngulaire);
+
+		this.transform.Rotate(0.0f, rotation, 0.0f);
+
+		Vector3 mouvement = this.transform.forward * Mathf.Max(moveVertical, -0.5f);
+		float norme = Mathf.Max(mouvement.magnitude, 0.5f);
+
+		mouvement += this.transform.right * moveHorizontal * 0.5f;
+
+		mouvement = (mouvement / mouvement.magnitude) * norme;
+
+		if (isPushing == false) {
+			this.transform.position += mouvement * vitesse * Time.deltaTime;
+		} else {
+			this.transform.position += mouvement * vitesse/2 * Time.deltaTime;
+			pushableCube.transform.position += mouvement * vitesse/2 * Time.deltaTime;
+		}
+	}
 
 	void FixedUpdate(){
 		Vector3 fwd = transform.TransformDirection (Vector3.down);
 		if(Physics.Raycast (transform.position, fwd, feetDist)){
-			isGrounded = true;
+
 			anim.SetBool ("IsJumping", false);
 		}else{
-			isGrounded = false;
+
 			anim.SetBool ("IsJumping", true);
 		}
 	}
@@ -176,5 +213,21 @@ public class princesse_deplacement : MonoBehaviour {
 		yield return new WaitForSeconds (1f);
 		CanDash = true;
 	}
-    
+
+	void OnTriggerStay(Collider collision){
+		if (collision.tag == "wall" || collision.tag == "cube") {
+			isGrounded = true;
+		}
+		if (collision.tag == "cube") {
+			if (Input.GetButton ("Fire2")) {
+				isPushing = true;
+				pushableCube = collision.gameObject;
+			} else {
+				
+				isPushing = false;
+
+			}
+		}
+	}
+
 }

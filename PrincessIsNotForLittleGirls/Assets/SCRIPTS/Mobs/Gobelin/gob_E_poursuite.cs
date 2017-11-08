@@ -8,10 +8,12 @@ public class gob_E_poursuite : ia_etat {
 	public float dureeRecherchePrincesse;
 	public float distanceEntreeCombat;
 
+	public ia_etat etatSiPrincessePerdue;
+
 	private Vector3 dernierePositionPrincesseConnue;
 	private bool princessePerdue;
 	private float delaiActuelRecherche;
-
+	private bool enRotation;
 
 	// Use this for initialization
 	void Start()
@@ -30,6 +32,7 @@ public class gob_E_poursuite : ia_etat {
 		dernierePositionPrincesseConnue = princesse.transform.position;
 		agent.definirDestination(dernierePositionPrincesseConnue);
 		princessePerdue = false;
+		enRotation = true;
 	}
 
 	public override void faireEtat()
@@ -41,7 +44,13 @@ public class gob_E_poursuite : ia_etat {
 				
 				dernierePositionPrincesseConnue = princesse.transform.position;
 				agent.definirDestination (dernierePositionPrincesseConnue);
+				enRotation = true;
 			}
+		}
+
+		if (enRotation) {
+
+			enRotation = agent.seTournerVersPosition (dernierePositionPrincesseConnue);
 		}
 
 		if (agent.distanceToPrincesse() <= agent.distanceCombatOptimale) {
@@ -71,7 +80,7 @@ public class gob_E_poursuite : ia_etat {
 
 				}
 			} else {
-				changerEtat (GetComponent<gob_E_patrouille> ());
+				changerEtat (etatSiPrincessePerdue);
 			}
 		}
 	}

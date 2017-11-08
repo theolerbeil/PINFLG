@@ -20,6 +20,7 @@ public class ia_agent : MonoBehaviour {
 	public float distanceVision;
 	public float rayonAudition;
 	public float distanceCombatOptimale;
+	public float vitesseAngulaire;
 	public ia_etat etatDegatsRecu;
 	public ia_etat etatMort;
 
@@ -37,7 +38,6 @@ public class ia_agent : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        
         etatCourant.entrerEtat();
     }
 	
@@ -87,13 +87,21 @@ public class ia_agent : MonoBehaviour {
 		return mobVie;
 	}
 
-    /// <summary>
-    /// Définit la position de la destination actuel de l'agent.
-    /// </summary>
-    public void definirDestination(Vector3 positionDestination)
-    {
-        nav.SetDestination(positionDestination);
-    }
+	/// <summary>
+	/// Définit la position de la destination actuel de l'agent.
+	/// </summary>
+	public void definirDestination(Vector3 positionDestination)
+	{
+		nav.SetDestination(positionDestination);
+	}
+
+	/// <summary>
+	/// Définit le point d'interet de destination actuel de l'agent.
+	/// </summary>
+	public void definirDestination(ia_pointInteret pi)
+	{
+		nav.SetDestination(pi.transform.position);
+	}
 
     /// <summary>
     /// Définit le nom du point d'interet de destination actuel de l'agent.
@@ -115,8 +123,66 @@ public class ia_agent : MonoBehaviour {
     /// </summary>
     public bool destinationCouranteAtteinte()
     {
-        return (nav.pathEndPosition - this.transform.position).magnitude <= nav.stoppingDistance;
-    }
+		Vector3 v = nav.pathEndPosition - nav.nextPosition;
+		v.y = 0;
+
+        return v.magnitude <= 0.2f;
+	}
+
+	/// <summary>
+	/// Tourne l'agent vers la position en fonction de sa vitesse angulaire maximale.
+	/// Retourne false si la rotation est finie.
+	/// </summary>
+	public bool seTournerVersPosition(Vector3 positionCible) {
+
+		Vector3 v = positionCible - this.transform.position;
+
+		return seTournerEnDirectionDe (v);
+	}
+
+	/// <summary>
+	/// Tourne l'agent vers la direction en fonction de sa vitesse angulaire maximale.
+	/// Retourne false si la rotation est finie.
+	/// </summary>
+	public bool seTournerEnDirectionDe(Vector3 forward) {
+
+		Quaternion q = new Quaternion ();
+		q.SetLookRotation (forward);
+
+		return seTourner (q);
+	}
+
+	/// <summary>
+	/// Tourne l'agent vers l'orientation en fonction de sa vitesse angulaire maximale.
+	/// Retourne false si la rotation est finie.
+	/// </summary>
+	public bool seTournerDansOrientationDe(GameObject obj) {
+
+		return seTourner (obj.transform.rotation);
+	}
+
+	private bool seTourner(Quaternion q) {
+
+		float difRotation = q.eulerAngles.y - this.transform.rotation.eulerAngles.y;
+
+		float rotation;
+
+		if (difRotation > 180.0f)
+		{
+			difRotation -= 360.0f;
+		}
+
+		if (difRotation < -180.0f)
+		{
+			difRotation += 360.0f;
+		}
+
+		rotation = Mathf.Clamp(difRotation, -vitesseAngulaire, vitesseAngulaire);
+
+		this.transform.Rotate(0.0f, rotation, 0.0f);
+
+		return Mathf.Abs(difRotation) > vitesseAngulaire ;
+	}
 
     public void setAnimation(string nomAnimation)
     {
@@ -139,7 +205,7 @@ public class ia_agent : MonoBehaviour {
     {
         etatCourant.sortirEtat();
         etatCourant = nouvelEtat;
-//		Debug.Log ("Entree état " + etatCourant.ToString());
+		Debug.Log (this.gameObject.name + " entre dans l'état " + etatCourant.ToString());
         etatCourant.entrerEtat();
 	}
 
@@ -163,6 +229,14 @@ public class ia_agent : MonoBehaviour {
 
 		Vector3 vecDistancePrincesse = princesse.transform.position - this.transform.position;
 
+		RaycastHit hitInfo;
+
+		Physics.Raycast(this.transform.position, vecDistancePrincesse.normalized, out hitInfo);
+
+		if ( ! hitInfo.collider.gameObject.Equals(princesse)) {
+			return false;
+		}
+
 		float distancePrincesse = vecDistancePrincesse.magnitude;
 
 		if (distancePrincesse <= this.rayonAudition * niveauAttention) {
@@ -173,11 +247,7 @@ public class ia_agent : MonoBehaviour {
 
 		if(angle <= this.demiAngleVision * niveauAttention) {
 
-			RaycastHit hitInfo;
-
-			Physics.Raycast(this.transform.position, vecDistancePrincesse.normalized, out hitInfo);
-
-			if (hitInfo.distance <= this.distanceVision && hitInfo.collider.gameObject.Equals(princesse)) {
+			if (hitInfo.distance <= this.distanceVision) {
 				return true;
 			}
 		}
@@ -208,6 +278,6 @@ public class ia_agent : MonoBehaviour {
 
 		Physics.Raycast (this.transform.position, -this.transform.up, out hitInfo);
 
-		return hitInfo.distance <= 0.05f;
+		return hitInfo.distance <= 0.065f;
 	}
 }

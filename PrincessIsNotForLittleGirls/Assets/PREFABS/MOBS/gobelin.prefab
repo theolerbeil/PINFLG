@@ -462,10 +462,12 @@ GameObject:
   - component: {fileID: 114257562304705656}
   - component: {fileID: 114406686919795056}
   - component: {fileID: 114380259584643674}
+  - component: {fileID: 114319844370825256}
   - component: {fileID: 114495390672951426}
   - component: {fileID: 114495343298560022}
   - component: {fileID: 114959185836115210}
   - component: {fileID: 114303874674154140}
+  - component: {fileID: 114261990976552156}
   - component: {fileID: 114851886317558394}
   - component: {fileID: 114025833143946730}
   - component: {fileID: 114640148858761534}
@@ -1497,6 +1499,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vieMax: 100
+--- !u!114 &114261990976552156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1613168974629440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c788c1cf3bcfb4aada604d24ce110c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceReculeVertical: 600
+  forceReculeHorizontal: 600
 --- !u!114 &114303874674154140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1508,10 +1523,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13ebaeebc13aa244b74848055910c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pourcentageUtilisationAttaquePuissante: 40
+  pourcentageUtilisationAttaquePuissante: 0.4
   degatsAttaquePuissante: 20
   forceDeSautAttaquePuissante: 1400
   forceAvancementAttaquePuissante: 700
+  forceReculeAttaquePuissante: 2
+--- !u!114 &114319844370825256
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1613168974629440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1699b257d339ba847a717f03e2c7e64a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emplacementAGarder: {fileID: 0}
+  vitesse: 3
 --- !u!114 &114380259584643674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1525,11 +1554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 1
   delaisAChaqueArret: 2
-  chemin:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  chemin: []
 --- !u!114 &114406686919795056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1544,8 +1569,9 @@ MonoBehaviour:
   etatCourant: {fileID: 114380259584643674}
   demiAngleVision: 60
   distanceVision: 18
-  rayonAudition: 5
+  rayonAudition: 7
   distanceCombatOptimale: 1.5
+  vitesseAngulaire: 8
   etatDegatsRecu: {fileID: 114851886317558394}
   etatMort: {fileID: 114025833143946730}
 --- !u!114 &114495343298560022
@@ -1575,6 +1601,7 @@ MonoBehaviour:
   vitesse: 3
   dureeRecherchePrincesse: 3
   distanceEntreeCombat: 6
+  etatSiPrincessePerdue: {fileID: 114380259584643674}
 --- !u!114 &114640148858761534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1612,7 +1639,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   porteeAttaqueSimple: 1.8
   degatsAttaqueSimple: 10
-  delaiAttaqueSimple: 5
+  delaiAttaqueSimple: 4
+  forceReculeAttaqueSimple: 1
+  delaiEntreDeuxEsquives: 3
+  pourcentageEsquive: 0.6
 --- !u!136 &136874068501000326
 CapsuleCollider:
   m_ObjectHideFlags: 1

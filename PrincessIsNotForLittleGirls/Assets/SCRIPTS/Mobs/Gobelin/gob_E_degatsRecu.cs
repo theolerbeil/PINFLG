@@ -21,16 +21,20 @@ public class gob_E_degatsRecu : ia_etat {
 
 	public override void entrerEtat()
 	{
+		nav.enabled = false;
 		facteurRecule = princesseArme.getFacteurReculeArmeActuelle();
 		anim.Play("degatsRecu");
-		rb.AddForce ((this.transform.forward * (-forceReculeHorizontal * facteurRecule)) + (this.transform.up * (forceReculeVertical * facteurRecule)));
+
+		Vector3 directionRecule = (this.transform.position - princesse.transform.position).normalized;
+
+		rb.velocity = Vector3.zero;
+		rb.AddForce ((directionRecule * (forceReculeHorizontal * facteurRecule)) + (this.transform.up * (forceReculeVertical * facteurRecule)));
 		timer = Time.time + 0.1f;
 	}
 
 	public override void faireEtat()
 	{
 		if (Time.time > timer && agent.estAuSol()) {
-//		if (agent.isActualAnimation("idleCombat")) {
 			changerEtat (GetComponent<gob_E_combat>());
 		}
 	}
