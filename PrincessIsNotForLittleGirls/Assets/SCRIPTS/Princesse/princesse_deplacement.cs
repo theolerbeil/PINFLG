@@ -193,7 +193,7 @@ public class princesse_deplacement : MonoBehaviour {
 			this.transform.position += mouvement * vitesse * Time.deltaTime;
 		} else {
 			this.transform.position += mouvement * vitesse/2 * Time.deltaTime;
-			pushableCube.transform.position += mouvement * vitesse/2 * Time.deltaTime;
+			//pushableCube.transform.position += mouvement * vitesse/2 * Time.deltaTime;
 		}
 	}
 
@@ -218,15 +218,17 @@ public class princesse_deplacement : MonoBehaviour {
 			isGrounded = true;
 		}
 		if (collision.tag == "cube") {
-			if (Input.GetButton ("Fire2")) {
-				isPushing = true;
-				pushableCube = collision.gameObject;
-			} else {
-				
-				isPushing = false;
+			isPushing = true;
+			Debug.Log ("touche la caisse");
+			//pushableCube = collision.gameObject;
+		} 
+	}
+	void OnTriggerExit(Collider collision){
 
-			}
-		}
+		if (collision.tag == "cube") {
+			isPushing = false;
+
+		} 
 	}
 
 }
