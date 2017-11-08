@@ -20,8 +20,8 @@ public class camera : MonoBehaviour {
 	}
 
 	void Update(){
-		horizontal += Input.GetAxis("Mouse X");
-		vertical += Input.GetAxis("Mouse Y");
+		horizontal += InputManager.GetKeyAxis("Mouse X");
+		vertical += InputManager.GetKeyAxis("Mouse Y");
 
 		vertical = Mathf.Clamp (vertical, ANGLE_MIN_Y, ANGLE_MAX_Y);
 	}

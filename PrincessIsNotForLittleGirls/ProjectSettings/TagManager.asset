@@ -8,8 +8,8 @@ TagManager:
   - Image_Action
   - wall
   - mob
-  - SceneChange
-  - cube
+  - Image_Action_ObjetProgression
+  - Affichage_ObjetRamasser
   layers:
   - Default
   - TransparentFX

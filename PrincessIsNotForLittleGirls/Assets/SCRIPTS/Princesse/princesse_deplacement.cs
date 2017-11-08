@@ -37,8 +37,8 @@ public class princesse_deplacement : MonoBehaviour {
 
 		}
 
-		float moveHorizontal = Input.GetAxis("Horizontal");
-		float moveVertical = Input.GetAxis("Vertical");
+		float moveHorizontal = InputManager.GetKeyAxis("Horizontal");
+		float moveVertical = InputManager.GetKeyAxis("Vertical");
 
 		if (moveHorizontal != 0.0f || moveVertical != 0.0f) {
 			GererDeplacement (moveHorizontal, moveVertical);
@@ -77,7 +77,8 @@ public class princesse_deplacement : MonoBehaviour {
 		}
 
 
-		bool saut = Input.GetKeyDown(KeyCode.Space);
+		bool saut = InputManager.GetKeyDown (KeyCode.Space);
+		//	Input.GetKeyDown(KeyCode.Space);
 
 		if (saut && isGrounded == true) {
 			rb.AddForce (new Vector3 (0.0f, forceSaut, 0.0f));
@@ -92,7 +93,7 @@ public class princesse_deplacement : MonoBehaviour {
 		}
 */
 
-		bool toucheAttack1 = Input.GetButtonDown("Fire1");
+		bool toucheAttack1 = InputManager.GetButtonDown("Fire1");
 		if (toucheAttack1) {
 			if (anim.GetBool ("IsIdle") == true) {
 				anim.Play ("attack1");
@@ -115,7 +116,7 @@ public class princesse_deplacement : MonoBehaviour {
             }
         }
 
-		if(Input.GetKeyDown(KeyCode.LeftShift)||Input.GetButtonDown("Fire3")){
+		if(InputManager.GetKeyDown(KeyCode.LeftShift)){
 			if (CanDash == true && isGrounded == true) {
 				anim.Play ("fwdash");
                 rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 45f, ForceMode.Impulse);
