@@ -14855,25 +14855,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1613168974629440, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
-      propertyPath: m_Name
-      value: gobelin_garde
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406686919795056, guid: 53a770449bc895240b07b768b30e3e97,
-        type: 2}
-      propertyPath: etatCourant
-      value: 
-      objectReference: {fileID: 1134805953}
-    - target: {fileID: 114319844370825256, guid: 53a770449bc895240b07b768b30e3e97,
-        type: 2}
-      propertyPath: emplacementAGarder
-      value: 
-      objectReference: {fileID: 106593451}
-    - target: {fileID: 114495390672951426, guid: 53a770449bc895240b07b768b30e3e97,
-        type: 2}
-      propertyPath: etatSiPrincessePerdue
-      value: 
-      objectReference: {fileID: 1134805953}
     - target: {fileID: 4279017700520248, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
@@ -14890,11 +14871,15 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: -0.00026962292
       objectReference: {fileID: 0}
-    - target: {fileID: 82590305404001812, guid: 53a770449bc895240b07b768b30e3e97,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
+    - target: {fileID: 1613168974629440, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
+      propertyPath: m_Name
+      value: gobelin_garde
       objectReference: {fileID: 0}
+    - target: {fileID: 114319844370825256, guid: 53a770449bc895240b07b768b30e3e97,
+        type: 2}
+      propertyPath: emplacementAGarder
+      value: 
+      objectReference: {fileID: 106593451}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53a770449bc895240b07b768b30e3e97, type: 2}
   m_IsPrefabParent: 0
@@ -30174,12 +30159,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b17a475fe771afc48a256ff4dcdbf85f, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1134805953 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114319844370825256, guid: 53a770449bc895240b07b768b30e3e97,
-    type: 2}
-  m_PrefabInternal: {fileID: 528514722}
-  m_Script: {fileID: 11500000, guid: 1699b257d339ba847a717f03e2c7e64a, type: 3}
 --- !u!4 &1151454336 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4565003241817794, guid: cfadea0d9ceadd749b89c8e88ffa908d,
@@ -44885,7 +44864,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400046, guid: 768f2b32ce72ed3469c47b643c3d152b, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2103940490}
-  m_LocalRotation: {x: 0.6834157, y: 0.29148585, z: 0.664287, w: 0.081864394}
+  m_LocalRotation: {x: 0.6834158, y: 0.29148588, z: 0.66428703, w: 0.0818644}
   m_LocalPosition: {x: 0.003982941, y: -0.005827032, z: 0.0019042797}
   m_LocalScale: {x: 0.9999996, y: 0.9999997, z: 0.999999}
   m_Children:

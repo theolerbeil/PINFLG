@@ -11,14 +11,25 @@ public class gob_E_combat : ia_etat {
 	public float delaiAttaqueSimple;
 	public float forceReculeAttaqueSimple;
 
+	public float sautLateralForceAvant;
+	public float sautLateralForceCote;
+	public float sautLateralForceHauteur;
+
 	public float delaiEntreDeuxEsquives;
 	public float pourcentageEsquive;
 
+	public float delaiStraff;
+	public float pourcentageStraff;
+
+	public float distanceRepousse;
+
 	private float delaiActuelAttaqueSimple;
 	private float delaiActuelEntreDeuxEsquives;
+	private float delaiActuelStraff;
 	private bool degatsAttaqueEffectues;
 	private triggerArme colliderArme;
 	private bool princesseEnVue;
+	private bool attaqueEnCours;
 
     // Use this for initialization
     void Start () {
@@ -26,27 +37,29 @@ public class gob_E_combat : ia_etat {
 		delaiActuelAttaqueSimple = 0.0f;
 		delaiActuelEntreDeuxEsquives = 0.0f;
 		colliderArme = GetComponent<triggerArme> ();
+		attaqueEnCours = false;
 	}
 
     public override void entrerEtat()
     {
 		setAnimation("idleCombat");
-		degatsAttaqueEffectues = false;
 
 		if (attaqueSimplePrete ()) {
 			delaiActuelAttaqueSimple = Time.time + delaiAttaqueSimple * Random.value;
 		}
+
+		delaiActuelStraff = Time.time + delaiStraff * Random.value;
     }
 
     public override void faireEtat()
     {
 		agent.seTournerVersPosition (princesse.transform.position);
 
-		if (agent.distanceToPrincesse () > porteeAttaqueSimple && !agent.isActualAnimation ("attackSimple")) {
+		if (agent.distanceToPrincesse () > porteeAttaqueSimple && !attaqueEnCours) {
 			
 			changerEtat (GetComponent<gob_E_depacementCombat> ());
 
-		} else if (!agent.isActualAnimation ("attackSimple") && esquivePrete() && princesseArme.isAttaqueEnCours() && Vector3.Angle(-princesse.transform.forward, this.transform.forward) <= 20.0f) {
+		} else if (!attaqueEnCours && esquivePrete() && princesseArme.isAttaqueEnCours() && Vector3.Angle(-princesse.transform.forward, this.transform.forward) <= 20.0f) {
 
 			delaiActuelEntreDeuxEsquives = Time.time + delaiEntreDeuxEsquives;
 
@@ -57,15 +70,48 @@ public class gob_E_combat : ia_etat {
 				changerEtat (GetComponent<gob_E_esquive> ());
 			}
 
+		} else if (!attaqueEnCours && agent.distanceToPrincesse() <= distanceRepousse) {
+
+			setAnimation ("repousse");
+			attaqueEnCours = true;
+			degatsAttaqueEffectues = false;
+			delaiActuelAttaqueSimple = Time.time + delaiAttaqueSimple;
+			delaiActuelStraff += 0.5f;
+			
+		} else if (!attaqueEnCours && Time.time >= delaiActuelStraff) {
+
+			float rand = Random.value;
+			delaiActuelStraff = Time.time + delaiStraff;
+			if (rand <= pourcentageStraff) {
+				changerEtat (GetComponent<gob_E_straff> ());
+			}
+
 		} else {
 			
 			if (attaqueSimplePrete ()) {
-				setAnimation ("attackSimple");
+
+				float aleatoire = Random.value;
+
+				if (aleatoire <= 0.25) {
+					setAnimation ("attack1");
+				} else if (aleatoire <= 0.5) {
+					setAnimation ("attack2");
+				} else if (aleatoire <= 0.75) {
+					setAnimation ("attack3");
+				} else {
+					setAnimation ("attack4");
+					rb.AddForce (this.transform.right * sautLateralForceCote + this.transform.forward * sautLateralForceAvant + this.transform.up * sautLateralForceHauteur);
+				}
+
+				attaqueEnCours = true;
+				degatsAttaqueEffectues = false;
 				delaiActuelAttaqueSimple = Time.time + delaiAttaqueSimple;
+				delaiActuelStraff += 0.5f;
 
 			} else {
 
-				if (agent.isActualAnimation ("attackSimple")) {
+				if (agent.isActualAnimation("attack1") || agent.isActualAnimation("attack2") || agent.isActualAnimation("attack3") || agent.isActualAnimation("attack4")) {
+					
 					setAnimation ("idleCombat");
 
 					if (!degatsAttaqueEffectues && colliderArme.IsPrincesseTouchee ()) {
@@ -73,8 +119,9 @@ public class gob_E_combat : ia_etat {
 						princesseVie.blesser (degatsAttaqueSimple, this.gameObject, forceReculeAttaqueSimple);
 						degatsAttaqueEffectues = true;
 					}
-				} else {
+				} else if (attaqueEnCours && Time.time >= delaiActuelAttaqueSimple - delaiAttaqueSimple + 0.5f) {
 					degatsAttaqueEffectues = false;
+					attaqueEnCours = false;
 				}
 			}
 		}

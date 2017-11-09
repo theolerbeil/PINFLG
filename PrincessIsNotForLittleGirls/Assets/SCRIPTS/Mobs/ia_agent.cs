@@ -255,6 +255,13 @@ public class ia_agent : MonoBehaviour {
 		return false;
 	}
 
+	public Vector3 directionToPrincesseDansPlanY0() {
+
+		Vector3 dir = princesse.transform.position - this.transform.position;
+		dir.y = 0.0f;
+		return dir.normalized;
+	}
+
 	public float distanceToPrincesse() {
 		return (princesse.transform.position - this.transform.position).magnitude;
 	}
