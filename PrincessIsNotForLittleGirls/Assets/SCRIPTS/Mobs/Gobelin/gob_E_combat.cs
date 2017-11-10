@@ -21,8 +21,6 @@ public class gob_E_combat : ia_etat {
 	public float delaiStraff;
 	public float pourcentageStraff;
 
-	public float distanceRepousse;
-
 	private float delaiActuelAttaqueSimple;
 	private float delaiActuelEntreDeuxEsquives;
 	private float delaiActuelStraff;
@@ -70,7 +68,7 @@ public class gob_E_combat : ia_etat {
 				changerEtat (GetComponent<gob_E_esquive> ());
 			}
 
-		} else if (!attaqueEnCours && agent.distanceToPrincesse() <= distanceRepousse) {
+		} else if (!attaqueEnCours && agent.distanceToPrincesse() <= agent.distanceRepousse) {
 
 			setAnimation ("repousse");
 			attaqueEnCours = true;
@@ -88,7 +86,7 @@ public class gob_E_combat : ia_etat {
 
 		} else {
 			
-			if (attaqueSimplePrete ()) {
+			if (!attaqueEnCours && attaqueSimplePrete ()) {
 
 				float aleatoire = Random.value;
 
@@ -110,7 +108,7 @@ public class gob_E_combat : ia_etat {
 
 			} else {
 
-				if (agent.isActualAnimation("attack1") || agent.isActualAnimation("attack2") || agent.isActualAnimation("attack3") || agent.isActualAnimation("attack4")) {
+				if (agent.isActualAnimation("attack1") || agent.isActualAnimation("attack2") || agent.isActualAnimation("attack3") || agent.isActualAnimation("attack4") || agent.isActualAnimation("repousse")) {
 					
 					setAnimation ("idleCombat");
 

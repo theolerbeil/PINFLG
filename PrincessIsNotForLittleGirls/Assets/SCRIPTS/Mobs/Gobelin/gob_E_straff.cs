@@ -37,7 +37,12 @@ public class gob_E_straff : ia_etat {
 	public override void faireEtat()
 	{
 		agent.seTournerVersPosition (princesse.transform.position);
-		if (agent.destinationCouranteAtteinte () || Time.time >= tempsMaxAvantFinStraff) {
+
+		if (agent.distanceToPrincesse () <= agent.distanceRepousse) {
+
+			changerEtat (GetComponent<gob_E_combat> ());
+
+		} else if (agent.destinationCouranteAtteinte () || Time.time >= tempsMaxAvantFinStraff) {
 			changerEtat (GetComponent<gob_E_combat> ());
 		}
 	}
