@@ -13,6 +13,7 @@ public class ia_agent : MonoBehaviour {
 	private princesse_arme princesseArme;
     private ia_pointInteret[] pointsInteret;
 	private mob_vie mobVie;
+	private Vector3 destination;
     
     public ia_etat etatCourant;
 
@@ -20,6 +21,7 @@ public class ia_agent : MonoBehaviour {
 	public float distanceVision;
 	public float rayonAudition;
 	public float distanceCombatOptimale;
+	public float distanceRepousse;
 	public float vitesseAngulaire;
 	public ia_etat etatDegatsRecu;
 	public ia_etat etatMort;
@@ -92,6 +94,7 @@ public class ia_agent : MonoBehaviour {
 	/// </summary>
 	public void definirDestination(Vector3 positionDestination)
 	{
+		destination = positionDestination;
 		nav.SetDestination(positionDestination);
 	}
 
@@ -100,7 +103,7 @@ public class ia_agent : MonoBehaviour {
 	/// </summary>
 	public void definirDestination(ia_pointInteret pi)
 	{
-		nav.SetDestination(pi.transform.position);
+		definirDestination(pi.transform.position);
 	}
 
     /// <summary>
@@ -112,7 +115,7 @@ public class ia_agent : MonoBehaviour {
         {
 			if (pi.name.Equals(nomDestination))
             {
-                nav.SetDestination(pi.transform.position);
+				definirDestination(pi);
                 return;
             }
         }
@@ -123,8 +126,8 @@ public class ia_agent : MonoBehaviour {
     /// </summary>
     public bool destinationCouranteAtteinte()
     {
-		Vector3 v = nav.pathEndPosition - nav.nextPosition;
-		v.y = 0;
+		Vector3 v = this.transform.position - destination;
+		v.y = 0.0f;
 
         return v.magnitude <= 0.2f;
 	}
@@ -255,12 +258,22 @@ public class ia_agent : MonoBehaviour {
 		return false;
 	}
 
+	public Vector3 directionToPrincesseDansPlanY0() {
+
+		Vector3 dir = princesse.transform.position - this.transform.position;
+		dir.y = 0.0f;
+		return dir.normalized;
+	}
+
 	public float distanceToPrincesse() {
 		return (princesse.transform.position - this.transform.position).magnitude;
 	}
 
 	public void recevoirDegat(int valeurDegats) {
-		changerEtat (etatDegatsRecu);
+
+		if (etatDegatsRecu != null) {
+			changerEtat (etatDegatsRecu);
+		}
 		mobVie.blesser (valeurDegats);
 	}
 
