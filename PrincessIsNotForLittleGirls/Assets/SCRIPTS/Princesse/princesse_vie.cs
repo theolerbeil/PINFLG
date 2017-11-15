@@ -41,6 +41,7 @@ public class princesse_vie : MonoBehaviour {
     public void soigner(int valeurSoin)
     {
         vie_courante = Mathf.Min(vie_courante + valeurSoin, vie_max);
+		GameControl.control.vie = vie_courante;
         Debug.Log("vie courante : " + vie_courante);
     }
 
@@ -54,6 +55,7 @@ public class princesse_vie : MonoBehaviour {
 		rb.AddForce ((directionRecule * (reculeHorizontal * facteurRecule)) + (this.transform.up * (reculeVertical * facteurRecule)));
 
         vie_courante = Mathf.Max(vie_courante - valeurDegats, 0);
+		GameControl.control.vie = vie_courante;
         Debug.Log("vie courante : " + vie_courante);
     }
 
