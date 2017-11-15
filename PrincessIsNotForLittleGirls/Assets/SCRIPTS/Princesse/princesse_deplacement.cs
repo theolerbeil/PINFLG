@@ -14,11 +14,13 @@ public class princesse_deplacement : MonoBehaviour {
 
 	private bool CanDash;
 	private Rigidbody rb;
-
+	private bool isPushing;
 	private princesse_arme princesseArme;
+	private GameObject pushableCube;
 
 	void Start ()
 	{
+		isPushing = false;
 		CanDash = true;
 		rb = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator> ();
@@ -35,8 +37,8 @@ public class princesse_deplacement : MonoBehaviour {
 
 		}
 
-		float moveHorizontal = Input.GetAxis("Horizontal");
-		float moveVertical = Input.GetAxis("Vertical");
+		float moveHorizontal = InputManager.GetKeyAxis("Horizontal");
+		float moveVertical = InputManager.GetKeyAxis("Vertical");
 
 		if (moveHorizontal != 0.0f || moveVertical != 0.0f) {
 			GererDeplacement (moveHorizontal, moveVertical);
@@ -75,7 +77,8 @@ public class princesse_deplacement : MonoBehaviour {
 		}
 
 
-		bool saut = Input.GetKeyDown(KeyCode.Space);
+		bool saut = InputManager.GetKeyDown (KeyCode.Space);
+		//	Input.GetKeyDown(KeyCode.Space);
 
 		if (saut && isGrounded == true) {
 			rb.AddForce (new Vector3 (0.0f, forceSaut, 0.0f));
@@ -90,7 +93,7 @@ public class princesse_deplacement : MonoBehaviour {
 		}
 */
 
-		bool toucheAttack1 = Input.GetButtonDown("Fire1");
+		bool toucheAttack1 = InputManager.GetButtonDown("Fire1");
 		if (toucheAttack1) {
 			if (anim.GetBool ("IsIdle") == true) {
 				anim.Play ("attack1");
@@ -113,7 +116,7 @@ public class princesse_deplacement : MonoBehaviour {
             }
         }
 
-		if(Input.GetKeyDown(KeyCode.LeftShift)||Input.GetButtonDown("Fire3")){
+		if(InputManager.GetKeyDown(KeyCode.LeftShift)){
 			if (CanDash == true && isGrounded == true) {
 				anim.Play ("fwdash");
                 rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 45f, ForceMode.Impulse);
@@ -134,6 +137,17 @@ public class princesse_deplacement : MonoBehaviour {
 
 			}
 		}
+
+		/*------------------ gerer la poussage du cube --------*/
+
+		if (isPushing == true) {
+			anim.SetBool ("isPushing", true);
+
+		} else {
+			anim.SetBool ("isPushing", false);
+
+		}
+
 
 	}
 
@@ -176,7 +190,12 @@ public class princesse_deplacement : MonoBehaviour {
 
 		mouvement = (mouvement / mouvement.magnitude) * norme;
 
-		this.transform.position += mouvement * vitesse * Time.deltaTime;
+		if (isPushing == false) {
+			this.transform.position += mouvement * vitesse * Time.deltaTime;
+		} else {
+			this.transform.position += mouvement * vitesse/2 * Time.deltaTime;
+			//pushableCube.transform.position += mouvement * vitesse/2 * Time.deltaTime;
+		}
 	}
 
 	void FixedUpdate(){
@@ -196,9 +215,21 @@ public class princesse_deplacement : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider collision){
-		if (collision.tag == "wall") {
+		if (collision.tag == "wall" || collision.tag == "cube") {
 			isGrounded = true;
 		}
+		if (collision.tag == "cube") {
+			isPushing = true;
+			Debug.Log ("touche la caisse");
+			//pushableCube = collision.gameObject;
+		} 
+	}
+	void OnTriggerExit(Collider collision){
+
+		if (collision.tag == "cube") {
+			isPushing = false;
+
+		} 
 	}
 
 }

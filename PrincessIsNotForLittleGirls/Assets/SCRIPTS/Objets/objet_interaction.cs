@@ -9,15 +9,14 @@ public class objet_interaction : MonoBehaviour {
     public Objet objet;
 	public float distance_activation;
     public float demiAngleActivationFrontal;
-	private UnityEngine.UI.Image image_detection;
 	private affichage_interraction hud_refractor;
 
 
 	// Use this for initialization
 	void Start () {
-        image_detection = GameObject.FindGameObjectWithTag("Image_Action").GetComponent< UnityEngine.UI.Image>();
         //image_detection.enabled = false;
         princesse = GameObject.FindGameObjectWithTag("Player");
+
 
 		hud_refractor = GameObject.FindGameObjectWithTag ("Image_Action").GetComponent<affichage_interraction>();
     }
