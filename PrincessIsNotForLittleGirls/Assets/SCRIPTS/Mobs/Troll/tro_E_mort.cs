@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class tro_E_mort : ia_etat {
 
+	public float delaiAvantDisparition;
+
+	private float actualDelai;
+
 	// Use this for initialization
 	void Start()
 	{
@@ -14,14 +18,16 @@ public class tro_E_mort : ia_etat {
 
 	public override void entrerEtat()
 	{
-		setAnimation("mort");
-		anim.enabled = false;
+		anim.Play("mort");
 		rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+		actualDelai = Time.time + delaiAvantDisparition;
 	}
 
 	public override void faireEtat()
 	{
-		
+		if(Time.time >= actualDelai){
+			this.gameObject.SetActive (false);
+		}
 	}
 
 	public override void sortirEtat()

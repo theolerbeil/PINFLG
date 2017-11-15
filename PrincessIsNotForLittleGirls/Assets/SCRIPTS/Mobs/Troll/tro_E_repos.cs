@@ -10,6 +10,9 @@ public class tro_E_repos : ia_etat {
 	public ia_etat etatRetour;
 
 	private float delaisActuel;
+	private bool endormi;
+	private bool reveilParPrincesse;
+	private bool reveilParTemps;
 
 	// Use this for initialization
 	void Start()
@@ -23,15 +26,30 @@ public class tro_E_repos : ia_etat {
 	{
 		setAnimation("repos");
 		delaisActuel = Time.time + (Random.value * (dureeReposMax - dureeReposMin)) + dureeReposMin;
+		reveilParPrincesse = false;
+		reveilParTemps = false;
+		endormi = true;
 	}
 
 	public override void faireEtat()
 	{
 		if(reveilleParLaPrincesse()) {
+			setAnimation("running");
+			reveilParPrincesse = true;
+			endormi = false;
+		}
+
+		else if (endormi && Time.time >= delaisActuel) {
+			setAnimation("running");
+			reveilParTemps = true;
+			endormi = false;
+		}
+
+		else if (reveilParPrincesse && agent.isActualAnimation("running")) {
 			changerEtat(this.GetComponent<tro_E_poursuite>());
 		}
 
-		else if (Time.time >= delaisActuel) {
+		else if (reveilParTemps && agent.isActualAnimation("running")) {
 			changerEtat (etatRetour);
 		}
 	}
@@ -42,6 +60,6 @@ public class tro_E_repos : ia_etat {
 	}
 
 	private bool reveilleParLaPrincesse() {
-		return agent.distanceToPrincesse() <= (agent.rayonAudition * pourcentageAuditionEnDormant);
+		return endormi && agent.distanceToPrincesse() <= (agent.rayonAudition * pourcentageAuditionEnDormant);
 	}
 }

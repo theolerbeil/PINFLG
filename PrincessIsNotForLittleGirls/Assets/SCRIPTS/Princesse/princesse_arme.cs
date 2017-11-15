@@ -39,13 +39,17 @@ public class princesse_arme : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+		
 		attaqueEnCours = false;
 		anim = GetComponent<Animator> ();
 		listeMobsTouches = new List<ia_agent> ();
+
+		SetArmeActive (GameControl.control.ArmeCourante, CreerUneArmeDepuisLEnum (GameControl.control.ArmeCourante));
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		
 		if (attaqueEnCours && anim.GetCurrentAnimatorStateInfo (0).IsName (anim.GetLayerName (0) + ".idle1")) {
 			
 			attaqueEnCours = false;
@@ -90,6 +94,7 @@ public class princesse_arme : MonoBehaviour {
 	private void defineActualsArmes(GameObject armeRamasse)
     {
 		actualWorldArme = armeRamasse;
+		GameControl.control.ArmeCourante = armeActive;
 		switch (armeActive)
 		{
 		case EnumArmes.vide:
@@ -165,6 +170,38 @@ public class princesse_arme : MonoBehaviour {
 
 	public float getFacteurReculeArmeActuelle(){
 		return facteurReculeArmeActuelle;
+	}
+
+	public GameObject CreerUneArmeDepuisLEnum(EnumArmes arme)
+	{
+		GameObject template = null;
+		switch (arme) {
+		case EnumArmes.bedfoot:
+			template = handBedfoot;
+			break;
+		case EnumArmes.poele:
+			template = handPoele;
+			break;
+		case EnumArmes.vide:
+			template = null;
+			break;
+		case EnumArmes.bread:
+			template = handBread;
+			break;
+		case EnumArmes.chandelier:
+			template = handChandelier;
+			break;
+		case EnumArmes.magic_staff:
+			template = handMagicStaff;
+			break;
+		case EnumArmes.showel:
+			template = handShowel;
+			break;
+		}
+
+		if (template == null)
+			return null;
+		return GameObject.Instantiate (template);
 	}
 }
 

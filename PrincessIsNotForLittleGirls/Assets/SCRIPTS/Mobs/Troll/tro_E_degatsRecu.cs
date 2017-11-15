@@ -29,12 +29,12 @@ public class tro_E_degatsRecu : ia_etat {
 
 		rb.velocity = Vector3.zero;
 		rb.AddForce ((directionRecule * (forceReculeHorizontal * facteurRecule)) + (this.transform.up * (forceReculeVertical * facteurRecule)));
-		timer = Time.time + 0.1f;
+		timer = Time.time + 1.0f;
 	}
 
 	public override void faireEtat()
 	{
-		if (Time.time > timer && agent.estAuSol()) {
+		if (Time.time > timer) {
 			changerEtat (GetComponent<tro_E_combat>());
 		}
 	}
