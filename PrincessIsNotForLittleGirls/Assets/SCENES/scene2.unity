@@ -57191,7 +57191,9 @@ MonoBehaviour:
   vertical: 50
   distanceMax: 4
   hauteurFocus: 0.8
+  distanceAvantTransparence: 1.5
   camera_transform: {fileID: 2021728523}
+  skinPrincesse: {fileID: 840782515}
 --- !u!81 &2021728519
 AudioListener:
   m_ObjectHideFlags: 0

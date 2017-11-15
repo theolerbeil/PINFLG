@@ -13,7 +13,9 @@ public class camera : MonoBehaviour {
 	public float vertical;
     public float distanceMax;
     public float hauteurFocus;
+	public float distanceAvantTransparence;
 	public Transform camera_transform;
+	public SkinnedMeshRenderer skinPrincesse;
 
 	void Start() {
 		camera_transform = transform;
@@ -43,5 +45,16 @@ public class camera : MonoBehaviour {
 		camera_transform.LookAt (cible.transform.position + cible.transform.up * hauteurFocus + cible.transform.forward * 0.1f);
 
 		camera_transform.transform.Rotate(new Vector3(-20, 0, 0));
+
+		if (distance < distanceAvantTransparence) {
+			float alpha = Mathf.Clamp(distance / (distanceAvantTransparence * 0.66f), 0.0f, 1.0f);
+			for (int i=0; i<skinPrincesse.materials.Length; i++) {
+				skinPrincesse.materials[i].color = new Color (skinPrincesse.materials[i].color.r, skinPrincesse.materials[i].color.g, skinPrincesse.materials[i].color.b, 0.0f);
+			}
+		} else {
+			for (int i=0; i<skinPrincesse.materials.Length; i++) {
+				skinPrincesse.materials[i].color = new Color (skinPrincesse.materials[i].color.r, skinPrincesse.materials[i].color.g, skinPrincesse.materials[i].color.b, 1.0f);
+			}
+		}
 	}
 }
