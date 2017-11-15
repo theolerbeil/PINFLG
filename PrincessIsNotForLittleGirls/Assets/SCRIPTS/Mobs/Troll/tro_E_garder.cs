@@ -39,7 +39,7 @@ public class tro_E_garder : ia_etat {
 		if (agent.princesseReperee ()) {
 			changerEtat (this.GetComponent<tro_E_poursuite> ());
 
-		} else if (!enDeplacement && agent.princesseRepereeAvecAttention ()) {
+		} else if (/*!enDeplacement*/ enGarde && agent.princesseRepereeAvecAttention ()) {
 			changerEtat (this.GetComponent<tro_E_poursuite> ());
 
 		} else if (enDeplacement) {

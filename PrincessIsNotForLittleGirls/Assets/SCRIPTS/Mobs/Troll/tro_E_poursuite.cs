@@ -38,14 +38,36 @@ public class tro_E_poursuite : ia_etat {
 	public override void faireEtat()
 	{
 
-		if (!princessePerdue) {
-
-			if (agent.princesseReperee () && !dernierePositionPrincesseConnue.Equals (princesse.transform.position)) {
-				
-				dernierePositionPrincesseConnue = princesse.transform.position;
-				agent.definirDestination (dernierePositionPrincesseConnue);
-				enRotation = true;
+		if (!princessePerdue && !agent.princesseReperee ()) {
+			if (delaiActuelRecherche == 0.0f) {
+				nav.enabled = false;
+				princessePerdue = true;
+				delaiActuelRecherche = Time.time + dureeRecherchePrincesse;
+				setAnimation ("searching");
+				enRotation = false;
 			}
+
+		} else if (princessePerdue) {
+			if (Time.time <= delaiActuelRecherche) {
+
+				if (agent.princesseRepereeAvecAttention ()) {
+					nav.enabled = true;
+					setAnimation ("running");
+					princessePerdue = false;
+					delaiActuelRecherche = 0.0f;
+					dernierePositionPrincesseConnue = princesse.transform.position;
+					agent.definirDestination (dernierePositionPrincesseConnue);
+					enRotation = true;
+
+				}
+			} else {
+				changerEtat (etatSiPrincessePerdue);
+			}
+		} else if (!dernierePositionPrincesseConnue.Equals (princesse.transform.position)) {
+
+			dernierePositionPrincesseConnue = princesse.transform.position;
+			agent.definirDestination (dernierePositionPrincesseConnue);
+			enRotation = true;
 		}
 
 		if (enRotation) {
@@ -57,27 +79,6 @@ public class tro_E_poursuite : ia_etat {
 
 			changerEtat (this.GetComponent<tro_E_combat> ());
 		
-		} else if (agent.destinationCouranteAtteinte ()) {
-
-			if (delaiActuelRecherche == 0.0f) {
-				princessePerdue = true;
-				delaiActuelRecherche = Time.time + dureeRecherchePrincesse;
-				setAnimation ("searching");
-			}
-
-			if(Time.time <= delaiActuelRecherche) {
-
-				if (agent.princesseRepereeAvecAttention ()) {
-					setAnimation("running");
-					princessePerdue = false;
-					delaiActuelRecherche = 0.0f;
-					dernierePositionPrincesseConnue = princesse.transform.position;
-					agent.definirDestination (dernierePositionPrincesseConnue);
-
-				}
-			} else {
-				changerEtat (etatSiPrincessePerdue);
-			}
 		}
 	}
 
