@@ -67,6 +67,7 @@ public class gob_E_poursuite : ia_etat {
 				princessePerdue = true;
 				delaiActuelRecherche = Time.time + dureeRecherchePrincesse;
 				setAnimation ("searching");
+				enRotation = false;
 			}
 
 			if(Time.time <= delaiActuelRecherche) {
@@ -77,6 +78,7 @@ public class gob_E_poursuite : ia_etat {
 					delaiActuelRecherche = 0.0f;
 					dernierePositionPrincesseConnue = princesse.transform.position;
 					agent.definirDestination (dernierePositionPrincesseConnue);
+					enRotation = true;
 
 				}
 			} else {
