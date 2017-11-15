@@ -4,61 +4,83 @@ using UnityEngine;
 
 public class affichage_interraction : MonoBehaviour {
 
-	private List<Objet> list_objet;
-	private Transform[] listImageInterraction;
+	private HashSet<Arme> arme;
+	private HashSet<ObjetProgression> objetProgression;
+	private Dictionary<EnumArmes,GameObject> dico;
 
 	// Use this for initialization
 	void Start () {
-		//image_detection=GetComponent< UnityEngine.UI.Image>();
-		listImageInterraction = gameObject.GetComponentsInChildren<Transform>(true);
+		arme = new HashSet<Arme> ();
+		objetProgression = new HashSet<ObjetProgression> ();
+		dico = new Dictionary<EnumArmes, GameObject> ();
+		foreach(enum_icon enu in GetComponentsInChildren<enum_icon>(true)){
+				dico.Add (enu.typeArme, enu.gameObject);
+		}
 
-
-	//	image_detection.enabled = false;
-		list_objet = new List<Objet>();
 	}
 
 	// Update is called once per frame
 	void Update () {
-
-		if (list_objet.Count > 0 ) {
-			Objet objetfutur = list_objet.ToArray ()[ list_objet.ToArray().Length-1];
-			if (objetfutur is Arme) {			
-				afficheObjet ("interraction_"+objetfutur.name);
-			}else if(objetfutur is ObjetProgression){
-				afficheObjet ("interraction_objetProgression");
-			}
-
+		Debug.Log (arme);
+		if (arme.Count>0) {
+			var enu = arme.GetEnumerator ();
+			enu.MoveNext();
+			var a = enu.Current;
+			afficheObjet (a.arme);
+		} else if (objetProgression.Count>0) {
+			afficheObjet (EnumArmes.vide);
 		} else {
 			desafficheObjet ();
 		}
 	}
 
+	public void activeObjet(Arme objet){
+		arme .Add(objet);
+	}
+
+	public void activeObjet(ObjetProgression objet){
+		objetProgression.Add(objet);
+	}
+
 	public void activeObjet(Objet objet){
-		if (!list_objet.Contains(objet)) {
-			list_objet.Add(objet);
+		var a = objet as Arme;
+		var o = objet as ObjetProgression;
+		if (a != null) {
+			activeObjet (a);
+		} else if (o != null) {
+			activeObjet (o);
 		}
+	}
+
+
+	public void desactiveObjet(Arme objet){
+		arme.Remove (objet);
+	}	
+	public void desactiveObjet(ObjetProgression objet){
+		objetProgression.Remove (objet);
 	}
 
 	public void desactiveObjet(Objet objet){
-		list_objet.Remove (objet);
+		var a = objet as Arme;
+		var o = objet as ObjetProgression;
+		if (a != null) {
+			desactiveObjet (a);
+		} else if (o != null) {
+			desactiveObjet (o);
+		}
 	}
 
-	private void afficheObjet(string nomImage){
-		bool trouve = false;
-		foreach(Transform t in listImageInterraction){
-			if (t.name.Equals(nomImage)) {
-				trouve = true;
-				t.gameObject.SetActive (true);
-			}
-		}
-		if (!trouve) {
-			afficheObjet ("interraction_objetProgression");
+	private void afficheObjet(EnumArmes nomImage){
+		if (dico.ContainsKey (nomImage)) {
+			dico [nomImage].SetActive (true);
+		} else {
+			dico [EnumArmes.vide].SetActive (true);
 		}
 	}
 
 	private void desafficheObjet(){
-		for(int i=1;i<listImageInterraction.Length;i++){
-			listImageInterraction [i].gameObject.SetActive (false);
+		foreach (GameObject game in dico.Values) {
+			game.SetActive (false);
 		}
 	}
 		
