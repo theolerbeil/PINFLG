@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class princesse_vie : MonoBehaviour {
 	static Animator anim;
@@ -27,6 +28,8 @@ public class princesse_vie : MonoBehaviour {
 		if (!enVie() && !gameover) {
 			Debug.Log ("GAME OVER");
             gameover = true;
+			SceneManager.LoadScene ("scene2");
+			GameControl.control.vie = 100;
 		}
         
 		if (Input.GetKeyDown (KeyCode.X)) {

@@ -13,6 +13,7 @@ public class GameControl : MonoBehaviour {
 	public EnumArmes ArmeCourante;
 	public List<EnumArmes> listArmeTenu;
 
+
 	void Awake(){
 		if (control == null) {
 			DontDestroyOnLoad (gameObject);

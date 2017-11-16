@@ -1,0 +1,84 @@
+Initialize engine version: 5.6.3p1 (9c92e827232b)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1be1)
+    Vendor:   NVIDIA
+    VRAM:     8093 MB
+    Driver:   23.21.13.8800
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\ProjetJeuVideo\PINFLG\PrincessIsNotForLittleGirls\vrobguiver_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\ProjetJeuVideo\PINFLG\PrincessIsNotForLittleGirls\vrobguiver_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\ProjetJeuVideo\PINFLG\PrincessIsNotForLittleGirls\vrobguiver_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\ProjetJeuVideo\PINFLG\PrincessIsNotForLittleGirls\vrobguiver_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\ProjetJeuVideo\PINFLG\PrincessIsNotForLittleGirls\vrobguiver_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\ProjetJeuVideo\PINFLG\PrincessIsNotForLittleGirls\vrobguiver_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\ProjetJeuVideo\PINFLG\PrincessIsNotForLittleGirls\vrobguiver_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading E:\ProjetJeuVideo\PINFLG\PrincessIsNotForLittleGirls\vrobguiver_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.018 seconds
+Platform assembly: E:\ProjetJeuVideo\PINFLG\PrincessIsNotForLittleGirls\vrobguiver_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\ProjetJeuVideo\PINFLG\PrincessIsNotForLittleGirls\vrobguiver_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+The referenced script on this Behaviour (Game Object 'Point light (1)') is missing!
+ 
+(Filename:  Line: 1743)
+
+The referenced script on this Behaviour (Game Object 'Point light (2)') is missing!
+ 
+(Filename:  Line: 1743)
+
+The referenced script on this Behaviour (Game Object 'Point light (1)') is missing!
+ 
+(Filename:  Line: 1743)
+
+The referenced script on this Behaviour (Game Object 'Point light (1)') is missing!
+ 
+(Filename:  Line: 1743)
+
+The referenced script on this Behaviour (Game Object 'Point light (1)') is missing!
+ 
+(Filename:  Line: 1743)
+
+The referenced script on this Behaviour (Game Object 'Point light (1)') is missing!
+ 
+(Filename:  Line: 1743)
+
+UnloadTime: 0.921680 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.264594 ms
+
+Unloading 48 unused Assets to reduce memory usage. Loaded Objects now: 2778.
+Total: 1.208495 ms (FindLiveObjects: 0.217679 ms CreateObjectMapping: 0.027654 ms MarkObjects: 0.634075 ms  DeleteObjects: 0.327506 ms)
+
+vie courante : 80
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+vie courante : 60
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+vie courante : 50
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+vie courante : 40
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+vie courante : 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+GAME OVER
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 2058 -> priority: 1 
+  Thread -> id: 41f4 -> priority: 1 
+  Thread -> id: ca4 -> priority: 1 
+  Thread -> id: 39ac -> priority: 1 
