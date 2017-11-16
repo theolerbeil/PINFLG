@@ -21,6 +21,8 @@ public class gob_E_combat : ia_etat {
 	public float delaiStraff;
 	public float pourcentageStraff;
 
+	public AudioClip sonAttaque;
+
 	private float delaiActuelAttaqueSimple;
 	private float delaiActuelEntreDeuxEsquives;
 	private float delaiActuelStraff;
@@ -67,6 +69,7 @@ public class gob_E_combat : ia_etat {
 		} else if (!attaqueEnCours && agent.distanceToPrincesse() <= agent.distanceRepousse) {
 
 			setAnimation ("repousse");
+			agent.getAudio().PlayOneShot(sonAttaque,1.0f);
 			attaqueEnCours = true;
 			degatsAttaqueEffectues = false;
 			delaiActuelAttaqueSimple = Time.time + delaiAttaqueSimple;
@@ -96,7 +99,7 @@ public class gob_E_combat : ia_etat {
 					setAnimation ("attack4");
 					rb.AddForce (this.transform.right * sautLateralForceCote + this.transform.forward * sautLateralForceAvant + this.transform.up * sautLateralForceHauteur);
 				}
-
+				agent.getAudio().PlayOneShot(sonAttaque,1.0f);
 				attaqueEnCours = true;
 				degatsAttaqueEffectues = false;
 				delaiActuelAttaqueSimple = Time.time + delaiAttaqueSimple;
