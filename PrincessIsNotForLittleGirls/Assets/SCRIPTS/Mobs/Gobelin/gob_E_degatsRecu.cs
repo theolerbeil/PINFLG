@@ -6,6 +6,7 @@ public class gob_E_degatsRecu : ia_etat {
 
 	public float forceReculeVertical;
 	public float forceReculeHorizontal;
+	public AudioClip sonDegat;
 
 	private float facteurRecule;
 
@@ -24,6 +25,8 @@ public class gob_E_degatsRecu : ia_etat {
 		nav.enabled = false;
 		facteurRecule = princesseArme.getFacteurReculeArmeActuelle();
 		anim.Play("degatsRecu");
+		agent.getAudio ().Stop();
+		agent.getAudio().PlayOneShot(sonDegat,1.0f);
 
 		Vector3 directionRecule = (this.transform.position - princesse.transform.position).normalized;
 

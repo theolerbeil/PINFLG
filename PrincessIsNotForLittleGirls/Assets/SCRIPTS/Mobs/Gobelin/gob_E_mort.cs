@@ -5,8 +5,10 @@ using UnityEngine;
 public class gob_E_mort : ia_etat {
 
 	public float delaiAvantDisparition;
+	public AudioClip sonMort;
 
 	private float actualDelai;
+	private bool sonJoue;
 
 	// Use this for initialization
 	void Start()
@@ -21,10 +23,15 @@ public class gob_E_mort : ia_etat {
 		setAnimation("mort");
 		rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
 		actualDelai = Time.time + delaiAvantDisparition;
+		sonJoue = false;
 	}
 
 	public override void faireEtat()
 	{
+		if (!agent.getAudio().isPlaying && !sonJoue){
+			agent.getAudio().PlayOneShot(sonMort,1.0f);
+			sonJoue = true;
+		}
 		if(Time.time >= actualDelai){
 			this.gameObject.SetActive (false);
 		}
