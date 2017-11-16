@@ -26,6 +26,8 @@ public class ia_agent : MonoBehaviour {
 	public ia_etat etatDegatsRecu;
 	public ia_etat etatMort;
 
+	private AudioSource audio;
+
     void Awake()
     {
         nav = this.GetComponent<NavMeshAgent>();
@@ -36,6 +38,7 @@ public class ia_agent : MonoBehaviour {
 		princesseArme = princesse.GetComponent<princesse_arme>();
         pointsInteret = GameObject.FindObjectsOfType<ia_pointInteret>();
 		mobVie = GetComponent<mob_vie> ();
+		audio = GetComponent<AudioSource> ();
     }
 
     // Use this for initialization
@@ -87,6 +90,10 @@ public class ia_agent : MonoBehaviour {
 	public mob_vie getMobVie()
 	{
 		return mobVie;
+	}
+
+	public AudioSource getAudio(){
+		return audio;
 	}
 
 	/// <summary>

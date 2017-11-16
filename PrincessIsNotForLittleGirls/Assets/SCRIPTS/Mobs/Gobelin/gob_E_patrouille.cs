@@ -9,6 +9,8 @@ public class gob_E_patrouille : ia_etat {
 
     public ia_pointInteret[] chemin;
 
+	public AudioClip sonArret;
+
     private int indiceCheminActuel;
 	private float delaisActuel;
 	private bool enChemin;
@@ -44,6 +46,7 @@ public class gob_E_patrouille : ia_etat {
 				setAnimation("searching");
 				enChemin = false;
 				this.delaisActuel = Time.time + this.delaisAChaqueArret;
+				agent.getAudio().PlayOneShot(sonArret, 1.0f);
 			}
 		} else if (Time.time > this.delaisActuel) {
 
