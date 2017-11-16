@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 2a32e6ee0df5f374194d99d75482ee6a
-timeCreated: 1509729424
+guid: 66f1ead30647d0d479c4813db14b0bb6
+timeCreated: 1510775197
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -38,18 +38,17 @@ ModelImporter:
     100060: main.L_end
     100062: main.R
     100064: main.R_end
-    100066: masse
-    100068: pied IK.L
-    100070: pied IK.R
-    100072: pied.L
-    100074: pied.L_end
-    100076: pied.R
-    100078: pied.R_end
-    100080: tete
-    100082: tete_end
-    100084: torse
-    100086: //RootNode
-    100088: ventre
+    100066: pied IK.L
+    100068: pied IK.R
+    100070: pied.L
+    100072: pied.L_end
+    100074: pied.R
+    100076: pied.R_end
+    100078: tete
+    100080: tete_end
+    100082: torse
+    100084: //RootNode
+    100086: ventre
     400000: Armature
     400002: Armature.001
     400004: Bone
@@ -83,26 +82,23 @@ ModelImporter:
     400060: main.L_end
     400062: main.R
     400064: main.R_end
-    400066: masse
-    400068: pied IK.L
-    400070: pied IK.R
-    400072: pied.L
-    400074: pied.L_end
-    400076: pied.R
-    400078: pied.R_end
-    400080: tete
-    400082: tete_end
-    400084: torse
-    400086: //RootNode
-    400088: ventre
+    400066: pied IK.L
+    400068: pied IK.R
+    400070: pied.L
+    400072: pied.L_end
+    400074: pied.R
+    400076: pied.R_end
+    400078: tete
+    400080: tete_end
+    400082: torse
+    400084: //RootNode
+    400086: ventre
     2000000: Camera
-    4300000: masse
-    4300002: Cube
+    4300000: Cube
     7400000: Armature.001|Armature.001Action
     9500000: //RootNode
     10800000: Lamp
     13700000: Cube
-    13700002: masse
   materials:
     importMaterials: 1
     materialName: 0

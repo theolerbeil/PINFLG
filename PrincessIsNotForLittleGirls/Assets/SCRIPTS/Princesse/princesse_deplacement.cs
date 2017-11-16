@@ -116,7 +116,7 @@ public class princesse_deplacement : MonoBehaviour {
             }
         }
 
-		if(InputManager.GetKeyDown(KeyCode.LeftShift)){
+		if(InputManager.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Fire3")){
 			if (CanDash == true && isGrounded == true) {
 				anim.Play ("fwdash");
                 rb.AddForce(transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical).normalized * 45f, ForceMode.Impulse);

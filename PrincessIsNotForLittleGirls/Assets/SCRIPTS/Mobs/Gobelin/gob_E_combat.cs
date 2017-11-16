@@ -42,10 +42,6 @@ public class gob_E_combat : ia_etat {
     {
 		setAnimation("idleCombat");
 
-		if (attaqueSimplePrete ()) {
-			delaiActuelAttaqueSimple = Time.time + delaiAttaqueSimple * Random.value;
-		}
-
 		delaiActuelStraff = Time.time + delaiStraff * Random.value;
     }
 
@@ -117,7 +113,7 @@ public class gob_E_combat : ia_etat {
 						princesseVie.blesser (degatsAttaqueSimple, this.gameObject, forceReculeAttaqueSimple);
 						degatsAttaqueEffectues = true;
 					}
-				} else if (attaqueEnCours && Time.time >= delaiActuelAttaqueSimple - delaiAttaqueSimple + 0.5f) {
+				} else if (attaqueEnCours && Time.time >= delaiActuelAttaqueSimple - delaiAttaqueSimple + 1.0f) {
 					degatsAttaqueEffectues = false;
 					attaqueEnCours = false;
 				}

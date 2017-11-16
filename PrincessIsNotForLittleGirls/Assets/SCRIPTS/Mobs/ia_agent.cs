@@ -208,7 +208,7 @@ public class ia_agent : MonoBehaviour {
     {
         etatCourant.sortirEtat();
         etatCourant = nouvelEtat;
-		Debug.Log (this.gameObject.name + " entre dans l'état " + etatCourant.ToString());
+//		Debug.Log (this.gameObject.name + " entre dans l'état " + etatCourant.ToString());
         etatCourant.entrerEtat();
 	}
 
