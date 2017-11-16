@@ -5,5 +5,4 @@ using UnityEngine;
 public class enum_objetP_icon : MonoBehaviour {
 
 	public EnumObjetProgression typeObjet;
-	public bool isObject;
 }

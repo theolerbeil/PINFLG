@@ -25,7 +25,7 @@ public class objet_interaction : MonoBehaviour {
 	void Update () {
         Vector3 distance_princesse = this.transform.position - princesse.transform.position;
 
-		bool action = Input.GetKeyDown (KeyCode.E);
+		bool action = InputManager.GetKeyDown (KeyCode.E);
 
 
 		if (distance_princesse.magnitude < distance_activation) {

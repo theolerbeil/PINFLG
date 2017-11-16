@@ -137,4 +137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c7109e91c9b064499f84d5a0998c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nomObjet: Pied de lit
+  descriptionObjet: Faut bien commencer par une arme non ?
   arme: 3

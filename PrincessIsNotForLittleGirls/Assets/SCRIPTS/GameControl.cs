@@ -11,6 +11,7 @@ public class GameControl : MonoBehaviour {
 
 	public float vie;
 	public EnumArmes ArmeCourante;
+	public List<EnumArmes> listArmeTenu;
 
 	void Awake(){
 		if (control == null) {

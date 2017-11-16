@@ -5,6 +5,7 @@ using UnityEngine;
 public class princesse_arme : MonoBehaviour {
 
     public EnumArmes armeActive;
+	public List<EnumArmes> listArmeTenu;
 
     private GameObject actualHandArme;
 	private GameObject actualWorldArme;
@@ -45,6 +46,9 @@ public class princesse_arme : MonoBehaviour {
 		listeMobsTouches = new List<ia_agent> ();
 
 		SetArmeActive (GameControl.control.ArmeCourante, CreerUneArmeDepuisLEnum (GameControl.control.ArmeCourante));
+
+		listArmeTenu = new List<EnumArmes> ();
+		listArmeTenu = GameControl.control.listArmeTenu;
 	}
 	
 	// Update is called once per frame

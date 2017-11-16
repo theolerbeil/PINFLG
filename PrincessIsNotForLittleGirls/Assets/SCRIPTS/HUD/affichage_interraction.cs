@@ -8,6 +8,7 @@ public class affichage_interraction : MonoBehaviour {
 	private HashSet<ObjetProgression> objetProgression;
 	private Dictionary<EnumArmes,GameObject> dico;
 
+
 	// Use this for initialization
 	void Start () {
 		arme = new HashSet<Arme> ();
@@ -42,12 +43,12 @@ public class affichage_interraction : MonoBehaviour {
 	}
 
 	public void activeObjet(Objet objet){
-		var a = objet as Arme;
-		var o = objet as ObjetProgression;
-		if (a != null) {
-			activeObjet (a);
-		} else if (o != null) {
-			activeObjet (o);
+		Arme arme = objet as Arme;
+		ObjetProgression objetP = objet as ObjetProgression;
+		if (arme != null) {
+			activeObjet (arme);
+		} else if (objetP != null) {
+			activeObjet (objetP);
 		}
 	}
 
@@ -60,12 +61,12 @@ public class affichage_interraction : MonoBehaviour {
 	}
 
 	public void desactiveObjet(Objet objet){
-		var a = objet as Arme;
-		var o = objet as ObjetProgression;
-		if (a != null) {
-			desactiveObjet (a);
-		} else if (o != null) {
-			desactiveObjet (o);
+		Arme arme = objet as Arme;
+		ObjetProgression objetP = objet as ObjetProgression;
+		if (arme != null) {
+			desactiveObjet (arme);
+		} else if (objetP != null) {
+			desactiveObjet (objetP);
 		}
 	}
 
