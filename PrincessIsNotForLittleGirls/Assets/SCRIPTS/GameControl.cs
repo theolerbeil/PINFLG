@@ -12,6 +12,7 @@ public class GameControl : MonoBehaviour {
 	public float vie;
 	public EnumArmes ArmeCourante;
 
+
 	void Awake(){
 		if (control == null) {
 			DontDestroyOnLoad (gameObject);
