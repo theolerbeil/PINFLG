@@ -6,12 +6,16 @@ public class affichage_ObjetRamasser : MonoBehaviour {
 
 	private bool time;
 	private Transform[] listImagePaused;
+	private Dictionary<EnumObjetProgression,GameObject> dico;
 
 	// Use this for initialization
 	void Start () {
 		time = true;
 		listImagePaused = gameObject.GetComponentsInChildren<Transform>(true);
-		desaffiche ();
+		/*foreach(enum_objetP_icon enu in GetComponentsInChildren<enum_objetP_icon>(true)){
+			dico.Add (enu.typeObjet, enu.gameObject);
+		}*/
+
 
 	}
 
@@ -38,8 +42,13 @@ public class affichage_ObjetRamasser : MonoBehaviour {
 
 	public void activeObjet(ObjetProgression objetProgression){
 		time = false;
+
+		/*Debug.Log (objetProgression.objetProgression);
+		if (dico.ContainsKey (objetProgression.objetProgression)) {
+			dico [objetProgression.objetProgression].SetActive (true);
+		}*/
 		
-		for (int i = 1; i < listImagePaused.Length; i++) {
+		/*for (int i = 1; i < listImagePaused.Length; i++) {
 			switch (listImagePaused [i].name) {
 			case "Panel":
 				listImagePaused [i].gameObject.SetActive(true);
@@ -53,7 +62,7 @@ public class affichage_ObjetRamasser : MonoBehaviour {
 				listImagePaused [i].GetComponent<UnityEngine.UI.Text> ().text = objetProgression.descriptionObjet;
 				break;
 			}
-		}
+		}*/
 
 	}
 

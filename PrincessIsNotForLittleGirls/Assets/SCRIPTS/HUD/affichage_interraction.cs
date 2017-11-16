@@ -13,15 +13,14 @@ public class affichage_interraction : MonoBehaviour {
 		arme = new HashSet<Arme> ();
 		objetProgression = new HashSet<ObjetProgression> ();
 		dico = new Dictionary<EnumArmes, GameObject> ();
-		foreach(enum_icon enu in GetComponentsInChildren<enum_icon>(true)){
-				dico.Add (enu.typeArme, enu.gameObject);
+		foreach(enum_arme_icon enu in GetComponentsInChildren<enum_arme_icon>(true)){
+			dico.Add (enu.typeArme, enu.gameObject);
 		}
 
 	}
 
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (arme);
 		if (arme.Count>0) {
 			var enu = arme.GetEnumerator ();
 			enu.MoveNext();
