@@ -34,7 +34,6 @@ public class objet_interaction : MonoBehaviour {
 			float angle = Vector3.Angle (princesse.transform.forward, distance_princesse.normalized);
 
 			if (angle <= demiAngleActivationFrontal) {
-
 				hud_refractor.activeObjet (objet);
 				
 				//image_detection.enabled = true;
