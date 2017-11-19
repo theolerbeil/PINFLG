@@ -29,11 +29,12 @@ public class affichage_ObjetRamasser : MonoBehaviour {
 	void Update () {
 
 
+
 		if (!time) {
 			if (Time.timeScale != 0) {
 				Time.timeScale = 0;
 			} else {
-				if (Input.GetKeyDown (KeyCode.Escape)) {
+				if (Input.GetButtonDown("Cancel")) {
 					time = true;
 					desaffiche ();
 					Time.timeScale = 1;
