@@ -6,6 +6,7 @@ public class affichage_interraction : MonoBehaviour {
 
 	private HashSet<Arme> arme;
 	private HashSet<ObjetProgression> objetProgression;
+	private HashSet<ObjetEnvironnement> objetEnvironnement;
 	private Dictionary<EnumArmes,GameObject> dico;
 
 
@@ -13,6 +14,7 @@ public class affichage_interraction : MonoBehaviour {
 	void Start () {
 		arme = new HashSet<Arme> ();
 		objetProgression = new HashSet<ObjetProgression> ();
+		objetEnvironnement = new HashSet<ObjetEnvironnement> ();
 		dico = new Dictionary<EnumArmes, GameObject> ();
 		foreach(enum_arme_icon enu in GetComponentsInChildren<enum_arme_icon>(true)){
 			dico.Add (enu.typeArme, enu.gameObject);
@@ -22,14 +24,16 @@ public class affichage_interraction : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (arme.Count>0) {
+		if (arme.Count > 0) {
 			var enu = arme.GetEnumerator ();
-			enu.MoveNext();
+			enu.MoveNext ();
 			var a = enu.Current;
 			afficheObjet (a.arme);
-		} else if (objetProgression.Count>0) {
+		} else if (objetProgression.Count > 0) {
 			afficheObjet (EnumArmes.vide);
-		} else {
+		} else if (objetEnvironnement.Count > 0) { 
+			afficheObjet (EnumArmes.vide);
+		}else {
 			desafficheObjet ();
 		}
 	}
@@ -42,13 +46,22 @@ public class affichage_interraction : MonoBehaviour {
 		objetProgression.Add(objet);
 	}
 
+	public void activeObjet(ObjetEnvironnement objet){
+		if(objet.utilisable)
+		objetEnvironnement.Add(objet);
+	}
+
+
 	public void activeObjet(Objet objet){
 		Arme arme = objet as Arme;
 		ObjetProgression objetP = objet as ObjetProgression;
+		ObjetEnvironnement objetE = objet as ObjetEnvironnement;
 		if (arme != null) {
 			activeObjet (arme);
 		} else if (objetP != null) {
 			activeObjet (objetP);
+		} else if(objetE != null){
+			activeObjet (objetE);
 		}
 	}
 
@@ -60,13 +73,20 @@ public class affichage_interraction : MonoBehaviour {
 		objetProgression.Remove (objet);
 	}
 
+	public void desactiveObjet(ObjetEnvironnement objet){
+		objetEnvironnement.Remove (objet);
+	}
+
 	public void desactiveObjet(Objet objet){
 		Arme arme = objet as Arme;
 		ObjetProgression objetP = objet as ObjetProgression;
+		ObjetEnvironnement objetE = objet as ObjetEnvironnement;
 		if (arme != null) {
 			desactiveObjet (arme);
 		} else if (objetP != null) {
 			desactiveObjet (objetP);
+		}else if(objetE != null){
+			desactiveObjet (objetE);
 		}
 	}
 

@@ -766,7 +766,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1a28adc3b13b62a4fac2c7ee5c336c6f, type: 2}
+  - {fileID: 2100000, guid: 6f3dcc75621f28847a1c73f7886dfef8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2394,7 +2394,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.99264705, g: 0.25546065, b: 0.69777274, a: 1}
+    m_HighlightedColor: {r: 0.8, g: 0.44313726, b: 0.74509805, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2580,7 +2580,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: b3973034551fb5c4889b976945f641e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e5cd13a960ac2b49b6e5e9c16f29ba7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3349,7 +3349,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1823982143}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ad69cb537e414b4ca25076863ecd0d2, type: 3}
+  m_Script: {fileID: 11500000, guid: 50ef9e428e802874eb284e1e6f50ea57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NomDeLaSceneaCharger: scene_room
