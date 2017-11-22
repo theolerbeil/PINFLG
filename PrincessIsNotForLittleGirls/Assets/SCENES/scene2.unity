@@ -48599,6 +48599,73 @@ Transform:
   m_Father: {fileID: 1721274022}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1876979604
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114208897395276296, guid: 4917380a9b83bad47a8ca379eff7450a,
+        type: 2}
+      propertyPath: listeClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082734295136910, guid: 4917380a9b83bad47a8ca379eff7450a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -15.650244
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082734295136910, guid: 4917380a9b83bad47a8ca379eff7450a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.36629057
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082734295136910, guid: 4917380a9b83bad47a8ca379eff7450a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -10.899969
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082734295136910, guid: 4917380a9b83bad47a8ca379eff7450a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082734295136910, guid: 4917380a9b83bad47a8ca379eff7450a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082734295136910, guid: 4917380a9b83bad47a8ca379eff7450a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082734295136910, guid: 4917380a9b83bad47a8ca379eff7450a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082734295136910, guid: 4917380a9b83bad47a8ca379eff7450a, type: 2}
+      propertyPath: m_RootOrder
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 114208897395276296, guid: 4917380a9b83bad47a8ca379eff7450a,
+        type: 2}
+      propertyPath: defaultLevelMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 70a57d4fa87edfa4691a4eab1932c676, type: 3}
+    - target: {fileID: 114208897395276296, guid: 4917380a9b83bad47a8ca379eff7450a,
+        type: 2}
+      propertyPath: listeClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 70a57d4fa87edfa4691a4eab1932c676, type: 3}
+    - target: {fileID: 114208897395276296, guid: 4917380a9b83bad47a8ca379eff7450a,
+        type: 2}
+      propertyPath: listeClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 39bf36f0d15d2504b8d7c74107e46814, type: 3}
+    - target: {fileID: 114208897395276296, guid: 4917380a9b83bad47a8ca379eff7450a,
+        type: 2}
+      propertyPath: listeClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: dade4a894d706a841a337358c605cf5a, type: 3}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4917380a9b83bad47a8ca379eff7450a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1882332148 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4565003241817794, guid: cfadea0d9ceadd749b89c8e88ffa908d,
@@ -50371,6 +50438,21 @@ MonoBehaviour:
   vitesseAngulaire: 8
   isGrounded: 0
   feetDist: 0.1
+  bruitsPas:
+  - {fileID: 8300000, guid: 3e1b4efdb788a7849902df8fb1ffbf09, type: 3}
+  - {fileID: 8300000, guid: ad62019e0bba6ba4c82ba1f0c9bd28ec, type: 3}
+  - {fileID: 8300000, guid: 88699f9bef4390040a20cac84fd86a41, type: 3}
+  - {fileID: 8300000, guid: 005526013c92f024b887ed06f9d84905, type: 3}
+  - {fileID: 8300000, guid: 538892b4132ec6b409c3cbc36bb9697f, type: 3}
+  - {fileID: 8300000, guid: 562d20da52dbc964dabd0a7d2ee87456, type: 3}
+  - {fileID: 8300000, guid: 74059a4574e6e994c903b4770005be12, type: 3}
+  - {fileID: 8300000, guid: 921598f64c808e14c867c5b9930db006, type: 3}
+  - {fileID: 8300000, guid: 92c8c97436940484e8bc3bad25c1be88, type: 3}
+  - {fileID: 8300000, guid: 78275d80cf5ba2048b1d889ffd1dd16c, type: 3}
+  minPitch: 1.8
+  maxPitch: 2
+  minVolume: 0.35
+  maxVolume: 0.45
 --- !u!114 &2111981683
 MonoBehaviour:
   m_ObjectHideFlags: 0

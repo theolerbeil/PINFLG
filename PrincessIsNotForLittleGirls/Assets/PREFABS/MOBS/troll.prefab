@@ -614,6 +614,7 @@ GameObject:
   - component: {fileID: 195324763171741130}
   - component: {fileID: 114387804167951912}
   - component: {fileID: 114652351777305646}
+  - component: {fileID: 114943392752212798}
   - component: {fileID: 114307471193374438}
   - component: {fileID: 114422631737329164}
   - component: {fileID: 114737939627647376}
@@ -1004,7 +1005,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1097639305062850}
-  m_LocalRotation: {x: 0.6834158, y: 0.29148588, z: 0.66428703, w: 0.0818644}
+  m_LocalRotation: {x: 0.6834157, y: 0.29148585, z: 0.664287, w: 0.081864394}
   m_LocalPosition: {x: 0.003982941, y: -0.005827032, z: 0.0019042797}
   m_LocalScale: {x: 0.9999996, y: 0.9999997, z: 0.999999}
   m_Children:
@@ -1517,6 +1518,21 @@ MonoBehaviour:
   vitesseAngulaire: 0.8
   etatDegatsRecu: {fileID: 0}
   etatMort: {fileID: 114747391936571350}
+  bruitsPas:
+  - {fileID: 8300000, guid: 3e1b4efdb788a7849902df8fb1ffbf09, type: 3}
+  - {fileID: 8300000, guid: ad62019e0bba6ba4c82ba1f0c9bd28ec, type: 3}
+  - {fileID: 8300000, guid: 88699f9bef4390040a20cac84fd86a41, type: 3}
+  - {fileID: 8300000, guid: 005526013c92f024b887ed06f9d84905, type: 3}
+  - {fileID: 8300000, guid: 538892b4132ec6b409c3cbc36bb9697f, type: 3}
+  - {fileID: 8300000, guid: 562d20da52dbc964dabd0a7d2ee87456, type: 3}
+  - {fileID: 8300000, guid: 74059a4574e6e994c903b4770005be12, type: 3}
+  - {fileID: 8300000, guid: 921598f64c808e14c867c5b9930db006, type: 3}
+  - {fileID: 8300000, guid: 92c8c97436940484e8bc3bad25c1be88, type: 3}
+  - {fileID: 8300000, guid: 78275d80cf5ba2048b1d889ffd1dd16c, type: 3}
+  minPitch: 0.1
+  maxPitch: 0.2
+  minVolume: 0.9
+  maxVolume: 1
 --- !u!114 &114737939627647376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1556,6 +1572,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ed512e6795468f4a933a2bebb2d666b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114943392752212798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1958744413631244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e88e7dea25cae42abbb9a295d392c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listeClips: []
 --- !u!114 &114975237975636626
 MonoBehaviour:
   m_ObjectHideFlags: 1

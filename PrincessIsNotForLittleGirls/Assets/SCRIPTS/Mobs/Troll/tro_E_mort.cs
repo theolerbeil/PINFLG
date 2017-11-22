@@ -19,7 +19,7 @@ public class tro_E_mort : ia_etat {
 
 	public override void entrerEtat()
 	{
-		agent.getAudio().PlayOneShot(sonMort,1.0f);
+		agent.getSoundEntity().playOneShot(sonMort,1.0f);
 		anim.Play("mort");
 		rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
 		actualDelai = Time.time + delaiAvantDisparition;
