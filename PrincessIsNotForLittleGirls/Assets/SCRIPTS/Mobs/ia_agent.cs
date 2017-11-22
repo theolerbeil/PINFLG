@@ -25,9 +25,14 @@ public class ia_agent : MonoBehaviour {
 	public float vitesseAngulaire;
 	public ia_etat etatDegatsRecu;
 	public ia_etat etatMort;
+	public AudioClip[] bruitsPas;
+	public float minPitch;
+	public float maxPitch;
+	public float minVolume;
+	public float maxVolume;
 
-	private AudioSource audio;
-	private SoundManager sm;
+	private SoundEntity se;
+	private float timerStep;
 
     void Awake()
     {
@@ -39,13 +44,12 @@ public class ia_agent : MonoBehaviour {
 		princesseArme = princesse.GetComponent<princesse_arme>();
         pointsInteret = GameObject.FindObjectsOfType<ia_pointInteret>();
 		mobVie = GetComponent<mob_vie> ();
-		audio = GetComponent<AudioSource> ();
-		sm = GameObject.FindGameObjectWithTag ("SoundManager").GetComponent<SoundManager>();
+		se = GetComponent<SoundEntity> ();
     }
 
     // Use this for initialization
     void Start () {
-		sm.addAudioSource (this.audio);
+		
         etatCourant.entrerEtat();
     }
 	
@@ -53,7 +57,13 @@ public class ia_agent : MonoBehaviour {
 	void Update () {
 
         etatCourant.faireEtat();
-
+		if (timerStep <= Time.time && nav.velocity.magnitude != 0.0f) {
+			int indice = Random.Range (0, this.bruitsPas.Length);
+			float volume = Random.Range (minVolume, maxVolume);
+			float pitch = Random.Range (minPitch, maxPitch);
+			se.playOneShot(this.bruitsPas[indice], volume, pitch);
+			timerStep = Time.time + (Random.Range (0.9f, 1.0f) * (1.0f / nav.velocity.magnitude) * 0.8f);
+		}
 	}
 
 	public NavMeshAgent getNav()
@@ -95,8 +105,8 @@ public class ia_agent : MonoBehaviour {
 		return mobVie;
 	}
 
-	public AudioSource getAudio(){
-		return audio;
+	public SoundEntity getSoundEntity(){
+		return se;
 	}
 
 	/// <summary>
