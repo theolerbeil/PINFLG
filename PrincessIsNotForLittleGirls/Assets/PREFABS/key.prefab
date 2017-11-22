@@ -21,6 +21,9 @@ GameObject:
   - component: {fileID: 4763284563516172}
   - component: {fileID: 33199075461318682}
   - component: {fileID: 23124009823038072}
+  - component: {fileID: 54246478260967710}
+  - component: {fileID: 114354325612922434}
+  - component: {fileID: 114401031192714640}
   m_Layer: 0
   m_Name: key
   m_TagString: Untagged
@@ -35,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1628455178177506}
   m_LocalRotation: {x: -0.00000003774895, y: -1.11022296e-16, z: 1.11022296e-16, w: 1}
-  m_LocalPosition: {x: -4.3862267, y: 1.701, z: 26.376749}
+  m_LocalPosition: {x: -0.60510683, y: 1.69, z: -2.9201193}
   m_LocalScale: {x: 9.999996, y: 9.999997, z: 9.999997}
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,3 +83,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1628455178177506}
   m_Mesh: {fileID: 4300000, guid: 1b3b814b0f2a6fb4b820d73d6bc02f94, type: 3}
+--- !u!54 &54246478260967710
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1628455178177506}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 10
+  m_CollisionDetection: 0
+--- !u!114 &114354325612922434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1628455178177506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9235aa119ac50f94e9729049f4f64ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objet: {fileID: 114401031192714640}
+  distance_activation: 1.5
+  demiAngleActivationFrontal: 45
+--- !u!114 &114401031192714640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1628455178177506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1ce7b1919c12d4484deef57e49b0bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomObjet: "cl\xE9"
+  descriptionObjet: description
+  objetProgression: 1
