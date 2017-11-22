@@ -206,8 +206,7 @@ public class princesse_deplacement : MonoBehaviour {
 			//pushableCube.transform.position += mouvement * vitesse/2 * Time.deltaTime;
 		}
 
-		if (timerStep <= Time.time && isGrounded) {
-			Debug.Log ("PAS");
+		if (timerStep <= Time.time && isGrounded && CanDash) {
 			int indice = Random.Range (0, this.bruitsPas.Length);
 			float volume = Random.Range (minVolume, maxVolume);
 			float pitch = Random.Range (minPitch, maxPitch);
