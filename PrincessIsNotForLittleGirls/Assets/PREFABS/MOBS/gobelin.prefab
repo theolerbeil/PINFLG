@@ -461,6 +461,7 @@ GameObject:
   - component: {fileID: 195983392004149306}
   - component: {fileID: 114257562304705656}
   - component: {fileID: 114406686919795056}
+  - component: {fileID: 114470220030614872}
   - component: {fileID: 114380259584643674}
   - component: {fileID: 114319844370825256}
   - component: {fileID: 114495390672951426}
@@ -860,7 +861,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1445092049460526}
-  m_LocalRotation: {x: -0.70710677, y: -0.70710665, z: 0.00026975636, w: -0.0002696229}
+  m_LocalRotation: {x: -0.7071068, y: -0.7071067, z: 0.0002697564, w: -0.00026962292}
   m_LocalPosition: {x: 0.0025, y: 0.0017, z: 0.0051}
   m_LocalScale: {x: 0.032083422, y: 0.022739137, z: 0.09069018}
   m_Children: []
@@ -1577,6 +1578,33 @@ MonoBehaviour:
   vitesseAngulaire: 8
   etatDegatsRecu: {fileID: 114851886317558394}
   etatMort: {fileID: 114025833143946730}
+  bruitsPas:
+  - {fileID: 8300000, guid: 3e1b4efdb788a7849902df8fb1ffbf09, type: 3}
+  - {fileID: 8300000, guid: ad62019e0bba6ba4c82ba1f0c9bd28ec, type: 3}
+  - {fileID: 8300000, guid: 88699f9bef4390040a20cac84fd86a41, type: 3}
+  - {fileID: 8300000, guid: 005526013c92f024b887ed06f9d84905, type: 3}
+  - {fileID: 8300000, guid: 538892b4132ec6b409c3cbc36bb9697f, type: 3}
+  - {fileID: 8300000, guid: 562d20da52dbc964dabd0a7d2ee87456, type: 3}
+  - {fileID: 8300000, guid: 74059a4574e6e994c903b4770005be12, type: 3}
+  - {fileID: 8300000, guid: 921598f64c808e14c867c5b9930db006, type: 3}
+  - {fileID: 8300000, guid: 92c8c97436940484e8bc3bad25c1be88, type: 3}
+  - {fileID: 8300000, guid: 78275d80cf5ba2048b1d889ffd1dd16c, type: 3}
+  minPitch: 2.5
+  maxPitch: 3
+  minVolume: 0.25
+  maxVolume: 0.35
+--- !u!114 &114470220030614872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1613168974629440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e88e7dea25cae42abbb9a295d392c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listeClips: []
 --- !u!114 &114495343298560022
 MonoBehaviour:
   m_ObjectHideFlags: 1
