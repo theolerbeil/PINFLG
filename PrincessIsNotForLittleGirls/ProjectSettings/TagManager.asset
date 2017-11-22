@@ -10,6 +10,7 @@ TagManager:
   - mob
   - Image_Action_ObjetProgression
   - Affichage_ObjetRamasser
+  - SoundManager
   layers:
   - Default
   - TransparentFX
