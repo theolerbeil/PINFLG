@@ -25,7 +25,7 @@ public class objet_interaction : MonoBehaviour {
 	void Update () {
         Vector3 distance_princesse = this.transform.position - princesse.transform.position;
 
-		bool action = InputManager.GetButtonDown("Ramasser");
+		bool action = InputManager.GetKeyDown (KeyCode.E);
 
 
 		if (distance_princesse.magnitude < distance_activation) {
@@ -34,6 +34,7 @@ public class objet_interaction : MonoBehaviour {
 			float angle = Vector3.Angle (princesse.transform.forward, distance_princesse.normalized);
 
 			if (angle <= demiAngleActivationFrontal) {
+
 				hud_refractor.activeObjet (objet);
 				
 				//image_detection.enabled = true;

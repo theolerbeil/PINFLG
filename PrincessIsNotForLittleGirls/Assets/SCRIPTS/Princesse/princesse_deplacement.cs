@@ -77,7 +77,7 @@ public class princesse_deplacement : MonoBehaviour {
 		}
 
 
-		bool saut = InputManager.GetButtonDown("Jump");
+		bool saut = InputManager.GetKeyDown (KeyCode.Space);
 		//	Input.GetKeyDown(KeyCode.Space);
 
 		if (saut && isGrounded == true) {
