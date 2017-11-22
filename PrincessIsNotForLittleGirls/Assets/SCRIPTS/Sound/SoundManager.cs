@@ -118,6 +118,31 @@ public class SoundManager : MonoBehaviour {
 		musicQueue.Enqueue (music);
 	}
 
+	public void playOneShot(AudioClip music) {
+		playOneShot (music, 1.0f);
+	}
+
+	public void playOneShot(AudioClip music, float volume) {
+		playOneShot (music, volume, 1.0f);
+	}
+
+	public void playOneShot(AudioClip music, float volume, float pitch) {
+		levelAudioSingle.pitch = pitch;
+		levelAudioSingle.PlayOneShot (music, volume);
+	}
+
+	public void playOneShot(int indice) {
+		playOneShot (indice, 1.0f);
+	}
+
+	public void playOneShot(int indice, float volume) {
+		playOneShot (indice, volume, 1.0f);
+	}
+
+	public void playOneShot(int indice, float volume, float pitch) {
+		playOneShot (listeClips [indice], volume, pitch);
+	}
+
 	private bool switchMusicFromTo(AudioSource from, AudioSource to) {
 		float volume = Mathf.Min (1.0f, (Time.time - timer) / dureeTransition);
 		from.volume = 1.0f - volume;

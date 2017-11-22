@@ -50424,6 +50424,21 @@ MonoBehaviour:
   vitesseAngulaire: 8
   isGrounded: 0
   feetDist: 0.1
+  bruitsPas:
+  - {fileID: 8300000, guid: 3e1b4efdb788a7849902df8fb1ffbf09, type: 3}
+  - {fileID: 8300000, guid: ad62019e0bba6ba4c82ba1f0c9bd28ec, type: 3}
+  - {fileID: 8300000, guid: 88699f9bef4390040a20cac84fd86a41, type: 3}
+  - {fileID: 8300000, guid: 005526013c92f024b887ed06f9d84905, type: 3}
+  - {fileID: 8300000, guid: 538892b4132ec6b409c3cbc36bb9697f, type: 3}
+  - {fileID: 8300000, guid: 562d20da52dbc964dabd0a7d2ee87456, type: 3}
+  - {fileID: 8300000, guid: 74059a4574e6e994c903b4770005be12, type: 3}
+  - {fileID: 8300000, guid: 921598f64c808e14c867c5b9930db006, type: 3}
+  - {fileID: 8300000, guid: 92c8c97436940484e8bc3bad25c1be88, type: 3}
+  - {fileID: 8300000, guid: 78275d80cf5ba2048b1d889ffd1dd16c, type: 3}
+  minPitch: 1.8
+  maxPitch: 2
+  minVolume: 0.35
+  maxVolume: 0.45
 --- !u!114 &2111981683
 MonoBehaviour:
   m_ObjectHideFlags: 0
