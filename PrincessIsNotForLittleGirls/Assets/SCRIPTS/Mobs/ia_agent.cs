@@ -27,6 +27,7 @@ public class ia_agent : MonoBehaviour {
 	public ia_etat etatMort;
 
 	private AudioSource audio;
+	private SoundManager sm;
 
     void Awake()
     {
@@ -39,10 +40,12 @@ public class ia_agent : MonoBehaviour {
         pointsInteret = GameObject.FindObjectsOfType<ia_pointInteret>();
 		mobVie = GetComponent<mob_vie> ();
 		audio = GetComponent<AudioSource> ();
+		sm = GameObject.FindGameObjectWithTag ("SoundManager").GetComponent<SoundManager>();
     }
 
     // Use this for initialization
     void Start () {
+		sm.addAudioSource (this.audio);
         etatCourant.entrerEtat();
     }
 	
