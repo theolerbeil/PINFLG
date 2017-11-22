@@ -25,8 +25,8 @@ public class gob_E_degatsRecu : ia_etat {
 		nav.enabled = false;
 		facteurRecule = princesseArme.getFacteurReculeArmeActuelle();
 		anim.Play("degatsRecu");
-		agent.getAudio ().Stop();
-		agent.getAudio().PlayOneShot(sonDegat,1.0f);
+		agent.getSoundEntity().stop();
+		agent.getSoundEntity().playOneShot(sonDegat,1.0f);
 
 		Vector3 directionRecule = (this.transform.position - princesse.transform.position).normalized;
 
