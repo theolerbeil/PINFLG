@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class princesse_objetProgression : MonoBehaviour {
 
-	private List<EnumObjetProgression> listObjet;
+	public List<EnumObjetProgression> listObjet;
 
 	// Use this for initialization
 	void Start () {
