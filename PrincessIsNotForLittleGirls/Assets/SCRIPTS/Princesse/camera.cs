@@ -22,10 +22,14 @@ public class camera : MonoBehaviour {
 	}
 
 	void Update(){
-		horizontal += InputManager.GetKeyAxis("Mouse X");
-		vertical += InputManager.GetKeyAxis("Mouse Y");
+		if(InputManager.GetKeyAxis("Mouse X") >= 0.8 || InputManager.GetKeyAxis("Mouse X") <= -0.8)
+			horizontal += InputManager.GetKeyAxis("Mouse X");
+		if(InputManager.GetKeyAxis("Mouse Y") >= 0.8 || InputManager.GetKeyAxis("Mouse Y") <= -0.8)
+			vertical += InputManager.GetKeyAxis("Mouse Y");
 
 		vertical = Mathf.Clamp (vertical, ANGLE_MIN_Y, ANGLE_MAX_Y);
+		//Debug.Log ("horizonral : " + horizontal);
+		Debug.Log ("Vertical : " + vertical);
 	}
 
 
