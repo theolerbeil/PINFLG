@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class princesse_deplacement : MonoBehaviour {
 
-	public GameObject cam;
 	static Animator anim;
 	public float vitesse;
 	public float forceSaut;
@@ -17,6 +16,7 @@ public class princesse_deplacement : MonoBehaviour {
 	public float minVolume;
 	public float maxVolume;
 
+	private GameObject cam;
 	private bool CanDash;
 	private Rigidbody rb;
 	private bool isPushing;
@@ -27,6 +27,7 @@ public class princesse_deplacement : MonoBehaviour {
 
 	void Start ()
 	{
+		cam = GameObject.FindGameObjectWithTag ("MainCamera");
 		isPushing = false;
 		CanDash = true;
 		rb = GetComponent<Rigidbody>();

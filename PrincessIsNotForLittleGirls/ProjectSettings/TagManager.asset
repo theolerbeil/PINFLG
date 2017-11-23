@@ -11,6 +11,7 @@ TagManager:
   - Image_Action_ObjetProgression
   - Affichage_ObjetRamasser
   - SoundManager
+  - PrincesseBody
   layers:
   - Default
   - TransparentFX

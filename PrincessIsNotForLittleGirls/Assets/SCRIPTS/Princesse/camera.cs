@@ -6,8 +6,9 @@ public class camera : MonoBehaviour {
 
 	private const float ANGLE_MIN_Y = 20f;
 	private const float ANGLE_MAX_Y = 50f;
-    
-	public GameObject cible;
+	private GameObject cible;
+	private SkinnedMeshRenderer skinPrincesse;
+
 	public float vitesse_rotation = 5;
 	public float horizontal;
 	public float vertical;
@@ -15,10 +16,11 @@ public class camera : MonoBehaviour {
     public float hauteurFocus;
 	public float distanceAvantTransparence;
 	public Transform camera_transform;
-	public SkinnedMeshRenderer skinPrincesse;
 
 	void Start() {
 		camera_transform = transform;
+		cible = GameObject.FindGameObjectWithTag ("Player");
+		skinPrincesse = GameObject.FindGameObjectWithTag ("PrincesseBody").GetComponent<SkinnedMeshRenderer>();
 	}
 
 	void Update(){
