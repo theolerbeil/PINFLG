@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SCENES/scene2.unity
     guid: b812a519087d82f4abf155c18303fd9f
+  - enabled: 1
+    path: Assets/SCENES/scene4-plateforme.unity
+    guid: 6d6787e91874cdc4c998bdd8f1ade5e7
