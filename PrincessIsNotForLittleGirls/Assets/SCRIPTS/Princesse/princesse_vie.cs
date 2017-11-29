@@ -33,10 +33,10 @@ public class princesse_vie : MonoBehaviour {
 		}
         
 		if (Input.GetKeyDown (KeyCode.X)) {
-            soigner(10);
+            soigner(1);
 
 		} else if (Input.GetKeyDown (KeyCode.W)) {
-			blesser(10, this.gameObject, 0.0f);
+			blesser(1, this.gameObject, 0.0f);
 		}
 
     }
