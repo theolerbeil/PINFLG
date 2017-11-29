@@ -29,7 +29,7 @@ public class princesse_vie : MonoBehaviour {
 			Debug.Log ("GAME OVER");
             gameover = true;
 			SceneManager.LoadScene ("scene2");
-			GameControl.control.vie = 100;
+			GameControl.control.Load ();
 		}
         
 		if (Input.GetKeyDown (KeyCode.X)) {

@@ -37,6 +37,7 @@ public class GameControl : MonoBehaviour {
 		PlayerData data = new PlayerData();
 		data.vie = vie;
 		data.ArmeCourante = ArmeCourante;
+		data.listArmeTenu = listArmeTenu;
 
 		bf.Serialize(file, data);
 		file.Close();
@@ -52,6 +53,7 @@ public class GameControl : MonoBehaviour {
 
 			vie = data.vie;
 			ArmeCourante = data.ArmeCourante;
+			listArmeTenu = data.listArmeTenu;
 		}
 	}
 
@@ -62,5 +64,6 @@ class PlayerData
 {
 	public float vie;
 	public EnumArmes ArmeCourante;
+	public List<EnumArmes> listArmeTenu;
 
 }

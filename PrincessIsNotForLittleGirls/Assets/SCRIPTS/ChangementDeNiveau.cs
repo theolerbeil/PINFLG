@@ -8,6 +8,7 @@ public class ChangementDeNiveau : MonoBehaviour {
 	public string NomDeLaSceneaCharger;
 
 	void OnTriggerEnter(Collider other){
+		GameControl.control.Save ();
 		SceneManager.LoadScene (NomDeLaSceneaCharger);
 	}
 
