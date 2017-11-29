@@ -2031,18 +2031,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armeActive: 0
   listArmeTenu: 
-  degatsPoele: 100
-  degatsBread: 50
-  degatsBedfoot: 50
-  degatsChandelier: 50
-  degatsShowel: 50
-  degatsMagicStaff: 50
+  degatsPoele: 3
+  degatsBread: 1
+  degatsBedfoot: 1
+  degatsChandelier: 2
+  degatsShowel: 2
+  degatsMagicStaff: 2
   facteurReculePoele: 1
   facteurReculeBread: 1
   facteurReculeBedfoot: 0.6
   facteurReculeChandelier: 1
   facteurReculeShowel: 1.2
-  facteurReculeMagicStaff: 2
+  facteurReculeMagicStaff: 1.4
   handPoele: {fileID: 1231397979868026}
   handBread: {fileID: 1113351943058698}
   handBedfoot: {fileID: 1918514292015522}
@@ -2113,8 +2113,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 921598f64c808e14c867c5b9930db006, type: 3}
   - {fileID: 8300000, guid: 92c8c97436940484e8bc3bad25c1be88, type: 3}
   - {fileID: 8300000, guid: 78275d80cf5ba2048b1d889ffd1dd16c, type: 3}
-  minPitch: 1.8
-  maxPitch: 2
+  minPitch: 1.5
+  maxPitch: 1.7
   minVolume: 0.35
   maxVolume: 0.45
 --- !u!114 &114835084900830886
@@ -2154,7 +2154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5fd84dd48388848837fff4f2a5b501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vie_max: 100
+  vie_max: 8
   reculeVertical: 300
   reculeHorizontal: 300
 --- !u!137 &137756089218399486

@@ -12,6 +12,8 @@ TagManager:
   - Affichage_ObjetRamasser
   - SoundManager
   - PrincesseBody
+  - cube
+  - affichage_ObjetActuel
   layers:
   - Default
   - TransparentFX
