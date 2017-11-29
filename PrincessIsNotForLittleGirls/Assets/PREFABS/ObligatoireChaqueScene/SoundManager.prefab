@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listeClips: []
-  defaultLevelMusic: {fileID: 0}
+  defaultLevelMusic: {fileID: 8300000, guid: e42c70dafec722d4bbce7c099520294e, type: 3}
   dureeTransition: 3
   levelAudioSingle: {fileID: 82987544530052064}
   levelAudioLoop1: {fileID: 82832612893572958}
