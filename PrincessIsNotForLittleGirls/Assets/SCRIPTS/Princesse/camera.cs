@@ -31,7 +31,7 @@ public class camera : MonoBehaviour {
 
 		vertical = Mathf.Clamp (vertical, ANGLE_MIN_Y, ANGLE_MAX_Y);
 		//Debug.Log ("horizonral : " + horizontal);
-		Debug.Log ("Vertical : " + vertical);
+		//Debug.Log ("Vertical : " + vertical);
 	}
 
 
