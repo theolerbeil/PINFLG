@@ -14,6 +14,7 @@ TagManager:
   - PrincesseBody
   - cube
   - affichage_ObjetActuel
+  - key
   layers:
   - Default
   - TransparentFX
