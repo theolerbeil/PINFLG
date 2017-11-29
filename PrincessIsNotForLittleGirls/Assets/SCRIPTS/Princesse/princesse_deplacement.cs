@@ -4,27 +4,37 @@ using UnityEngine;
 
 public class princesse_deplacement : MonoBehaviour {
 
-	public GameObject cam;
 	static Animator anim;
 	public float vitesse;
 	public float forceSaut;
 	public float vitesseAngulaire;
 	public bool isGrounded;
 	public float feetDist = 0.1f;
+	public AudioClip[] bruitsPas;
+	public float minPitch;
+	public float maxPitch;
+	public float minVolume;
+	public float maxVolume;
 
+	private GameObject cam;
 	private bool CanDash;
 	private Rigidbody rb;
 	private bool isPushing;
 	private princesse_arme princesseArme;
 	private GameObject pushableCube;
+	private float timerStep;
+	private SoundManager sm;
 
 	void Start ()
 	{
+		cam = GameObject.FindGameObjectWithTag ("MainCamera");
 		isPushing = false;
 		CanDash = true;
 		rb = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator> ();
 		princesseArme = GetComponent<princesse_arme> ();
+		timerStep = 0.0f;
+		sm = GameObject.FindGameObjectWithTag ("SoundManager").GetComponent<SoundManager>();
 	}
 
 	void Update ()
@@ -195,6 +205,14 @@ public class princesse_deplacement : MonoBehaviour {
 		} else {
 			this.transform.position += mouvement * vitesse/2 * Time.deltaTime;
 			//pushableCube.transform.position += mouvement * vitesse/2 * Time.deltaTime;
+		}
+
+		if (timerStep <= Time.time && isGrounded && CanDash) {
+			int indice = Random.Range (0, this.bruitsPas.Length);
+			float volume = Random.Range (minVolume, maxVolume);
+			float pitch = Random.Range (minPitch, maxPitch);
+			sm.playOneShot(this.bruitsPas[indice], volume, pitch);
+			timerStep = Time.time + (Random.Range (0.9f, 1.0f) * (1.0f / mouvement.magnitude) * 0.3f);
 		}
 	}
 

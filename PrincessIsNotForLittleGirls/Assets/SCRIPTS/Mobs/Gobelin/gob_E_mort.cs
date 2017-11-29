@@ -28,8 +28,8 @@ public class gob_E_mort : ia_etat {
 
 	public override void faireEtat()
 	{
-		if (!agent.getAudio().isPlaying && !sonJoue){
-			agent.getAudio().PlayOneShot(sonMort,1.0f);
+		if (!agent.getSoundEntity().isPlaying() && !sonJoue){
+			agent.getSoundEntity().playOneShot(sonMort,1.0f);
 			sonJoue = true;
 		}
 		if(Time.time >= actualDelai){
