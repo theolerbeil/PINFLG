@@ -25,4 +25,5 @@ public class princesse_objetProgression : MonoBehaviour {
 public enum EnumObjetProgression
 {
 	caisse,
+	key,
 }
