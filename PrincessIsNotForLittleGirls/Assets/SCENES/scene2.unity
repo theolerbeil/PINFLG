@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 0.7
+  m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.291864, g: 0.3498138, b: 0.42139947, a: 0.7}
+  m_IndirectSpecularColor: {r: 0.34744054, g: 0.4146754, b: 0.4977309, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -13563,7 +13563,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 154.486, y: -0.13397217, z: 119.373}
 --- !u!4 &431719031 stripped
 Transform:
@@ -22277,7 +22277,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4690197088196444, guid: 833c5fe7a8dc55141bc69cd53f34c0ee, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6.91
+      value: -5.4
       objectReference: {fileID: 0}
     - target: {fileID: 4690197088196444, guid: 833c5fe7a8dc55141bc69cd53f34c0ee, type: 2}
       propertyPath: m_LocalPosition.y
@@ -22315,6 +22315,16 @@ Prefab:
     - target: {fileID: 4690197088196444, guid: 833c5fe7a8dc55141bc69cd53f34c0ee, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90.108
+      objectReference: {fileID: 0}
+    - target: {fileID: 137756089218399486, guid: 833c5fe7a8dc55141bc69cd53f34c0ee,
+        type: 2}
+      propertyPath: m_Quality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 137756089218399486, guid: 833c5fe7a8dc55141bc69cd53f34c0ee,
+        type: 2}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 833c5fe7a8dc55141bc69cd53f34c0ee, type: 2}
@@ -33234,7 +33244,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4565003241817794, guid: cfadea0d9ceadd749b89c8e88ffa908d, type: 2}
       propertyPath: m_RootOrder
-      value: 30
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4565003241817794, guid: cfadea0d9ceadd749b89c8e88ffa908d, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -34130,7 +34140,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4082734295136910, guid: 4917380a9b83bad47a8ca379eff7450a, type: 2}
       propertyPath: m_RootOrder
-      value: 32
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 114208897395276296, guid: 4917380a9b83bad47a8ca379eff7450a,
         type: 2}
@@ -34286,7 +34296,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 149.274, y: 68.615, z: 117.119995}
 --- !u!4 &1914990412 stripped
 Transform:
