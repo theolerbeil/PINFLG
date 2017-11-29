@@ -547,7 +547,7 @@ GameObject:
   - component: {fileID: 4183302825750730}
   - component: {fileID: 95724102821085962}
   m_Layer: 0
-  m_Name: princesse
+  m_Name: princesse_menu
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
