@@ -59,11 +59,14 @@ public class princesse_vie : MonoBehaviour {
 
         vie_courante = Mathf.Max(vie_courante - valeurDegats, 0);
 		GameControl.control.vie = vie_courante;
-        Debug.Log("vie courante : " + vie_courante);
     }
 
     public bool enVie()
     {
         return vie_courante > 0;
     }
+
+	public int getVieCourante(){
+		return vie_courante;
+	}
 }

@@ -25,7 +25,8 @@ public class affichage_objetActuel : MonoBehaviour {
 
 	public void objetRamasse(EnumObjetProgression enu){
 		if (objetAffiche.ContainsKey (enu)) {
-			
+			objetAffiche [enu]++;
+			dicoObjet [enu].GetComponentInChildren<UnityEngine.UI.Text> ().text = "x" + objetAffiche [enu];
 		} else {
 			dicoObjet [enu].SetActive (true);
 			objetAffiche.Add (enu,1);
