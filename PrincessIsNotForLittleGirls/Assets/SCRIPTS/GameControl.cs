@@ -23,16 +23,6 @@ public class GameControl : MonoBehaviour {
 		}
 	}
 
-	void Update(){
-		//Debug.Log (vie);
-	}
-
-	void OnGUI()
-	{
-		GUI.Label (new Rect (10, 10, 100, 30), "Vie: " + vie);
-		GUI.Label (new Rect (10, 30, 150, 60), "Arme Courante: " + ArmeCourante);
-	}
-
 	public void Save()
 	{
 		BinaryFormatter bf = new BinaryFormatter ();

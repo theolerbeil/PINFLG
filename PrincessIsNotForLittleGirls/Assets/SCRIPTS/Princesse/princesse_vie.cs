@@ -18,7 +18,6 @@ public class princesse_vie : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		scene = SceneManager.GetActiveScene ();
-		Debug.Log (scene.name);
 		if (scene.name == "scene_room") {
 			vie_courante = vie_max;
 			GameControl.control.vie = vie_courante;
@@ -33,7 +32,6 @@ public class princesse_vie : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (vie_courante);
 		if (!enVie() && !gameover) {
 			Debug.Log ("GAME OVER");
             gameover = true;

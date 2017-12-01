@@ -17,6 +17,7 @@ public class GameManagerMenu : MonoBehaviour {
     public void LancerPartie()
     {
         SceneManager.LoadScene(NomDeLaSceneaCharger);
+		GameControl.control.ArmeCourante = EnumArmes.vide;
     }
     public void QuiterJeu()
     {
