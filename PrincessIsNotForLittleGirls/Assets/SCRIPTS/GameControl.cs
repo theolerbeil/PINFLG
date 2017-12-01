@@ -9,7 +9,7 @@ public class GameControl : MonoBehaviour {
 
 	public static GameControl control;
 
-	public float vie;
+	public int vie;
 	public EnumArmes ArmeCourante;
 	public List<EnumArmes> listArmeTenu;
 
@@ -21,6 +21,10 @@ public class GameControl : MonoBehaviour {
 		} else if (control != this) {
 			Destroy (gameObject);
 		}
+	}
+
+	void Update(){
+		//Debug.Log (vie);
 	}
 
 	void OnGUI()
@@ -62,7 +66,7 @@ public class GameControl : MonoBehaviour {
 [Serializable]
 class PlayerData
 {
-	public float vie;
+	public int vie;
 	public EnumArmes ArmeCourante;
 	public List<EnumArmes> listArmeTenu;
 

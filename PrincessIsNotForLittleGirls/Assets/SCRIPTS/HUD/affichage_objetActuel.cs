@@ -20,6 +20,8 @@ public class affichage_objetActuel : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
 		
 	}
 

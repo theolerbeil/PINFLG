@@ -15,6 +15,7 @@ public class affichage_vie : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//Debug.Log (princesse.getVieCourante ());
 		for (int i = 1; i < listImageHeart.Length; i++) {
 			if (listImageHeart[i].name == princesse.getVieCourante () + "_heart"){
 				listImageHeart[i].gameObject.SetActive (true);
