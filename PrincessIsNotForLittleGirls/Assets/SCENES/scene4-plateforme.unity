@@ -4161,6 +4161,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 179.99998
       objectReference: {fileID: 0}
+    - target: {fileID: 1723017418232520, guid: b352ab27963d8704dbdc1682a7fb011b, type: 2}
+      propertyPath: m_TagString
+      value: cube
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b352ab27963d8704dbdc1682a7fb011b, type: 2}
   m_IsPrefabParent: 0
@@ -6584,6 +6588,10 @@ Prefab:
     - target: {fileID: 1723017418232520, guid: b352ab27963d8704dbdc1682a7fb011b, type: 2}
       propertyPath: m_Name
       value: pillar2_large (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723017418232520, guid: b352ab27963d8704dbdc1682a7fb011b, type: 2}
+      propertyPath: m_TagString
+      value: cube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b352ab27963d8704dbdc1682a7fb011b, type: 2}
