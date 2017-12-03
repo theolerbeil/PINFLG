@@ -5,6 +5,7 @@ using UnityEngine;
 public class mob_vie : MonoBehaviour {
 
 	public int vieMax;
+	public Transform hitEffect;
 
 	private int vieCourante;
 	private ia_agent agent;
@@ -18,6 +19,15 @@ public class mob_vie : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void blesser(int degats, Vector3 hitPoint) {
+
+		if (hitEffect != null) {
+			Instantiate (hitEffect, hitPoint, Quaternion.identity);
+		}
+
+		blesser (degats);
 	}
 
 	public void blesser(int degats) {

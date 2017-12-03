@@ -289,6 +289,14 @@ public class ia_agent : MonoBehaviour {
 		return (princesse.transform.position - this.transform.position).magnitude;
 	}
 
+	public void recevoirDegat(int valeurDegats, Vector3 hitPoint) {
+
+		if (etatDegatsRecu != null) {
+			changerEtat (etatDegatsRecu);
+		}
+		mobVie.blesser (valeurDegats, hitPoint);
+	}
+
 	public void recevoirDegat(int valeurDegats) {
 
 		if (etatDegatsRecu != null) {

@@ -73,7 +73,10 @@ public class princesse_arme : MonoBehaviour {
 				if (!listeMobsTouches.Contains (mobTouche) && mobTouche.estEnVie()) {
 					
 					listeMobsTouches.Add (mobTouche);
-					mobTouche.recevoirDegat (degatsArmeActuelle);
+
+					Vector3 hitPoint = other.ClosestPoint (this.transform.position);
+
+					mobTouche.recevoirDegat (degatsArmeActuelle, hitPoint);
 				}
 			}
 		}
