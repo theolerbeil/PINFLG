@@ -92,6 +92,7 @@ public class princesse_arme : MonoBehaviour {
 
 	public void lancerAttaque() {
 		attaqueEnCours = true;
+		listeMobsTouches.Clear ();
 	}
 
 	public bool isAttaqueEnCours() {

@@ -24,7 +24,7 @@ public class mob_vie : MonoBehaviour {
 	public void blesser(int degats, Vector3 hitPoint) {
 
 		if (hitEffect != null) {
-			Instantiate (hitEffect, hitPoint, Quaternion.identity);
+			Instantiate (hitEffect, hitPoint, hitEffect.transform.rotation);
 		}
 
 		blesser (degats);
