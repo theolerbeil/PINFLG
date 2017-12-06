@@ -13,30 +13,40 @@ public class princesse_vie : MonoBehaviour {
 	private int vie_courante;
 	private Rigidbody rb;
     private bool gameover;
+	private Scene scene;
 
 	// Use this for initialization
 	void Start () {
-		vie_courante = vie_max;
+		scene = SceneManager.GetActiveScene ();
+		if (scene.name == "scene_room") {
+			vie_courante = vie_max;
+			GameControl.control.vie = vie_courante;
+		} else {
+			vie_courante = GameControl.control.vie;
+		}
         gameover = false;
 		anim = GetComponent<Animator> ();
 		rb = GetComponent<Rigidbody>();
+		
     }
 	
 	// Update is called once per frame
 	void Update () {
-
 		if (!enVie() && !gameover) {
 			Debug.Log ("GAME OVER");
             gameover = true;
-			SceneManager.LoadScene ("scene2");
+			SceneManager.LoadScene (scene.name);
 			GameControl.control.Load ();
+			vie_courante = vie_max;
+			GameControl.control.vie = vie_courante;
+			GameControl.control.Save ();
 		}
         
 		if (Input.GetKeyDown (KeyCode.X)) {
-            soigner(10);
+            soigner(1);
 
 		} else if (Input.GetKeyDown (KeyCode.W)) {
-			blesser(10, this.gameObject, 0.0f);
+			blesser(1, this.gameObject, 0.0f);
 		}
 
     }
@@ -59,11 +69,14 @@ public class princesse_vie : MonoBehaviour {
 
         vie_courante = Mathf.Max(vie_courante - valeurDegats, 0);
 		GameControl.control.vie = vie_courante;
-        Debug.Log("vie courante : " + vie_courante);
     }
 
     public bool enVie()
     {
         return vie_courante > 0;
     }
+
+	public int getVieCourante(){
+		return vie_courante;
+	}
 }

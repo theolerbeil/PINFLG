@@ -1485,6 +1485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vieMax: 2
+  hitEffect: {fileID: 4250328504743692, guid: ad330e73d42cbd348bca364815c3a807, type: 2}
 --- !u!114 &114261990976552156
 MonoBehaviour:
   m_ObjectHideFlags: 1
