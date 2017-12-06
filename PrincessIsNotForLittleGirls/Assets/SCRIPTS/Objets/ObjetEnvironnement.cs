@@ -27,4 +27,5 @@ public class ObjetEnvironnement : Objet {
 public enum EnumObjetEnvironnement
 {
 	porte,
+    plateforteMouvante,
 }
