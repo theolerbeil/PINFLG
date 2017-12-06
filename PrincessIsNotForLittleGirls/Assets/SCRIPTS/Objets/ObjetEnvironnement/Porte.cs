@@ -8,6 +8,7 @@ public class Porte : ObjetEnvironnement {
 	public EnumObjetProgression[] objetNecessaire;
 	private  Animator anim;
 	private princesse_objetProgression princesse;
+	public ia_agent[] ennemiMort;
 
 
 	// Use this for initialization
@@ -34,6 +35,12 @@ public class Porte : ObjetEnvironnement {
 
 		foreach (EnumObjetProgression objet in objetNecessaire) {
 			if(!princesse.listObjet.Contains(objet)){
+				ouverture = false;
+			}
+		}
+
+		foreach (ia_agent ia in ennemiMort) {
+			if(ia.estEnVie()){
 				ouverture = false;
 			}
 		}
