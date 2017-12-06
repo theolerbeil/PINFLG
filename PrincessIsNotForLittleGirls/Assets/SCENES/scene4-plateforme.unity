@@ -2737,6 +2737,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114941524049680868, guid: f0548f5856429404788bcc7df58a1ea0,
+        type: 2}
+      propertyPath: chemin.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4834220893378256, guid: f0548f5856429404788bcc7df58a1ea0, type: 2}
       propertyPath: m_LocalPosition.x
       value: -8.752381
