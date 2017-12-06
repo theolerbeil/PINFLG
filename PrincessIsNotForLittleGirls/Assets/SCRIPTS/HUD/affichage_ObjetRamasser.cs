@@ -27,14 +27,12 @@ public class affichage_ObjetRamasser : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
-
-
 		if (!time) {
 			if (Time.timeScale != 0) {
 				Time.timeScale = 0;
 			} else {
 				if (Input.GetButtonDown("Cancel")) {
+					Debug.Log ("fin affichage"+Time.frameCount);
 					time = true;
 					desaffiche ();
 					Time.timeScale = 1;
