@@ -21761,10 +21761,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomObjet: 
   descriptionObjet: 
-  objetEnvrironnement: 0
+  objetEnvrironnement: 1
   utilisable: 0
-  EnBas: 0
-  EnHaut: 0
+  posHaut: {x: 0, y: 21.75, z: 0}
+  posBas: {x: 0, y: 18.35, z: 0}
+  isMoving: 0
 --- !u!1 &1542260381
 GameObject:
   m_ObjectHideFlags: 0
