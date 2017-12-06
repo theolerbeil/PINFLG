@@ -27,6 +27,5 @@ public class ObjetProgression : Objet {
 		affichageObjetRamasser.activeObjet (GetComponent<ObjetProgression>());
 		princesse.addItem(objetProgression,this.gameObject);
 		affichageobjetActuel.objetRamasse (objetProgression);
-
 	}
 }
