@@ -35,10 +35,8 @@ public class objet_interaction : MonoBehaviour {
 
 			if (angle <= demiAngleActivationFrontal) {
 				hud_refractor.activeObjet (objet);
-				
 				//image_detection.enabled = true;
 				if (action) {
-					Debug.Log ("ACTION"+Time.frameCount);
 					objet.Activation ();
 					hud_refractor.desactiveObjet (objet);
 				}

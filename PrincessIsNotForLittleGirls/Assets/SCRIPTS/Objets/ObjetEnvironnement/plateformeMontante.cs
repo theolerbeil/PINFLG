@@ -7,41 +7,50 @@ public class plateformeMontante : ObjetEnvironnement {
     public Vector3 posHaut;
     public Vector3 posBas;
     public bool isMoving;
+	public bool CanUp;
+	public bool CanDown;
+	public float vitesse;
     // Use this for initialization
     void Start () {
         posBas.x = this.transform.position.x;
         posBas.z = this.transform.position.z;
         posHaut.x = this.transform.position.x;
         posHaut.z = this.transform.position.z;
-        isMoving = false;
+		CanUp = false;
+		CanDown = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
-
+		if ( utilisable == false && CanUp == true)
+		{
+			Monte();
+		} else if (utilisable == false && CanDown == true)
+		{
+			Descend();
+		}
     }
 
     public void Monte()
     {
-        while (this.transform.position.y <= posHaut.y)
+		gameObject.transform.Translate(Vector3.up * vitesse * Time.deltaTime, Space.World);
+        if (this.transform.position.y >= posHaut.y)
         {
-            gameObject.transform.Translate(Vector3.up * 0.1f * Time.deltaTime, Space.World);
-           
-        }
-        this.gameObject.transform.position = new Vector3(posHaut.x, posHaut.y, posHaut.z);
-        isMoving = false;
+			this.gameObject.transform.position = new Vector3(posHaut.x, posHaut.y, posHaut.z);
+			utilisable = true;
+			CanUp = false;  
+        }  
     }
 
     public void Descend()
     {
-        while (this.transform.position.y >= posBas.y)
+		gameObject.transform.Translate(Vector3.down * vitesse * Time.deltaTime, Space.World);
+        if (this.transform.position.y <= posBas.y)
         {
-
-            gameObject.transform.Translate(Vector3.down * 0.1f * Time.deltaTime, Space.World);
-
+			this.gameObject.transform.position = new Vector3(posBas.x, posBas.y, posBas.z);
+			utilisable = true;
+			CanDown = false; 
         }
-        this.gameObject.transform.position = new Vector3(posBas.x, posBas.y, posBas.z);
-        isMoving = false;
     }
 
     public
@@ -50,12 +59,12 @@ public class plateformeMontante : ObjetEnvironnement {
     {
         if ( this.transform.position.y == posBas.y && isMoving == false)
         {
-            isMoving = true;
-            Monte();
+			utilisable = false;
+			CanUp = true;
         } else if (this.transform.position.y == posHaut.y && isMoving == false)
         {
-            isMoving = true;
-            Descend();
+			utilisable = false;
+			CanDown = true;
         }
     }
 }

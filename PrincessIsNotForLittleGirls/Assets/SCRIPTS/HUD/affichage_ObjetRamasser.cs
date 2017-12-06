@@ -32,7 +32,6 @@ public class affichage_ObjetRamasser : MonoBehaviour {
 				Time.timeScale = 0;
 			} else {
 				if (Input.GetButtonDown("Cancel")) {
-					Debug.Log ("fin affichage"+Time.frameCount);
 					time = true;
 					desaffiche ();
 					Time.timeScale = 1;

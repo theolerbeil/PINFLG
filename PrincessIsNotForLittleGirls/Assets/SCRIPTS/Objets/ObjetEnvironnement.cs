@@ -22,6 +22,7 @@ public class ObjetEnvironnement : Objet {
 	{
 
 	}
+		
 }
 
 public enum EnumObjetEnvironnement

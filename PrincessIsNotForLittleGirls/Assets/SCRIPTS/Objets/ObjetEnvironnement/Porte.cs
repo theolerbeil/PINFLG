@@ -20,12 +20,21 @@ public class Porte : ObjetEnvironnement {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		utilisable = isActivable();
 	}
 
 	override
 	public void Activation()
 	{
+		if (isActivable() && utilisable) {
+			anim.SetBool("isOpen", true);
+			utilisable = false;
+		}
+
+	}
+
+
+	private bool isActivable(){
 		bool ouverture = true;
 		if (armeCourante != EnumArmes.vide) {
 			if (GameControl.control.ArmeCourante != armeCourante) {
@@ -45,10 +54,6 @@ public class Porte : ObjetEnvironnement {
 			}
 		}
 
-		if (ouverture && utilisable) {
-			anim.SetBool("isOpen", true);
-			utilisable = false;
-		}
-
+		return ouverture;
 	}
 }
