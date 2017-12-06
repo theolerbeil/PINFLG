@@ -56,4 +56,6 @@ public class Porte : ObjetEnvironnement {
 
 		return ouverture;
 	}
+
+
 }
