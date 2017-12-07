@@ -27,9 +27,9 @@ public class Levier : ObjetEnvironnement {
 	override
 	public void Activation()
 	{
+		GetComponent<AudioSource> ().PlayOneShot (levier, 1f);
 		foreach (ObjetEnvironnement objet in listObjetEnvironnement) {
 			objet.Activation ();
-			GetComponent<AudioSource> ().PlayOneShot (levier, 1f);
 		}
 	}
 }
