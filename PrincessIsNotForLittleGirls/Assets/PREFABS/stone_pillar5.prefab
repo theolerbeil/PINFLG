@@ -22,12 +22,12 @@ GameObject:
   - component: {fileID: 33612688239620074}
   - component: {fileID: 23852190109372692}
   - component: {fileID: 65282346791996006}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: stone_pillar5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4180467493810886
 Transform:
@@ -35,9 +35,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1438430741805922}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 4, y: 1, z: 0}
-  m_LocalScale: {x: 50, y: 50, z: 100}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 103.29, y: 76.599, z: -0.889}
+  m_LocalScale: {x: 35.63057, y: 35.630474, z: 71.26094}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
