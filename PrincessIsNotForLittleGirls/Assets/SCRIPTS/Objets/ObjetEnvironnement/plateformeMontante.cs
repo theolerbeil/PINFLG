@@ -10,6 +10,8 @@ public class plateformeMontante : ObjetEnvironnement {
 	public bool CanUp;
 	public bool CanDown;
 	public float vitesse;
+	public Animator animLevier;
+
     // Use this for initialization
     void Start () {
         posBas.x = this.transform.position.x;
@@ -33,11 +35,13 @@ public class plateformeMontante : ObjetEnvironnement {
 
     public void Monte()
     {
+		
 		gameObject.transform.Translate(Vector3.up * vitesse * Time.deltaTime, Space.World);
         if (this.transform.position.y >= posHaut.y)
         {
 			this.gameObject.transform.position = new Vector3(posHaut.x, posHaut.y, posHaut.z);
 			utilisable = true;
+			GetComponent<AudioSource> ().Stop ();
 			CanUp = false;  
         }  
     }
@@ -49,6 +53,7 @@ public class plateformeMontante : ObjetEnvironnement {
         {
 			this.gameObject.transform.position = new Vector3(posBas.x, posBas.y, posBas.z);
 			utilisable = true;
+			GetComponent<AudioSource> ().Stop ();
 			CanDown = false; 
         }
     }
@@ -61,10 +66,16 @@ public class plateformeMontante : ObjetEnvironnement {
         {
 			utilisable = false;
 			CanUp = true;
+			animLevier.SetBool ("isUp", true);
+			animLevier.SetBool ("isDown", false);
+			GetComponent<AudioSource> ().Play ();
         } else if (this.transform.position.y == posHaut.y && isMoving == false)
         {
 			utilisable = false;
 			CanDown = true;
+			animLevier.SetBool ("isDown", true);
+			animLevier.SetBool ("isUp", false);
+			GetComponent<AudioSource> ().Play ();
         }
     }
 }
