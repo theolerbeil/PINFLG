@@ -109,7 +109,7 @@ MonoBehaviour:
   horizontal: 0
   vertical: 50
   distanceMax: 4
-  hauteurFocus: 0.8
+  hauteurFocus: 0.3
   distanceAvantTransparence: 1.5
   camera_transform: {fileID: 4644378828053428}
 --- !u!124 &124058302125896452
