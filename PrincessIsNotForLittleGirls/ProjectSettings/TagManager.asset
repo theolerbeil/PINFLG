@@ -15,6 +15,7 @@ TagManager:
   - cube
   - affichage_ObjetActuel
   - key
+  - HUD
   layers:
   - Default
   - TransparentFX

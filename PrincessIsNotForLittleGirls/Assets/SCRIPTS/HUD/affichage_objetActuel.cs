@@ -35,6 +35,19 @@ public class affichage_objetActuel : MonoBehaviour {
 		}
 	}
 
+	public void objetUtilise(EnumObjetProgression enu){
+		if (objetAffiche.ContainsKey (enu)) {
+			objetAffiche [enu]--;
+			if (objetAffiche [enu] > 0) {
+				dicoObjet [enu].GetComponentInChildren<UnityEngine.UI.Text> ().text = "x" + objetAffiche [enu];
+			} else {
+				dicoObjet [enu].SetActive (false);
+				objetAffiche.Remove (enu);
+			}
+
+		} 
+	}
+
 
 
 }

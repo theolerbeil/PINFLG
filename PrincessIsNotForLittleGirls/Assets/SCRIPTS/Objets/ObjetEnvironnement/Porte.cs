@@ -20,7 +20,6 @@ public class Porte : ObjetEnvironnement {
 	
 	// Update is called once per frame
 	void Update () {
-		utilisable = isActivable();
 	}
 
 	override
@@ -29,32 +28,34 @@ public class Porte : ObjetEnvironnement {
 		if (isActivable() && utilisable) {
 			anim.SetBool("isOpen", true);
 			utilisable = false;
+			foreach (EnumObjetProgression objet in objetNecessaire) {
+				princesse.removeItem (objet);
+			}
 		}
 
 	}
 
 
 	private bool isActivable(){
-		bool ouverture = true;
 		if (armeCourante != EnumArmes.vide) {
 			if (GameControl.control.ArmeCourante != armeCourante) {
-				ouverture = false;
+				return false;
 			}
 		}
 
 		foreach (EnumObjetProgression objet in objetNecessaire) {
 			if(!princesse.listObjet.Contains(objet)){
-				ouverture = false;
+				return false;
 			}
 		}
 
 		foreach (ia_agent ia in ennemiMort) {
 			if(ia.estEnVie()){
-				ouverture = false;
+				return false;
 			}
 		}
 
-		return ouverture;
+		return true;
 	}
 
 
