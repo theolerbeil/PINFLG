@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Levier : ObjetEnvironnement {
 
+	public AudioClip levier;
 	public ObjetEnvironnement[] listObjetEnvironnement;
 
 	// Use this for initialization
@@ -26,6 +27,7 @@ public class Levier : ObjetEnvironnement {
 	override
 	public void Activation()
 	{
+		GetComponent<AudioSource> ().PlayOneShot (levier, 1f);
 		foreach (ObjetEnvironnement objet in listObjetEnvironnement) {
 			objet.Activation ();
 		}

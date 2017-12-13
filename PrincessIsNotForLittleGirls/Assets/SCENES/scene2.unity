@@ -13913,6 +13913,14 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1156296264280500, guid: cfb6ee8e83494b54b87ea98a8ea79f0d, type: 2}
+      propertyPath: m_TagString
+      value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573461597618410, guid: cfb6ee8e83494b54b87ea98a8ea79f0d, type: 2}
+      propertyPath: m_TagString
+      value: affichage_ObjetActuel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cfb6ee8e83494b54b87ea98a8ea79f0d, type: 2}
   m_IsPrefabParent: 0
@@ -33487,6 +33495,16 @@ Prefab:
     - target: {fileID: 4255568694602212, guid: 697e7c9e01059854ca690ef0b6c8510e, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 54246478260967710, guid: e29f800cae486654db1ef6de1873de55,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54411883058646730, guid: 697e7c9e01059854ca690ef0b6c8510e,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 697e7c9e01059854ca690ef0b6c8510e, type: 2}
