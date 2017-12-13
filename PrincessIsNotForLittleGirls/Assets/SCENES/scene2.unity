@@ -32695,6 +32695,11 @@ Prefab:
       propertyPath: m_TagString
       value: key
       objectReference: {fileID: 0}
+    - target: {fileID: 54246478260967710, guid: e29f800cae486654db1ef6de1873de55,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e29f800cae486654db1ef6de1873de55, type: 2}
   m_IsPrefabParent: 0
