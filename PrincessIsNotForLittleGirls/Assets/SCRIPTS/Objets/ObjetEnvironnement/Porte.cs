@@ -15,7 +15,6 @@ public class Porte : ObjetEnvironnement {
 	void Start () {
 		princesse= GameObject.FindGameObjectWithTag("Player").GetComponent<princesse_objetProgression>();
 		anim = GetComponent<Animator>();
-
 	}
 	
 	// Update is called once per frame
