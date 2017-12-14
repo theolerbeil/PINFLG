@@ -25713,6 +25713,16 @@ Prefab:
       propertyPath: nomObjet
       value: "Petite Cl\xE9 Scintillante"
       objectReference: {fileID: 0}
+    - target: {fileID: 114536713968965116, guid: 697e7c9e01059854ca690ef0b6c8510e,
+        type: 2}
+      propertyPath: demiAngleActivationFrontal
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114536713968965116, guid: 697e7c9e01059854ca690ef0b6c8510e,
+        type: 2}
+      propertyPath: distance_activation
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 697e7c9e01059854ca690ef0b6c8510e, type: 2}
   m_IsPrefabParent: 0
