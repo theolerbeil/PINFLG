@@ -37,6 +37,16 @@ public class Porte : ObjetEnvironnement {
 
 
 	private bool isActivable(){
+		Dictionary<EnumObjetProgression,int> listObjetPrincesse;
+		listObjetPrincesse = new Dictionary<EnumObjetProgression, int> ();
+		foreach (EnumObjetProgression objet in princesse.listObjet) {
+			if(listObjetPrincesse.ContainsKey(objet)){
+				listObjetPrincesse[objet]++;
+			}else{
+				listObjetPrincesse.Add (objet, 1);
+			}
+		}
+
 		if (armeCourante != EnumArmes.vide) {
 			if (GameControl.control.ArmeCourante != armeCourante) {
 				return false;
@@ -44,8 +54,14 @@ public class Porte : ObjetEnvironnement {
 		}
 
 		foreach (EnumObjetProgression objet in objetNecessaire) {
-			if(!princesse.listObjet.Contains(objet)){
+			if (!listObjetPrincesse.ContainsKey (objet)) {
 				return false;
+			} else {
+				if (listObjetPrincesse [objet] > 1) {
+					listObjetPrincesse [objet]--;
+				} else {
+					listObjetPrincesse.Remove (objet);
+				}
 			}
 		}
 
