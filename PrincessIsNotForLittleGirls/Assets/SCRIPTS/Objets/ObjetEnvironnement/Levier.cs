@@ -6,10 +6,11 @@ public class Levier : ObjetEnvironnement {
 
 	public AudioClip levier;
 	public ObjetEnvironnement[] listObjetEnvironnement;
+	public bool etat;
 
 	// Use this for initialization
 	void Start () {
-		
+		etat = false;
 	}
 	
 	// Update is called once per frame
@@ -27,6 +28,11 @@ public class Levier : ObjetEnvironnement {
 	override
 	public void Activation()
 	{
+		if (etat == false) {
+			etat = true;
+		} else {
+			etat = false;
+		}
 		GetComponent<AudioSource> ().PlayOneShot (levier, 1f);
 		foreach (ObjetEnvironnement objet in listObjetEnvironnement) {
 			objet.Activation ();

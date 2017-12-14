@@ -62,6 +62,7 @@ public class plateformeMontante : ObjetEnvironnement {
 
     override void Activation()
     {
+		
         if ( this.transform.position.y == posBas.y && isMoving == false)
         {
 			utilisable = false;

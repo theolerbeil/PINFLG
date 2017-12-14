@@ -9,6 +9,7 @@ public class Porte : ObjetEnvironnement {
 	private  Animator anim;
 	private princesse_objetProgression princesse;
 	public ia_agent[] ennemiMort;
+	public Levier levier;
 
 
 	// Use this for initialization
@@ -51,6 +52,13 @@ public class Porte : ObjetEnvironnement {
 		foreach (ia_agent ia in ennemiMort) {
 			if(ia.estEnVie()){
 				return false;
+			}
+		}
+
+		if (levier != null) {
+			if (!levier.etat) {
+				return false;
+
 			}
 		}
 
