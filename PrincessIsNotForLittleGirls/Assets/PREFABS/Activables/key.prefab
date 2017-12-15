@@ -167,8 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1ce7b1919c12d4484deef57e49b0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomObjet: "cl\xE9"
-  descriptionObjet: description
+  nomObjet: "Petite Cl\xE9 Scintillante"
+  descriptionObjet: " \"A quoi peu bien servir une cl\xE9 ? Hum... Probablement \xE0
+    invoquer les esprits les soirs de plaine lune...\"  ~Juliette 2017~"
   objetProgression: 1
 --- !u!198 &198790967292737842
 ParticleSystem:
