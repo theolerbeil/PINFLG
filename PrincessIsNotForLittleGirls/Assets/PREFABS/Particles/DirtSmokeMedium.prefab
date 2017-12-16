@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198049538254953018}
   - component: {fileID: 114066957105788294}
   - component: {fileID: 199465910682519924}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: DirtSmokeMedium
   m_TagString: Untagged
   m_Icon: {fileID: 0}

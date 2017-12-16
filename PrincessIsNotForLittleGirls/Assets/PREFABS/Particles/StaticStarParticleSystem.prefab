@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4284157874713962}
   - component: {fileID: 198590856697281552}
   - component: {fileID: 199544338678668242}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: StaticStarParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}

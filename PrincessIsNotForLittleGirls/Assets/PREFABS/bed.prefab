@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4439819308872842}
   - component: {fileID: 33641494704304462}
   - component: {fileID: 23398296846988204}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: matelas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 33428708536572096}
   - component: {fileID: 23590589421336984}
   - component: {fileID: 65356225086056366}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: planche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4124263487786026}
   - component: {fileID: 33115339779389172}
   - component: {fileID: 23053914578128336}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: support
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 4096294287551494}
   - component: {fileID: 33710726513433836}
   - component: {fileID: 23982920465708858}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: oreiller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4248368272913390}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
